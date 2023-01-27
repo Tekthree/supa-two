@@ -1,0 +1,97 @@
+<div class="pt-10">
+          <div class='sm:hidden'>
+            <label for='tabs' class='sr-only'>Select a tab</label>
+            <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
+            <select
+              id='tabs'
+              name='tabs'
+              class='block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500'
+            >
+              <option selected>Hip-Hop</option>
+
+              <option>Music Gems</option>
+
+							<option>Beat Suite</option>
+
+							<option>House Love</option>
+
+              <option>Drum and Bass</option>
+
+              <option>Turntablism</option>
+            </select>
+          </div>
+          <div class='hidden sm:block mx-auto max-w-4xl '>
+            <nav
+              class='isolate flex divide-x divide-[#030508] rounded-lg shadow'
+              aria-label='Tabs'
+            >
+              <!-- Current: "text-gray-900", Default: "text-gray-400 hover:text-gray-200" -->
+              <a
+                href='/hiphop'
+                class='text-gray-400 rounded-l-lg group relative min-w-0 flex-1 overflow-hidden  py-4 px-4 text-sm font-medium text-center hover:bg-[#424e66] focus:z-10'
+                aria-current='page'
+              >
+                <span>Hip-Hop</span>
+                <span
+                  aria-hidden='true'
+                  class='absolute inset-x-0 bottom-0 h-0.5'
+                ></span>
+              </a>
+							
+
+              <a
+                href='/gems'
+                class='text-gray-400 hover:text-gray-200 group relative min-w-0 flex-1 overflow-hidden  py-4 px-4 text-sm font-medium text-center hover:bg-[#424e66] focus:z-10'
+              >
+                <span>Music Gems</span>
+                <span
+                  aria-hidden='true'
+                  class='bg-transparent absolute inset-x-0 bottom-0 h-0.5'
+                ></span>
+              </a>
+							<a
+                href='/beats'
+                class='text-gray-400 hover:text-gray-200 group relative min-w-0 flex-1 overflow-hidden  py-4 px-4 text-sm font-medium text-center hover:bg-[#424e66] focus:z-10'
+              >
+                <span>Beat Suite</span>
+                <span
+                  aria-hidden='true'
+                  class='bg-transparent absolute inset-x-0 bottom-0 h-0.5'
+                ></span>
+              </a>
+
+							<a
+                href='/house'
+                class='text-gray-400 hover:text-gray-200 group relative min-w-0 flex-1 overflow-hidden  py-4 px-4 text-sm font-medium text-center hover:bg-[#424e66] focus:z-10'
+              >
+                <span>House Love</span>
+                <span
+                  aria-hidden='true'
+                  class='bg-transparent absolute inset-x-0 bottom-0 h-0.5'
+                ></span>
+              </a>
+
+              <a
+                href='/drumandbass'
+                class='text-gray-400 hover:text-gray-200 group relative min-w-0 flex-1 overflow-hidden  py-4 px-4 text-sm font-medium text-center hover:bg-[#424e66] focus:z-10'
+              >
+                <span>Drum and Bass</span>
+                <span
+                  aria-hidden='true'
+                  class='bg-transparent absolute inset-x-0 bottom-0 h-0.5'
+                ></span>
+              </a>
+
+              <a
+                href='/turntablism'
+                class='text-gray-400 hover:text-gray-200 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden  py-4 px-4 text-sm font-medium text-center hover:bg-[#424e66] focus:z-10'
+              >
+                <span>Turntablism</span>
+                <span
+                  aria-hidden='true'
+                  class='bg-transparent absolute inset-x-0 bottom-0 h-0.5'
+                ></span>
+              </a>
+            </nav>
+          </div>
+        </div>

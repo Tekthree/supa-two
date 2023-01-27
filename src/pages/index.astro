@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import galleryData from '../../public/galleryData';
+import { YouTube } from '@astro-community/astro-embed-youtube';
+// import { createClient } from '@supabase/supabase-js';
+// import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
+
+
+// const client = new Client({
+//   intents: [
+//     GatewayIntentBits.Guilds,
+//     GatewayIntentBits.GuildMessages,
+//     GatewayIntentBits.MessageContent,
+//     GatewayIntentBits.GuildMembers,
+//   ],
+// }); // Create a new Discord client
+
+// const token = import.meta.env.DISCORD_BOT_TOKEN;
+
+// const supabaseAdin = createClient(
+//   import.meta.env.PUBLIC_SUPABASE_URL,
+//   import.meta.env.SUPABASE_SERVICE_ROLE_KEY
+// );
+
+// const { data } = await supabaseAdin.from('music').select('*').order('id');
+
+// Replace with the ID of the text channel you want to search
+// const channelId = '';
+
+// client.on('ready', () => {
+//   console.log(`Logged in as ${client.user.tag}!`);
+
+//   // Get the text channel instance
+//   const channel = client.channels.cache.get(channelId);
+
+//   // Fetch all messages in the channel
+//   let allMessages = [];
+//   let lastMessageId;
+//   const fetchMessages = () => {
+//     channel.messages
+//       .fetch({ limit: 100, before: lastMessageId })
+//       .then((messages) => {
+//         allMessages = allMessages.concat(messages);
+//         lastMessageId = messages.last().id;
+//         if (messages.size === 100) {
+//           fetchMessages();
+//         } else {
+//           // console.log(allMessages);
+//           // Code to filter and add YouTube URLs to playlist goes here
+//         }
+
+//         let youtubeUrls = [];
+
+//         const youtubeMessages = messages.filter((message) => {
+//           return message.content.includes('youtu');
+//         });
+
+//         youtubeMessages.forEach((message) => {
+//           youtubeUrls.push({
+//             url: message.content.match(/https?:\/\/[^\s]+/)[0],
+//           });
+//         });
+
+//         console.log(youtubeUrls);
+//       });
+//   };
+//   fetchMessages();
+// });
+
+// client.login(token);
+
+---
+
+<Layout title='Welcome to Astro.'>
+  <main class='bg-black'>
+   <div class='mx-auto max-w-7xl sm:px-6 lg:px-8'>
+    <!-- Content goes here -->
+
+    <div class=''>
+      <div
+        class='mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'
+      >
+        <h2 class='sr-only'>Products</h2>
+
+        <div
+          class='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
+        >
+          {
+            galleryData.map((card) => (
+              <div class='group '>
+                <div class='aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray xl:aspect-w-7 xl:aspect-h-8'>
+                  <YouTube
+                    class='h-full w-full object-cover object-center group-hover:opacity-75'
+                    id={card.url}
+                  />
+                </div>
+                <h3 class='mt-4 text-sm text-gray-700'>{card.username}</h3>
+                <p class='mt-1 text-lg font-medium text-gray-900'>
+                  {card.name}
+                </p>
+              </div>
+            ))
+          }
+
+          <!-- More products... -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+</Layout>
