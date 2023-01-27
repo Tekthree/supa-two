@@ -5,7 +5,6 @@ import { YouTube } from '@astro-community/astro-embed-youtube';
 // import { createClient } from '@supabase/supabase-js';
 // import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
 
-
 // const client = new Client({
 //   intents: [
 //     GatewayIntentBits.Guilds,
@@ -68,44 +67,43 @@ import { YouTube } from '@astro-community/astro-embed-youtube';
 // });
 
 // client.login(token);
-
 ---
 
 <Layout title='Welcome to Astro.'>
   <main class='bg-black'>
-   <div class='mx-auto max-w-7xl sm:px-6 lg:px-8'>
-    <!-- Content goes here -->
+    <div class='mx-auto max-w-7xl sm:px-6 lg:px-8'>
+      <!-- Content goes here -->
 
-    <div class=''>
-      <div
-        class='mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'
-      >
-        <h2 class='sr-only'>Products</h2>
-
+      <div class=''>
         <div
-          class='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
+          class='mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'
         >
-          {
-            galleryData.map((card) => (
-              <div class='group '>
-                <div class='aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray xl:aspect-w-7 xl:aspect-h-8'>
-                  <YouTube
-                    class='h-full w-full object-cover object-center group-hover:opacity-75'
-                    id={card.url}
-                  />
-                </div>
-                <h3 class='mt-4 text-sm text-gray-700'>{card.username}</h3>
-                <p class='mt-1 text-lg font-medium text-gray-900'>
-                  {card.name}
-                </p>
-              </div>
-            ))
-          }
+          <h2 class='sr-only'>Products</h2>
 
-          <!-- More products... -->
+          <div
+            class='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
+          >
+            {
+              galleryData.map((card) => (
+                <div class='group '>
+                  <div class='aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray xl:aspect-w-7 xl:aspect-h-8'>
+                    <YouTube
+                      class='h-full w-full object-cover object-center group-hover:opacity-75'
+                      id={card.url}
+                    />
+                  </div>
+                  <h3 class='mt-4 text-sm text-gray-700'>{card.username}</h3>
+                  <p class='mt-1 text-lg font-medium text-gray-900'>
+                    {card.name}
+                  </p>
+                </div>
+              ))
+            }
+
+            <!-- More products... -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </main>
 </Layout>
