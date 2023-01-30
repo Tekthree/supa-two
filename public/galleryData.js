@@ -1,4 +1,7 @@
 const galleryData = [
+  { url: 'https://www.youtube.com/watch?v=jQ3DX7oDOMg' },
+  { url: 'https://www.youtube.com/watch?v=hT_2kUx0AcQ' },
+  { url: 'https://www.youtube.com/watch?v=u19h0plTJa4' },
   {
     url: 'https://www.youtube.com/watch?v=VSOTzF6vGGI&list=LL&index=45',
   },
@@ -172,7 +175,5 @@ const galleryData = [
   { url: 'https://youtu.be/fLqAPgR14S4' },
   { url: 'https://www.youtube.com/watch?v=6NlstW2xvwc&t=6s' },
 ];
-
-
 
 export default galleryData;
