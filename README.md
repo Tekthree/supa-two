@@ -1,4 +1,4 @@
-# @example/basics
+# Okizoo Discord Music App
 
 A basic module for building web applications with [Astro](https://astro.js.org/).
 
