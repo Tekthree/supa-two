@@ -1,4 +1,11 @@
 const galleryData = [
+  {
+    url: 'https://music.youtube.com/watch?v=Pm5iLGWqg4M&feature=share',
+  },
+  { url: 'https://www.youtube.com/watch?v=DdeKOG22gNU' },
+  { url: 'https://www.youtube.com/watch?v=_oHlAw9tE3o' },
+  { url: 'https://www.youtube.com/watch?v=-Z65hHESYGE' },
+  { url: 'https://youtu.be/KKGlTGnLXQc' },
   { url: 'https://www.youtube.com/watch?v=jQ3DX7oDOMg' },
   { url: 'https://www.youtube.com/watch?v=hT_2kUx0AcQ' },
   { url: 'https://www.youtube.com/watch?v=u19h0plTJa4' },
@@ -175,5 +182,6 @@ const galleryData = [
   { url: 'https://youtu.be/fLqAPgR14S4' },
   { url: 'https://www.youtube.com/watch?v=6NlstW2xvwc&t=6s' },
 ];
+
 
 export default galleryData;
