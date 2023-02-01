@@ -1,4 +1,10 @@
 const dnb = [
+  { url: 'https://youtu.be/lOlGORFPZew' },
+  { url: 'https://www.youtube.com/watch?v=LuB29bL2kyI' },
+  { url: 'https://youtu.be/KKlGQo_Mbhc' },
+  { url: 'https://youtu.be/q_TCnxDp078' },
+  { url: 'https://youtu.be/sa7SDiCQY3E' },
+  { url: 'https://youtu.be/PJfSFzP6oUY' },
   { url: 'https://music.youtube.com/watch?v=3Of01_WEdQI' },
   { url: 'https://www.youtube.com/watch?v=7lFvL9xl8eg' },
   { url: 'https://www.youtube.com/watch?v=9jedO9czY0E' },

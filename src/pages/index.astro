@@ -3,86 +3,88 @@ import Layout from '../layouts/Layout.astro';
 import galleryData from '../../public/galleryData.js';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 // import { createClient } from '@supabase/supabase-js';
-// import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
+import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
 
-// const client = new Client({
-//   intents: [
-//     GatewayIntentBits.Guilds,
-//     GatewayIntentBits.GuildMessages,
-//     GatewayIntentBits.MessageContent,
-//     GatewayIntentBits.GuildMembers,
-//   ],
-// }); // Create a new Discord client
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers,
+  ],
+}); // Create a new Discord client
 
-// const token = import.meta.env.DISCORD_BOT_TOKEN;
+const token = import.meta.env.DISCORD_BOT_TOKEN;
 
-// // const supabaseAdin = createClient(
-// //   import.meta.env.PUBLIC_SUPABASE_URL,
-// //   import.meta.env.SUPABASE_SERVICE_ROLE_KEY
-// // );
+// const supabaseAdin = createClient(
+//   import.meta.env.PUBLIC_SUPABASE_URL,
+//   import.meta.env.SUPABASE_SERVICE_ROLE_KEY
+// );
 
-// // const { data } = await supabaseAdin.from('music').select('*').order('id');
+// const { data } = await supabaseAdin.from('music').select('*').order('id');
 
-// // Replace with the ID of the text channel you want to search
-// const channelId = '1062327975091126342';
+// Replace with the ID of the text channel you want to search
+const channelId = '1062325992137424986';
 
-// client.on('ready', () => {
-//   console.log(`Logged in as ${client.user.tag}!`);
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
 
-//   // Get the text channel instance
-//   const channel = client.channels.cache.get(channelId);
+  // Get the text channel instance
+  const channel = client.channels.cache.get(channelId);
 
-//   // Fetch all messages in the channel
-//   let allMessages = [];
-//   let lastMessageId;
-//   const fetchMessages = () => {
-//     channel.messages
-//       .fetch({ limit: 100, before: lastMessageId })
-//       .then((messages) => {
-//         allMessages = allMessages.concat(messages);
-//         lastMessageId = messages.last().id;
-//         if (messages.size === 100) {
-//           fetchMessages();
-//         } else {
-//           // console.log(allMessages);
-//           // Code to filter and add YouTube URLs to playlist goes here
-//         }
+  // Fetch all messages in the channel
+  let allMessages = [];
+  let lastMessageId;
+  const fetchMessages = () => {
+    channel.messages
+      .fetch({ limit: 100, before: lastMessageId })
+      .then((messages) => {
+        allMessages = allMessages.concat(messages);
+        lastMessageId = messages.last().id;
+        if (messages.size === 100) {
+          fetchMessages();
+        } else {
+          // console.log(allMessages);
+          // Code to filter and add YouTube URLs to playlist goes here
+        }
 
-//         let youtubeUrls = [];
+        let youtubeUrls = [];
 
-//         const youtubeMessages = messages.filter((message) => {
-//           return message.content.includes('youtu');
-//         });
+        const youtubeMessages = messages.filter((message) => {
+          return message.content.includes('youtu');
+        });
 
-//         youtubeMessages.forEach((message) => {
-//           youtubeUrls.push({
-//             url: message.content.match(/https?:\/\/[^\s]+/)[0],
-//           });
-//         });
+        youtubeMessages.forEach((message) => {
+          youtubeUrls.push({
+            url: message.content.match(/https?:\/\/[^\s]+/)[0],
+          });
+        });
 
-//         const urlRegex =
-//           /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        console.log(youtubeUrls)
 
-//         const videoIds = youtubeUrls.map(({ url }) => {
-//           const match = url.match(urlRegex);
-//           if (match) {
-//             const videoId = match[1];
-//             if (videoId.length === 11) {
-//               return videoId;
-//             }
-//           }
-//           return undefined;
-//         });
+        const urlRegex =
+          /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
 
-//         console.log(videoIds);
+        const videoIds = youtubeUrls.map(({ url }) => {
+          const match = url.match(urlRegex);
+          if (match) {
+            const videoId = match[1];
+            if (videoId.length === 11) {
+              return videoId;
+            }
+          }
+          return undefined;
+        });
+
+        console.log(videoIds);
 
         
-//       });
-//   };
-//   fetchMessages();
-// });
+      });
+  };
+  fetchMessages();
+});
 
-// client.login(token);
+client.login(token);
 ---
 
 <Layout title='Okizoo Homepage'>
@@ -193,25 +195,28 @@ import { YouTube } from '@astro-community/astro-embed-youtube';
     outline: none;
     cursor: pointer;
     color: white;
-    background-color: #7f8c8d;
+    background-color: #141a2c;
+  }
+  .button:hover{
+    background-color: #2b3860;
   }
   #play-button {
-    background-color: #2ecc71;
+    background-color: #1a223a;
   }
   #play-button:hover {
-    background-color: #27ae60;
+    background-color: #2b3860;
   }
   #pause-button {
-    background-color: #e67e22;
+    background-color: #1a223a;
   }
   #pause-button:hover {
-    background-color: #d35400;
+    background-color: #2b3860;
   }
   #stop-button {
-    background-color: #e74c3c;
+    background-color: #1a223a;
   }
   #stop-button:hover {
-    background-color: #c0392b;
+    background-color: #2b3860;
   }
   
   
