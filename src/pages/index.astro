@@ -25,7 +25,7 @@ const token = import.meta.env.DISCORD_BOT_TOKEN;
 // const { data } = await supabaseAdin.from('music').select('*').order('id');
 
 // Replace with the ID of the text channel you want to search
-const channelId = '1062325992137424986';
+const channelId = '1049841438919245925';
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -61,7 +61,7 @@ client.on('ready', () => {
           });
         });
 
-        console.log(youtubeUrls)
+        console.log(youtubeUrls);
 
         const urlRegex =
           /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
@@ -78,7 +78,6 @@ client.on('ready', () => {
         });
 
         console.log(videoIds);
-
       });
   };
   fetchMessages();
@@ -290,6 +289,14 @@ client.login(token);
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   var videoId = [
+    'V8p6i8sHeho',
+    'zOHzvvTroXQ',
+    'WYT4gMDHYZw',
+    '1lIqJvMIbWU',
+    'unt_LFp5TiM',
+    'y7fU2pY962E',
+    'lQyypr9cp8I',
+    'E6YjQHUbz38',
     'q16-Sipt2t4',
     'jhMk_wLm07E',
     'ySKCpxq1NEs',
