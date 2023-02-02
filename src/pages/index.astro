@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import galleryData from '../../public/galleryData.js';
 import { YouTube } from '@astro-community/astro-embed-youtube';
+import playIcon from '../../public/play.svg';
 // import { createClient } from '@supabase/supabase-js';
 import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
 
@@ -78,7 +79,6 @@ client.on('ready', () => {
 
         console.log(videoIds);
 
-        
       });
   };
   fetchMessages();
@@ -89,15 +89,14 @@ client.login(token);
 
 <Layout title='Okizoo Homepage'>
   <main class='bg-black'>
-    
     <div class='mx-auto max-w-7xl sm:px-6 lg:px-8'>
       <!-- Content goes here -->
-      
+
       <div class=''>
         <div
-        class='mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'
+          class='mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'
         >
-        <div id='player' class='w-full '></div>
+          <div id='player' class='w-full'></div>
           <h2 class='sr-only'>Products</h2>
 
           <div
@@ -159,29 +158,94 @@ client.login(token);
     </div>
     <div class='fixed inset-x-0 bottom-0 p-4 bg-[#090c14]'>
       <div class='flex justify-center space-x-4'>
-        <button class='button rounded-full' id='back-button'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M21 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953l7.108-4.062A1.125 1.125 0 0121 8.688v8.123zM11.25 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953L9.567 7.71a1.125 1.125 0 011.683.977v8.123z" />
-</svg>
-</button>
-        
-        <button class='button rounded-full' id='pause-button'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9v6m-4.5 0V9M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-</button>
-<button class='button rounded-full' id='play-button'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
-</svg>
-</button>
-        <button class='button rounded-full' id='stop-button'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-  <path stroke-linecap="round" stroke-linejoin="round" d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z" />
-</svg>
-</button>
-        <button class='button rounded-full' id='next-button'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062A1.125 1.125 0 013 16.81V8.688zM12.75 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062a1.125 1.125 0 01-1.683-.977V8.688z" />
-</svg>
-</button>
+        <button class='button rounded-full' id='back-button'
+          ><svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='w-6 h-6'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M21 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953l7.108-4.062A1.125 1.125 0 0121 8.688v8.123zM11.25 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953L9.567 7.71a1.125 1.125 0 011.683.977v8.123z'
+            ></path>
+          </svg>
+        </button>
+
+        <button class='button rounded-full' id='pause-button'
+          ><svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='w-6 h-6'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M14.25 9v6m-4.5 0V9M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+          </svg>
+        </button>
+        <button class='button rounded-full' id='play-button'
+          ><svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='w-6 h-6'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z'
+            ></path>
+          </svg>
+        </button>
+        <button class='button rounded-full' id='stop-button'
+          ><svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='w-6 h-6'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z'
+            ></path>
+          </svg>
+        </button>
+        <button class='button rounded-full' id='next-button'
+          ><svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='w-6 h-6'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M3 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062A1.125 1.125 0 013 16.81V8.688zM12.75 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062a1.125 1.125 0 01-1.683-.977V8.688z'
+            ></path>
+          </svg>
+        </button>
       </div>
     </div>
   </main>
@@ -189,7 +253,7 @@ client.login(token);
 
 <style>
   .button {
-    padding: 10px 20px;
+    padding: 10px 10px;
     font-weight: bold;
     letter-spacing: 5px;
     outline: none;
@@ -197,7 +261,7 @@ client.login(token);
     color: white;
     background-color: #141a2c;
   }
-  .button:hover{
+  .button:hover {
     background-color: #2b3860;
   }
   #play-button {
@@ -218,308 +282,305 @@ client.login(token);
   #stop-button:hover {
     background-color: #2b3860;
   }
-  
-  
 </style>
 
-
 <script is:inline>
-  
-  
   var tag = document.createElement('script');
   tag.src = 'https://www.youtube.com/iframe_api';
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   var videoId = [
-  'Pm5iLGWqg4M',
-  'DdeKOG22gNU',
-  '_oHlAw9tE3o',
-  '-Z65hHESYGE',
-  'KKGlTGnLXQc',
-  'u19h0plTJa4',
-  'hT_2kUx0AcQ',
-  'jQ3DX7oDOMg',
-  'VSOTzF6vGGI',
-  '_iDw1c_tUU8',
-  'FbIMSdn4ZY0',
-  'fOb_2wM8qIc',
-  'kEUBTVysypY',
-  'Wa86aPSXRX4',
-  '9pF3SsCh7A8',
-  'ynlD8U_TvTs',
-  '4bZeLOvGBgY',
-  'ygUCRN65avY',
-  'iuw0DGI1sA8',
-  'rpEuno72RVI',
-  'LNR4WHaGQQw',
-  'ZpXd4_CjE_0',
-  'dNlgimfHDgE',
-  'qm6Se2Ok53w',
-  'RiLgEtEBxvk',
-  'Z_D_g92kYP8',
-  'Kr4nAOCJgHE',
-  'Bv7Gwb9j63I',
-  'pr19jIAJK4U',
-  'dzsw3HVWrm4',
-  'GFopBeCTl2w',
-  'Viqo_ForBL8',
-  'xddW6HJUeQ8',
-  'V3L_9TsF48c',
-  'rvVoRA6bi_o',
-  'w6yILBkC86I',
-  'RlXgf1vYz88',
-  'C8JuX75vbcg',
-  'jqp_fsJlw5A',
-  '7BXOFtd9elU',
-  'HgrlCJPiLQs',
-  'qRHCMshfne4',
-  'Zd-xJqmB4Js',
-  'Re9wDJeJ1Qo',
-  'U3pouD85FwI',
-  '17moD6zt0bA',
-  'hsrCprYh9dY',
+    'q16-Sipt2t4',
+    'jhMk_wLm07E',
+    'ySKCpxq1NEs',
+    'Dwbe13hTvEw',
+    'A0sjh4V4bYY',
+    'CCq7FSqsAo0',
+    'DdeKOG22gNU',
+    '_oHlAw9tE3o',
+    '-Z65hHESYGE',
+    'KKGlTGnLXQc',
+    'u19h0plTJa4',
+    'hT_2kUx0AcQ',
+    'jQ3DX7oDOMg',
+    'VSOTzF6vGGI',
+    '_iDw1c_tUU8',
+    'FbIMSdn4ZY0',
+    'fOb_2wM8qIc',
+    'kEUBTVysypY',
+    'Wa86aPSXRX4',
+    '9pF3SsCh7A8',
+    'ynlD8U_TvTs',
+    '4bZeLOvGBgY',
+    'ygUCRN65avY',
+    'iuw0DGI1sA8',
+    'rpEuno72RVI',
+    'LNR4WHaGQQw',
+    'ZpXd4_CjE_0',
+    'dNlgimfHDgE',
+    'qm6Se2Ok53w',
+    'RiLgEtEBxvk',
+    'Z_D_g92kYP8',
+    'Kr4nAOCJgHE',
+    'Bv7Gwb9j63I',
+    'pr19jIAJK4U',
+    'dzsw3HVWrm4',
+    'GFopBeCTl2w',
+    'Viqo_ForBL8',
+    'xddW6HJUeQ8',
+    'V3L_9TsF48c',
+    'rvVoRA6bi_o',
+    'w6yILBkC86I',
+    'RlXgf1vYz88',
+    'C8JuX75vbcg',
+    'jqp_fsJlw5A',
+    '7BXOFtd9elU',
+    'HgrlCJPiLQs',
+    'qRHCMshfne4',
+    'Zd-xJqmB4Js',
+    'Re9wDJeJ1Qo',
+    'U3pouD85FwI',
+    '17moD6zt0bA',
+    'hsrCprYh9dY',
 
-  'Pm5iLGWqg4M',
-  'DdeKOG22gNU',
-  '_oHlAw9tE3o',
-  '-Z65hHESYGE',
-  'KKGlTGnLXQc',
-  'u19h0plTJa4',
-  'hT_2kUx0AcQ',
-  'jQ3DX7oDOMg',
-  'VSOTzF6vGGI',
-  '_iDw1c_tUU8',
-  'FbIMSdn4ZY0',
-  'fOb_2wM8qIc',
-  'kEUBTVysypY',
-  'Wa86aPSXRX4',
-  '9pF3SsCh7A8',
-  'ynlD8U_TvTs',
-  '4bZeLOvGBgY',
-  'ygUCRN65avY',
-  'iuw0DGI1sA8',
-  'rpEuno72RVI',
-  'LNR4WHaGQQw',
-  'ZpXd4_CjE_0',
-  'dNlgimfHDgE',
-  'qm6Se2Ok53w',
-  'RiLgEtEBxvk',
-  'Z_D_g92kYP8',
-  'Kr4nAOCJgHE',
-  'Bv7Gwb9j63I',
-  'pr19jIAJK4U',
-  'dzsw3HVWrm4',
-  'GFopBeCTl2w',
-  'Viqo_ForBL8',
-  'xddW6HJUeQ8',
-  'V3L_9TsF48c',
-  'rvVoRA6bi_o',
-  'w6yILBkC86I',
-  'RlXgf1vYz88',
-  'C8JuX75vbcg',
-  'jqp_fsJlw5A',
-  '7BXOFtd9elU',
-  'HgrlCJPiLQs',
-  'qRHCMshfne4',
-  'Zd-xJqmB4Js',
-  'Re9wDJeJ1Qo',
-  'U3pouD85FwI',
-  '17moD6zt0bA',
-  'hsrCprYh9dY',
+    'Pm5iLGWqg4M',
+    'DdeKOG22gNU',
+    '_oHlAw9tE3o',
+    '-Z65hHESYGE',
+    'KKGlTGnLXQc',
+    'u19h0plTJa4',
+    'hT_2kUx0AcQ',
+    'jQ3DX7oDOMg',
+    'VSOTzF6vGGI',
+    '_iDw1c_tUU8',
+    'FbIMSdn4ZY0',
+    'fOb_2wM8qIc',
+    'kEUBTVysypY',
+    'Wa86aPSXRX4',
+    '9pF3SsCh7A8',
+    'ynlD8U_TvTs',
+    '4bZeLOvGBgY',
+    'ygUCRN65avY',
+    'iuw0DGI1sA8',
+    'rpEuno72RVI',
+    'LNR4WHaGQQw',
+    'ZpXd4_CjE_0',
+    'dNlgimfHDgE',
+    'qm6Se2Ok53w',
+    'RiLgEtEBxvk',
+    'Z_D_g92kYP8',
+    'Kr4nAOCJgHE',
+    'Bv7Gwb9j63I',
+    'pr19jIAJK4U',
+    'dzsw3HVWrm4',
+    'GFopBeCTl2w',
+    'Viqo_ForBL8',
+    'xddW6HJUeQ8',
+    'V3L_9TsF48c',
+    'rvVoRA6bi_o',
+    'w6yILBkC86I',
+    'RlXgf1vYz88',
+    'C8JuX75vbcg',
+    'jqp_fsJlw5A',
+    '7BXOFtd9elU',
+    'HgrlCJPiLQs',
+    'qRHCMshfne4',
+    'Zd-xJqmB4Js',
+    'Re9wDJeJ1Qo',
+    'U3pouD85FwI',
+    '17moD6zt0bA',
+    'hsrCprYh9dY',
 
-  'BjbHRe-RhKM',
-  'HPdUYUeQsrs',
-  '_RINJYBIqc4',
-  'oSvAO7vRBfU',
-  'A_NNNi5QCIM',
-  'GFopBeCTl2w',
-  'E8pHAQc4rxA',
-  'bOMOMWeh4Jk',
-  'LJ8NoDwPNOo',
-  'WRI6aB6T6TE',
-  'KQaVDWtnVZ0',
-  'nMihWgMrKYM',
-  'kNYvr_2hsBM',
-  'Nky4aKFkqCY',
-  '25W3bhBFaF0',
-  '66kBIEYGJls',
-  'YCnaVPMXVOg',
-  'xs00TF0w1ck',
+    'BjbHRe-RhKM',
+    'HPdUYUeQsrs',
+    '_RINJYBIqc4',
+    'oSvAO7vRBfU',
+    'A_NNNi5QCIM',
+    'GFopBeCTl2w',
+    'E8pHAQc4rxA',
+    'bOMOMWeh4Jk',
+    'LJ8NoDwPNOo',
+    'WRI6aB6T6TE',
+    'KQaVDWtnVZ0',
+    'nMihWgMrKYM',
+    'kNYvr_2hsBM',
+    'Nky4aKFkqCY',
+    '25W3bhBFaF0',
+    '66kBIEYGJls',
+    'YCnaVPMXVOg',
+    'xs00TF0w1ck',
 
-  'BjbHRe-RhKM',
-  'HPdUYUeQsrs',
-  '_RINJYBIqc4',
-  'oSvAO7vRBfU',
-  'A_NNNi5QCIM',
-  'GFopBeCTl2w',
-  'E8pHAQc4rxA',
-  'bOMOMWeh4Jk',
-  'LJ8NoDwPNOo',
-  'WRI6aB6T6TE',
-  'KQaVDWtnVZ0',
-  'nMihWgMrKYM',
-  'kNYvr_2hsBM',
-  'Nky4aKFkqCY',
-  '25W3bhBFaF0',
-  '66kBIEYGJls',
-  'YCnaVPMXVOg',
-  'xs00TF0w1ck',
+    'BjbHRe-RhKM',
+    'HPdUYUeQsrs',
+    '_RINJYBIqc4',
+    'oSvAO7vRBfU',
+    'A_NNNi5QCIM',
+    'GFopBeCTl2w',
+    'E8pHAQc4rxA',
+    'bOMOMWeh4Jk',
+    'LJ8NoDwPNOo',
+    'WRI6aB6T6TE',
+    'KQaVDWtnVZ0',
+    'nMihWgMrKYM',
+    'kNYvr_2hsBM',
+    'Nky4aKFkqCY',
+    '25W3bhBFaF0',
+    '66kBIEYGJls',
+    'YCnaVPMXVOg',
+    'xs00TF0w1ck',
 
-  'wIGU11nopN0',
-  '_HfI57VP3U0',
-  'gxRMVDchdpk',
-  'wiuqP51iDpQ',
-  'B9y30auFlcI',
-  '45ZFjiABLwI',
-  'xxQuLz-bQgc',
-  'gjEmwvsIhuE',
-  'k822F8Zo42I',
-  'GP0FwijUJNI',
-  'J37T5ZGVFWQ',
-  'FmLsNzsSf6g',
-  'Qd75eKzcjJ0',
-  'NabmJWtYK5c',
-  '2W_BZc3k054',
-  '87Z2Kds4KPo',
-  'QUJHidt3QpY',
-  'Jzyo3-VzKjg',
-  'XMPZ1huj_z0',
-  'hUce-g7WNtE',
-  'uJtblNRcmMM',
-  'beQDzn_bLDw',
-  '8cRDx9-ODUc',
-  'JE4HJK4F5K0',
-  'P_xRboVrYKU',
-  '8Q1I9pN8a-M',
-  'fOO1mWLGhh8',
-  'SwOYIntD1Wk',
-  'GxFrAOK-qNk',
-  '2RjU-4XzaGc',
-  'fQnxzrz3uDA',
-  'i-Puq1pgTXU',
-  'oq2dfOyNaXE',
-  '6Hy_4tQzuJg',
-  'bblSwA3Ir_I',
-  'f55HngFE9YM',
-  'qZFZh62tw3o',
-  'jckE3DzY3Pw',
-  'IdNxeepSpuk',
-  'kNimjPIZdgI',
-  '6EptaoA--IU',
-  'iNpf1GqkQdc',
-  'Fijwt0WMsH0',
-  'pM1BTmgtT3g',
-  'ucaCqYMHJVU',
-  'lju6E1vvq3Q',
-  'Uvj3qhcKMuc',
-  'QPdW3WKTBYk',
-  '7icGNCSMa5U',
-  'AZOXyS_GMx4',
-  'Usz1rlYxWLU',
-  'UrTZ-ULZ6dY',
+    'wIGU11nopN0',
+    '_HfI57VP3U0',
+    'gxRMVDchdpk',
+    'wiuqP51iDpQ',
+    'B9y30auFlcI',
+    '45ZFjiABLwI',
+    'xxQuLz-bQgc',
+    'gjEmwvsIhuE',
+    'k822F8Zo42I',
+    'GP0FwijUJNI',
+    'J37T5ZGVFWQ',
+    'FmLsNzsSf6g',
+    'Qd75eKzcjJ0',
+    'NabmJWtYK5c',
+    '2W_BZc3k054',
+    '87Z2Kds4KPo',
+    'QUJHidt3QpY',
+    'Jzyo3-VzKjg',
+    'XMPZ1huj_z0',
+    'hUce-g7WNtE',
+    'uJtblNRcmMM',
+    'beQDzn_bLDw',
+    '8cRDx9-ODUc',
+    'JE4HJK4F5K0',
+    'P_xRboVrYKU',
+    '8Q1I9pN8a-M',
+    'fOO1mWLGhh8',
+    'SwOYIntD1Wk',
+    'GxFrAOK-qNk',
+    '2RjU-4XzaGc',
+    'fQnxzrz3uDA',
+    'i-Puq1pgTXU',
+    'oq2dfOyNaXE',
+    '6Hy_4tQzuJg',
+    'bblSwA3Ir_I',
+    'f55HngFE9YM',
+    'qZFZh62tw3o',
+    'jckE3DzY3Pw',
+    'IdNxeepSpuk',
+    'kNimjPIZdgI',
+    '6EptaoA--IU',
+    'iNpf1GqkQdc',
+    'Fijwt0WMsH0',
+    'pM1BTmgtT3g',
+    'ucaCqYMHJVU',
+    'lju6E1vvq3Q',
+    'Uvj3qhcKMuc',
+    'QPdW3WKTBYk',
+    '7icGNCSMa5U',
+    'AZOXyS_GMx4',
+    'Usz1rlYxWLU',
+    'UrTZ-ULZ6dY',
 
-  'j-JB0Hwtu8Q',
-  'VT7hmCkIq4o',
-  'azsynh_J_KI',
-  'dz7V-Fxr7sI',
-  '9NDaJtcusi4',
-  'ow0dlCS2HH4',
-  '605sWoD5qxU',
-  'KlLv3MihJRA',
-  'd8KPzY9BY4Q',
-  'BT_RwLwlGLc',
-  'RlcfnYa-T4s',
-  '54yOD994ors',
-  'baTxdSdYR5E',
-  '1oT88UUYwPM',
-  '6JTb5ieO_jE',
-  'daRZhJyyz_s',
-  'fLqAPgR14S4',
-  '6NlstW2xvwc',
+    'j-JB0Hwtu8Q',
+    'VT7hmCkIq4o',
+    'azsynh_J_KI',
+    'dz7V-Fxr7sI',
+    '9NDaJtcusi4',
+    'ow0dlCS2HH4',
+    '605sWoD5qxU',
+    'KlLv3MihJRA',
+    'd8KPzY9BY4Q',
+    'BT_RwLwlGLc',
+    'RlcfnYa-T4s',
+    '54yOD994ors',
+    'baTxdSdYR5E',
+    '1oT88UUYwPM',
+    '6JTb5ieO_jE',
+    'daRZhJyyz_s',
+    'fLqAPgR14S4',
+    '6NlstW2xvwc',
 
-  'wIGU11nopN0',
-  '_HfI57VP3U0',
-  'gxRMVDchdpk',
-  'wiuqP51iDpQ',
-  'B9y30auFlcI',
-  '45ZFjiABLwI',
-  'xxQuLz-bQgc',
-  'gjEmwvsIhuE',
-  'k822F8Zo42I',
-  'GP0FwijUJNI',
-  'J37T5ZGVFWQ',
-  'FmLsNzsSf6g',
-  'Qd75eKzcjJ0',
-  'NabmJWtYK5c',
-  '2W_BZc3k054',
-  '87Z2Kds4KPo',
-  'QUJHidt3QpY',
-  'Jzyo3-VzKjg',
-  'XMPZ1huj_z0',
-  'hUce-g7WNtE',
-  'uJtblNRcmMM',
-  'beQDzn_bLDw',
-  '8cRDx9-ODUc',
-  'JE4HJK4F5K0',
-  'P_xRboVrYKU',
-  '8Q1I9pN8a-M',
-  'fOO1mWLGhh8',
-  'SwOYIntD1Wk',
-  'GxFrAOK-qNk',
-  '2RjU-4XzaGc',
-  'fQnxzrz3uDA',
-  'i-Puq1pgTXU',
-  'oq2dfOyNaXE',
-  '6Hy_4tQzuJg',
-  'bblSwA3Ir_I',
-  'f55HngFE9YM',
-  'qZFZh62tw3o',
-  'jckE3DzY3Pw',
-  'IdNxeepSpuk',
-  'kNimjPIZdgI',
-  '6EptaoA--IU',
-  'iNpf1GqkQdc',
-  'Fijwt0WMsH0',
-  'pM1BTmgtT3g',
-  'ucaCqYMHJVU',
-  'lju6E1vvq3Q',
-  'Uvj3qhcKMuc',
-  'QPdW3WKTBYk',
-  '7icGNCSMa5U',
-  'AZOXyS_GMx4',
-  'Usz1rlYxWLU',
-  'UrTZ-ULZ6dY',
-
-  'j-JB0Hwtu8Q',
-  'VT7hmCkIq4o',
-  'azsynh_J_KI',
-  'dz7V-Fxr7sI',
-  '9NDaJtcusi4',
-  'ow0dlCS2HH4',
-  '605sWoD5qxU',
-  'KlLv3MihJRA',
-  'd8KPzY9BY4Q',
-  'BT_RwLwlGLc',
-  'RlcfnYa-T4s',
-  '54yOD994ors',
-  'baTxdSdYR5E',
-  '1oT88UUYwPM',
-  '6JTb5ieO_jE',
-  'daRZhJyyz_s',
-  'fLqAPgR14S4',
-  '6NlstW2xvwc',
-];
+    'wIGU11nopN0',
+    '_HfI57VP3U0',
+    'gxRMVDchdpk',
+    'wiuqP51iDpQ',
+    'B9y30auFlcI',
+    '45ZFjiABLwI',
+    'xxQuLz-bQgc',
+    'gjEmwvsIhuE',
+    'k822F8Zo42I',
+    'GP0FwijUJNI',
+    'J37T5ZGVFWQ',
+    'FmLsNzsSf6g',
+    'Qd75eKzcjJ0',
+    'NabmJWtYK5c',
+    '2W_BZc3k054',
+    '87Z2Kds4KPo',
+    'QUJHidt3QpY',
+    'Jzyo3-VzKjg',
+    'XMPZ1huj_z0',
+    'hUce-g7WNtE',
+    'uJtblNRcmMM',
+    'beQDzn_bLDw',
+    '8cRDx9-ODUc',
+    'JE4HJK4F5K0',
+    'P_xRboVrYKU',
+    '8Q1I9pN8a-M',
+    'fOO1mWLGhh8',
+    'SwOYIntD1Wk',
+    'GxFrAOK-qNk',
+    '2RjU-4XzaGc',
+    'fQnxzrz3uDA',
+    'i-Puq1pgTXU',
+    'oq2dfOyNaXE',
+    '6Hy_4tQzuJg',
+    'bblSwA3Ir_I',
+    'f55HngFE9YM',
+    'qZFZh62tw3o',
+    'jckE3DzY3Pw',
+    'IdNxeepSpuk',
+    'kNimjPIZdgI',
+    '6EptaoA--IU',
+    'iNpf1GqkQdc',
+    'Fijwt0WMsH0',
+    'pM1BTmgtT3g',
+    'ucaCqYMHJVU',
+    'lju6E1vvq3Q',
+    'Uvj3qhcKMuc',
+    'QPdW3WKTBYk',
+    '7icGNCSMa5U',
+    'AZOXyS_GMx4',
+    'Usz1rlYxWLU',
+    'UrTZ-ULZ6dY',
+    'j-JB0Hwtu8Q',
+    'VT7hmCkIq4o',
+    'azsynh_J_KI',
+    'dz7V-Fxr7sI',
+    '9NDaJtcusi4',
+    'ow0dlCS2HH4',
+    '605sWoD5qxU',
+    'KlLv3MihJRA',
+    'd8KPzY9BY4Q',
+    'BT_RwLwlGLc',
+    'RlcfnYa-T4s',
+    '54yOD994ors',
+    'baTxdSdYR5E',
+    '1oT88UUYwPM',
+    '6JTb5ieO_jE',
+    'daRZhJyyz_s',
+    'fLqAPgR14S4',
+    '6NlstW2xvwc',
+  ];
   var player;
   currentVideoId = 0;
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
       playerVars: {
-        // autoplay: 1,
-        // loop: 1,
-        // rel: 0,
-        // showinfo: 0,
-        // autohide: 0,
-        // modestbranding: 1,
+        disablekb: 1,
+        rel: 0,
+        showinfo: 0,
+        modestbranding: 1,
       },
       events: {
         onReady: onPlayerReady,
@@ -577,4 +638,3 @@ client.login(token);
     }
   }
 </script>
-
