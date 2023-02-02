@@ -1,4 +1,10 @@
 const galleryData = [
+  { url: 'https://www.youtube.com/watch?v=oF2ukpB8JVI' },
+  { url: 'https://www.youtube.com/watch?v=qZqPmUtQs2Q' },
+  { url: 'https://www.youtube.com/watch?v=vpZeCZSx3gE' },
+  { url: 'https://www.youtube.com/watch?v=lGF-1x94SxY' },
+  { url: 'https://www.youtube.com/watch?v=DqROS_ub6Q4' },
+  { url: 'https://www.youtube.com/watch?v=naw5VjcUQeo' },
   { url: 'https://www.youtube.com/watch?v=rzEGpY3zESQ' },
   { url: 'https://www.youtube.com/watch?v=WDq0dJbu8sE' },
   { url: 'https://www.youtube.com/watch?v=O3QOBYq0lBI' },

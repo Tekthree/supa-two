@@ -4,86 +4,86 @@ import galleryData from '../../public/galleryData.js';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import playIcon from '../../public/play.svg';
 // import { createClient } from '@supabase/supabase-js';
-import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
+// import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
 
-const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent,
-    GatewayIntentBits.GuildMembers,
-  ],
-}); // Create a new Discord client
+// const client = new Client({
+//   intents: [
+//     GatewayIntentBits.Guilds,
+//     GatewayIntentBits.GuildMessages,
+//     GatewayIntentBits.MessageContent,
+//     GatewayIntentBits.GuildMembers,
+//   ],
+// }); // Create a new Discord client
 
-const token = import.meta.env.DISCORD_BOT_TOKEN;
+// const token = import.meta.env.DISCORD_BOT_TOKEN;
 
-// const supabaseAdin = createClient(
-//   import.meta.env.PUBLIC_SUPABASE_URL,
-//   import.meta.env.SUPABASE_SERVICE_ROLE_KEY
-// );
+// // const supabaseAdin = createClient(
+// //   import.meta.env.PUBLIC_SUPABASE_URL,
+// //   import.meta.env.SUPABASE_SERVICE_ROLE_KEY
+// // );
 
-// const { data } = await supabaseAdin.from('music').select('*').order('id');
+// // const { data } = await supabaseAdin.from('music').select('*').order('id');
 
-// Replace with the ID of the text channel you want to search
-const channelId = '1049841438919245925';
+// // Replace with the ID of the text channel you want to search
+// const channelId = '1049841438919245925';
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+// client.on('ready', () => {
+//   console.log(`Logged in as ${client.user.tag}!`);
 
-  // Get the text channel instance
-  const channel = client.channels.cache.get(channelId);
+//   // Get the text channel instance
+//   const channel = client.channels.cache.get(channelId);
 
-  // Fetch all messages in the channel
-  let allMessages = [];
-  let lastMessageId;
-  const fetchMessages = () => {
-    channel.messages
-      .fetch({ limit: 100, before: lastMessageId })
-      .then((messages) => {
-        allMessages = allMessages.concat(messages);
-        lastMessageId = messages.last().id;
-        if (messages.size === 100) {
-          fetchMessages();
-        } else {
-          // console.log(allMessages);
-          // Code to filter and add YouTube URLs to playlist goes here
-        }
+//   // Fetch all messages in the channel
+//   let allMessages = [];
+//   let lastMessageId;
+//   const fetchMessages = () => {
+//     channel.messages
+//       .fetch({ limit: 100, before: lastMessageId })
+//       .then((messages) => {
+//         allMessages = allMessages.concat(messages);
+//         lastMessageId = messages.last().id;
+//         if (messages.size === 100) {
+//           fetchMessages();
+//         } else {
+//           // console.log(allMessages);
+//           // Code to filter and add YouTube URLs to playlist goes here
+//         }
 
-        let youtubeUrls = [];
+//         let youtubeUrls = [];
 
-        const youtubeMessages = messages.filter((message) => {
-          return message.content.includes('youtu');
-        });
+//         const youtubeMessages = messages.filter((message) => {
+//           return message.content.includes('youtu');
+//         });
 
-        youtubeMessages.forEach((message) => {
-          youtubeUrls.push({
-            url: message.content.match(/https?:\/\/[^\s]+/)[0],
-          });
-        });
+//         youtubeMessages.forEach((message) => {
+//           youtubeUrls.push({
+//             url: message.content.match(/https?:\/\/[^\s]+/)[0],
+//           });
+//         });
 
-        console.log(youtubeUrls);
+//         console.log(youtubeUrls);
 
-        const urlRegex =
-          /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+//         const urlRegex =
+//           /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
 
-        const videoIds = youtubeUrls.map(({ url }) => {
-          const match = url.match(urlRegex);
-          if (match) {
-            const videoId = match[1];
-            if (videoId.length === 11) {
-              return videoId;
-            }
-          }
-          return undefined;
-        });
+//         const videoIds = youtubeUrls.map(({ url }) => {
+//           const match = url.match(urlRegex);
+//           if (match) {
+//             const videoId = match[1];
+//             if (videoId.length === 11) {
+//               return videoId;
+//             }
+//           }
+//           return undefined;
+//         });
 
-        console.log(videoIds);
-      });
-  };
-  fetchMessages();
-});
+//         console.log(videoIds);
+//       });
+//   };
+//   fetchMessages();
+// });
 
-client.login(token);
+// client.login(token);
 ---
 
 <Layout title='Okizoo Homepage'>
@@ -123,38 +123,7 @@ client.login(token);
         </div>
       </div>
     </div>
-    <div class='absolute right-4 top-4'>
-      <div id='dark-mode-toggle' class='cursor-pointer'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          class='h-6 w-6 stroke-white hidden dark:block'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-          stroke-width='2'
-        >
-          <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'
-          ></path>
-        </svg>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          class='h-6 w-6 stroke-[#0A1122] block dark:hidden'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-          stroke-width='2'
-        >
-          <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
-          ></path>
-        </svg>
-      </div>
-    </div>
+
     <div class='fixed inset-x-0 bottom-0 p-4 bg-[#090c14]'>
       <div class='flex justify-center space-x-4'>
         <button class='button rounded-full' id='back-button'
@@ -289,9 +258,23 @@ client.login(token);
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   var videoId = [
-     'rzEGpY3zESQ', 'WDq0dJbu8sE', 'O3QOBYq0lBI', 'olLlcGnziNw',
-  'YDWI7MV-7WE', '5jfriNA_f1s', 'TWSs_aWC0Lo', 'KgNNm_6Bu2Y',
-  'v6HBZC9pZHQ', 'w3333Fo6ufY', 'E2Snh2NZHhk',
+    'oF2ukpB8JVI',
+    'qZqPmUtQs2Q',
+    'vpZeCZSx3gE',
+    'lGF-1x94SxY',
+    'DqROS_ub6Q4',
+    'naw5VjcUQeo',
+    'rzEGpY3zESQ',
+    'WDq0dJbu8sE',
+    'O3QOBYq0lBI',
+    'olLlcGnziNw',
+    'YDWI7MV-7WE',
+    '5jfriNA_f1s',
+    'TWSs_aWC0Lo',
+    'KgNNm_6Bu2Y',
+    'v6HBZC9pZHQ',
+    'w3333Fo6ufY',
+    'E2Snh2NZHhk',
     'V8p6i8sHeho',
     'zOHzvvTroXQ',
     'WYT4gMDHYZw',
