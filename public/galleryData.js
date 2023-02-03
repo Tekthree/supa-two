@@ -1,4 +1,13 @@
 const galleryData = [
+  { url: 'https://www.youtube.com/watch?v=pJ7_9FnOaFE' },
+  { url: 'https://youtu.be/NvXR6D-Ti08' },
+  { url: 'https://www.youtube.com/watch?v=UKxYNY75QOg' },
+  { url: 'https://youtu.be/__egWoLZdRg' },
+  { url: 'https://youtu.be/OA8aw07dpg0' },
+  { url: 'https://youtu.be/K04kBLt3CeI' },
+  { url: 'https://youtu.be/NMbzQOnVAYg' },
+  { url: 'https://youtu.be/Z6_14f5cAGg' },
+  { url: 'https://youtu.be/6bPZ2WBGdwI' },
   { url: 'https://www.youtube.com/watch?v=qYocJ1Xhzk4' },
   { url: 'https://www.youtube.com/watch?v=Rbm3ocRwVRg' },
   { url: 'https://www.youtube.com/watch?v=KHr1I68b4UQ' },
