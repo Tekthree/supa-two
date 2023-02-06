@@ -25,7 +25,7 @@ import PlayerBottom from '../components/PlayerBottom.astro';
 // // const { data } = await supabaseAdin.from('music').select('*').order('id');
 
 // // Replace with the ID of the text channel you want to search
-// const channelId = '1049841438919245925';
+// const channelId = '1057747211468943450';
 
 // client.on('ready', () => {
 //   console.log(`Logged in as ${client.user.tag}!`);
@@ -95,7 +95,11 @@ import PlayerBottom from '../components/PlayerBottom.astro';
         <div
           class='mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'
         >
-          <div id='player' class='w-full border-8 border-[#2b3860] rounded-lg'></div>
+          <div
+            id='player'
+            class='w-full relative top-2 left-2 border-4 border-[#2b3860] rounded-xl'
+          >
+          </div>
           <h2 class='sr-only'>Products</h2>
 
           <div
@@ -124,6 +128,6 @@ import PlayerBottom from '../components/PlayerBottom.astro';
       </div>
     </div>
 
-    <PlayerBottom/>
+    <PlayerBottom />
   </main>
 </Layout>

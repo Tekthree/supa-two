@@ -1,4 +1,31 @@
 const galleryData = [
+  { url: 'https://www.youtube.com/watch?v=l3TCBl0WhxM' },
+  { url: 'https://youtu.be/dYiC3TvFcgE' },
+  { url: 'https://youtu.be/PUDAz7J-SnQ' },
+  { url: 'https://youtu.be/HouAy7z81QU' },
+  { url: 'https://www.youtube.com/watch?v=VbVrHlh3vvk' },
+  { url: 'https://www.youtube.com/watch?v=u9jQXwKTjdU' },
+  { url: 'https://www.youtube.com/watch?v=qwgPxrZnBpg' },
+  { url: 'https://www.youtube.com/watch?v=f_KAtkIWMq4' },
+  {
+    url: 'https://music.youtube.com/watch?v=UrxLe3DzAkI&feature=share',
+  },
+  {
+    url: 'https://music.youtube.com/watch?v=fCNBXjTohds&feature=share',
+  },
+  { url: 'https://youtu.be/A3iNxTxOxN0' },
+  { url: 'https://youtu.be/Yd3AV4Cexf0' },
+  { url: 'https://youtu.be/fkeHjrA7PoM' },
+  {
+    url: 'https://music.youtube.com/watch?v=1MPcQ_Z4L2M&feature=share',
+  },
+  {
+    url: 'https://music.youtube.com/watch?v=r0sVIPJ4Nls&feature=share',
+  },
+  {
+    url: 'https://music.youtube.com/watch?v=AwhvIedmelE&feature=share',
+  },
+  { url: 'https://youtu.be/r9XrPXdhhuU' },
   { url: 'https://youtu.be/1rT7sdksYTA' },
   { url: 'https://youtu.be/YNcGR7GKHLw' },
   { url: 'https://youtu.be/UGAMBKRnZjA' },

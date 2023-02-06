@@ -1,4 +1,16 @@
 const collectiveMusic = [
+  {
+    url: 'https://music.youtube.com/watch?v=GQtxWOf-y5E&feature=share',
+  },
+  { url: 'https://youtu.be/3nDgnNUJe6s' },
+  { url: 'https://youtu.be/MtSzpKiARrI' },
+  { url: 'https://youtu.be/edZQ8Br7soA' },
+  { url: 'https://www.youtube.com/watch?v=7ihbqW_cGiM' },
+  { url: 'https://youtu.be/0DTyB7o_6HU' },
+  { url: 'https://youtu.be/WFuWPhlsyEI' },
+  {
+    url: 'https://www.youtube.com/watch?v=7z25ZZ3DHds&list=LL&index=84',
+  },
   { url: 'https://www.youtube.com/watch?v=7z25ZZ3DHds' },
   { url: 'https://www.youtube.com/watch?v=RcVZfJO01NI' },
   { url: 'https://www.youtube.com/watch?v=hpYZhXif8B0' },
