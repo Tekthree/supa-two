@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.2.2",
+    "@supabase/supabase-js": "^2.4.0",
     "@astrojs/netlify": "^2.0.0",
     "@astrojs/tailwind": "^3.0.0",
     "astro": "^2.0.2",
