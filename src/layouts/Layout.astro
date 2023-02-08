@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import BottomNav from '../components/BottomNav.astro';
+import TopNav from '../components/TopNav.astro';
 import '../styles/global.css';
 export interface Props {
   title: string;
@@ -18,6 +19,7 @@ const { title } = Astro.props;
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
   </head>
+  <TopNav/> 
   <body class='bg-black'>
     <!-- This example requires Tailwind CSS v3.0+ -->
     <div class='relative isolate overflow-hidden'>
