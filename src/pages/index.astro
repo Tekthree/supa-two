@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import galleryData from '../../public/galleryData.js';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import PlayerBottom from '../components/PlayerBottom.astro';
-import { createClient } from '@supabase/supabase-js';
+// import { createClient } from '@supabase/supabase-js';
 // import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
 
 // const client = new Client({
@@ -18,12 +18,12 @@ import { createClient } from '@supabase/supabase-js';
 // const token = import.meta.env.DISCORD_BOT_TOKEN;
 // const apiKey = import.meta.env.YOUTUBE_API_KEY;
 
-const supabaseAdin = createClient(
-  import.meta.env.PUBLIC_SUPABASE_URL,
-  import.meta.env.SUPABASE_SERVICE_ROLE_KEY
-);
+// const supabaseAdin = createClient(
+//   import.meta.env.PUBLIC_SUPABASE_URL,
+//   import.meta.env.SUPABASE_SERVICE_ROLE_KEY
+// );
 
-const { data } = await supabaseAdin.from('music').select('*').order('id');
+// const { data } = await supabaseAdin.from('music').select('*').order('id');
 
 // Replace with the ID of the text channel you want to search
 // const channelIds = [
@@ -128,7 +128,7 @@ const { data } = await supabaseAdin.from('music').select('*').order('id');
             class='pt-20 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
           >
             {
-              data.map((card) => (
+              galleryData.map((card) => (
                 <div class='group border border-[#121212] p-4 rounded-2xl '>
                   <div class='aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray xl:aspect-w-7 xl:aspect-h-8'>
                     <YouTube
