@@ -4,19 +4,19 @@ import galleryData from '../../public/galleryData.js';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import PlayerBottom from '../components/PlayerBottom.astro';
 import { createClient } from '@supabase/supabase-js';
-import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
+// import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
 
-const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent,
-    GatewayIntentBits.GuildMembers,
-  ],
-}); // Create a new Discord client
+// const client = new Client({
+//   intents: [
+//     GatewayIntentBits.Guilds,
+//     GatewayIntentBits.GuildMessages,
+//     GatewayIntentBits.MessageContent,
+//     GatewayIntentBits.GuildMembers,
+//   ],
+// }); // Create a new Discord client
 
-const token = import.meta.env.DISCORD_BOT_TOKEN;
-const apiKey = import.meta.env.YOUTUBE_API_KEY;
+// const token = import.meta.env.DISCORD_BOT_TOKEN;
+// const apiKey = import.meta.env.YOUTUBE_API_KEY;
 
 const supabaseAdin = createClient(
   import.meta.env.PUBLIC_SUPABASE_URL,
