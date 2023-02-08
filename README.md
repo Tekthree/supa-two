@@ -45,3 +45,5 @@ The code then logs in to the Discord client using the token and fetches all mess
 
 Finally, the code defines the main layout of the website using the Layout component and embeds the videos using the YouTube component. The videos are displayed in a grid layout with information about the video and its creator displayed below each video.
 
+
+- Having issues with supabase
