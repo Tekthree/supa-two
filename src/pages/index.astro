@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import galleryData from '../../public/galleryData.js';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import PlayerBottom from '../components/PlayerBottom.astro';
-// import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js';
 // import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
 
 // const client = new Client({
@@ -18,12 +18,12 @@ import PlayerBottom from '../components/PlayerBottom.astro';
 // const token = import.meta.env.DISCORD_BOT_TOKEN;
 // const apiKey = import.meta.env.YOUTUBE_API_KEY;
 
-// const supabaseAdin = createClient(
-//   import.meta.env.PUBLIC_SUPABASE_URL,
-//   import.meta.env.SUPABASE_SERVICE_ROLE_KEY
-// );
+const supabaseAdin = createClient(
+  import.meta.env.PUBLIC_SUPABASE_URL,
+  import.meta.env.SUPABASE_SERVICE_ROLE_KEY
+);
 
-// const { data } = await supabaseAdin.from('music').select('*').order('id');
+const { data } = await supabaseAdin.from('music').select('*').order('id');
 
 // Replace with the ID of the text channel you want to search
 // const channelIds = [
@@ -136,8 +136,8 @@ import PlayerBottom from '../components/PlayerBottom.astro';
                       id={card.url}
                     />
                   </div>
-                  <h3 class='mt-4 text-lg text-gray-700'>{card.title}</h3>
-                  <p class='mt-1 text-sm font-medium text-gray-900'>
+                  <h3 class='mt-4 text-lg font-bold text-gray-600'>{card.title}</h3>
+                  <p class='mt-1 text-sm font-medium text-gray-800'>
                     {card.username}
                   </p>
                 </div>
