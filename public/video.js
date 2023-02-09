@@ -56,20 +56,21 @@ const videos = [
   {
     id: '2299',
     created_at: '2023-02-09 16:45:15.494726+00',
-    title: '"80s Japanese Fusion Summer Mix Vol.1 (Fusion Jazz',
-    username: ' City Pop',
-    url: ' Funk',
-    video_id: ' Soul...)"',
-    channel_id: 'Nations',
+    title:
+      '80s Japanese Fusion Summer Mix Vol.1 (Fusion Jazz, City Pop, Funk, Soul...)',
+    username: 'Nations',
+    url: 'https://music.youtube.com/watch?v=35N2W7vwHPw&feature=share',
+    video_id: '35N2W7vwHPw',
+    channel_id: '1057747211468943450',
   },
   {
     id: '2300',
     created_at: '2023-02-09 16:45:15.496328+00',
-    title: '"ANOTR',
-    username: ' Abel Balder - Vertigo"',
-    url: 'Tek Jones',
-    video_id: 'https://www.youtube.com/watch?v=QThYaD1cMrU',
-    channel_id: 'QThYaD1cMrU',
+    title: 'ANOTR, Abel Balder - Vertigo',
+    username: 'Tek Jones',
+    url: 'https://www.youtube.com/watch?v=QThYaD1cMrU',
+    video_id: 'QThYaD1cMrU',
+    channel_id: '1062325851418525776',
   },
   {
     id: '2301',
@@ -218,7 +219,7 @@ const videos = [
   {
     id: '2317',
     created_at: '2023-02-09 16:45:15.683019+00',
-    title: '"Pheelz x Davido - ""Electricity"" (Official Music Video)"',
+    title: 'Pheelz x Davido - "Electricity" (Official Music Video)',
     username: 'DunnD',
     url: 'https://youtu.be/RhS0aKygDww',
     video_id: 'RhS0aKygDww',
@@ -272,11 +273,11 @@ const videos = [
   {
     id: '2323',
     created_at: '2023-02-09 16:45:15.721698+00',
-    title: '"Gavlyn',
-    username: ' DJ Hoppa & Marley B. - Call On Me (Official Video)"',
-    url: 'DunnD',
-    video_id: 'https://www.youtube.com/watch?v=UdqR-V5vagA',
-    channel_id: 'UdqR-V5vagA',
+    title: 'Gavlyn, DJ Hoppa & Marley B. - Call On Me (Official Video)',
+    username: 'DunnD',
+    url: 'https://www.youtube.com/watch?v=UdqR-V5vagA',
+    video_id: 'UdqR-V5vagA',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2324',
@@ -374,11 +375,12 @@ const videos = [
   {
     id: '2334',
     created_at: '2023-02-09 16:45:15.773279+00',
-    title: '"Wynne - The Thesis (Official Video) ft. Vursatyl',
-    username: ' Illmac',
-    url: ' KayelaJ & Dame D.O.L.L.A."',
-    video_id: 'DunnD',
-    channel_id: 'https://www.youtube.com/watch?v=KHr1I68b4UQ',
+    title:
+      'Wynne - The Thesis (Official Video) ft. Vursatyl, Illmac, KayelaJ & Dame D.O.L.L.A.',
+    username: 'DunnD',
+    url: 'https://www.youtube.com/watch?v=KHr1I68b4UQ',
+    video_id: 'KHr1I68b4UQ',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2335',
@@ -455,12 +457,12 @@ const videos = [
   {
     id: '2361',
     created_at: '2023-02-09 16:45:15.913842+00',
-    title: '"PREMIERE: RoyGreen & Protone',
-    username:
-      " Monologue 'Far Outta Space' [Demand Records] ***OUT 16/12/22***\"",
-    url: 'JohnGlist',
+    title:
+      "PREMIERE: RoyGreen & Protone, Monologue 'Far Outta Space' [Demand Records] ***OUT 16/12/22***",
+    username: 'JohnGlist',
+    url: 'https://youtu.be/7lFvL9xl8eg',
     video_id: '7lFvL9xl8eg',
-    channel_id: '7lFvL9xl8eg',
+    channel_id: '1062325992137424986',
   },
   {
     id: '2371',
@@ -620,7 +622,7 @@ const videos = [
     id: '2538',
     created_at: '2023-02-09 16:45:16.596137+00',
     title:
-      '"DJ ALF of HipHopSlam ""Special Controller 1 Sauce"" (2017 Lab Insomnia)"',
+      'DJ ALF of HipHopSlam "Special Controller 1 Sauce" (2017 Lab Insomnia)',
     username: 'ALF of Hip Hop Slam',
     url: 'https://youtu.be/dvpIGVNFjMg',
     video_id: 'dvpIGVNFjMg',
@@ -638,11 +640,11 @@ const videos = [
   {
     id: '2558',
     created_at: '2023-02-09 16:45:16.874687+00',
-    title: '"Andy Mineo',
-    username: ' Wordsplayed - You Know the Drill"',
-    url: 'DunnD',
+    title: 'Andy Mineo, Wordsplayed - You Know the Drill',
+    username: 'DunnD',
+    url: 'https://www.youtube.com/watch?v=YDWI7MV-7WE',
     video_id: 'YDWI7MV-7WE',
-    channel_id: 'YDWI7MV-7WE',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2568',
@@ -684,7 +686,7 @@ const videos = [
     id: '2608',
     created_at: '2023-02-09 16:45:17.522056+00',
     title:
-      '"""Calvin"" -  Conway The Machine & The Alchemist  (Directed by Jason Goldwatch)"',
+      '"Calvin" -  Conway The Machine & The Alchemist  (Directed by Jason Goldwatch)',
     username: 'Tek Jones',
     url: 'https://www.youtube.com/watch?v=VSOTzF6vGGI&list=LL&index=45',
     video_id: 'VSOTzF6vGGI',
@@ -838,8 +840,7 @@ const videos = [
   {
     id: '2482',
     created_at: '2023-02-09 16:45:16.240893+00',
-    title:
-      '"Apollo Brown & Skyzoo - ""Payout (feat. Stalley)"" | Official Video"',
+    title: 'Apollo Brown & Skyzoo - "Payout (feat. Stalley)" | Official Video',
     username: 'DunnD',
     url: 'https://youtu.be/Qd75eKzcjJ0',
     video_id: 'Qd75eKzcjJ0',
@@ -885,11 +886,11 @@ const videos = [
   {
     id: '2532',
     created_at: '2023-02-09 16:45:16.51339+00',
-    title: '"Jean Grae',
-    username: ' ""Before the Summer Broke"""',
-    url: 'DunnD',
+    title: 'Jean Grae, Before the Summer Broke',
+    username: 'DunnD',
+    url: 'https://www.youtube.com/watch?v=oF2ukpB8JVI',
     video_id: 'oF2ukpB8JVI',
-    channel_id: 'oF2ukpB8JVI',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2542',
@@ -968,7 +969,7 @@ const videos = [
     id: '2622',
     created_at: '2023-02-09 16:45:17.708309+00',
     title:
-      '"Jam Burglar + ALF of Hip Hop Slam ""Whatever You Want To Call It"" music video"',
+      'Jam Burglar + ALF of Hip Hop Slam "Whatever You Want To Call It" music video',
     username: 'ALF of Hip Hop Slam',
     url: 'https://youtu.be/bYl2kS86i0E',
     video_id: 'bYl2kS86i0E',
@@ -977,7 +978,7 @@ const videos = [
   {
     id: '2632',
     created_at: '2023-02-09 16:45:17.876825+00',
-    title: '"Royce da 5\'9"" - Boblo Boat ft. J. Cole"',
+    title: 'Royce da 5\'9" - Boblo Boat ft. J. Cole',
     username: 'DunnD',
     url: 'https://www.youtube.com/watch?v=f55HngFE9YM',
     video_id: 'f55HngFE9YM',
@@ -1140,7 +1141,7 @@ const videos = [
     id: '2513',
     created_at: '2023-02-09 16:45:16.314387+00',
     title:
-      '"Peanut Butter Wolf  ""The Chronicles (I Will Always Love H.E.R.)"" Timi D 1990\'s DJ photos version"',
+      'Peanut Butter Wolf  "The Chronicles (I Will Always Love H.E.R.)" Timi D 1990\'s DJ photos version',
     username: 'ALF of Hip Hop Slam',
     url: 'https://youtu.be/qJ8MdYblIvc',
     video_id: 'qJ8MdYblIvc',
@@ -1194,11 +1195,11 @@ const videos = [
   {
     id: '2573',
     created_at: '2023-02-09 16:45:17.06034+00',
-    title: '"Desire',
-    username: ' The Evil Spell"',
-    url: 'Robert Brownie Jr.',
-    video_id: 'https://youtu.be/oSvAO7vRBfU',
-    channel_id: 'oSvAO7vRBfU',
+    title: 'Desire, The Evil Spell',
+    username: 'Robert Brownie Jr.',
+    url: 'https://youtu.be/oSvAO7vRBfU',
+    video_id: 'oSvAO7vRBfU',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2583',
@@ -1239,7 +1240,7 @@ const videos = [
   {
     id: '2623',
     created_at: '2023-02-09 16:45:17.717897+00',
-    title: '"rare mf doom video - ""fazers"""',
+    title: 'rare mf doom video - fazers',
     username: 'DunnD',
     url: 'https://www.youtube.com/watch?v=Viqo_ForBL8',
     video_id: 'Viqo_ForBL8',
@@ -1347,11 +1348,11 @@ const videos = [
   {
     id: '2444',
     created_at: '2023-02-09 16:45:16.167222+00',
-    title: '"327 (feat. Tyler',
-    username: ' The Creator & Billie Essco)"',
-    url: 'Tek Jones',
-    video_id: 'https://www.youtube.com/watch?v=zOHzvvTroXQ&list=LL&index=11',
-    channel_id: 'zOHzvvTroXQ',
+    title: '327 (feat. Tyler, The Creator & Billie Essco)',
+    username: 'Tek Jones',
+    url: 'https://www.youtube.com/watch?v=zOHzvvTroXQ&list=LL&index=11',
+    video_id: 'zOHzvvTroXQ',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2455',
@@ -1437,7 +1438,7 @@ const videos = [
   {
     id: '2545',
     created_at: '2023-02-09 16:45:16.676351+00',
-    title: '"Bullet Proof Space Travelers ""Warp Speed To Planet Earth"""',
+    title: 'Bullet Proof Space Travelers Warp Speed To Planet Earth',
     username: 'ALF of Hip Hop Slam',
     url: 'https://youtu.be/SBOzlnF7WzU',
     video_id: 'SBOzlnF7WzU',
@@ -1500,7 +1501,7 @@ const videos = [
   {
     id: '2615',
     created_at: '2023-02-09 16:45:17.6111+00',
-    title: '"Roc Marciano & The Alchemist ""Quantum Leap""  OFFICIAL VIDEO"',
+    title: 'Roc Marciano & The Alchemist "Quantum Leap"  OFFICIAL VIDEO',
     username: 'Robert Brownie Jr.',
     url: 'https://www.youtube.com/watch?v=87Z2Kds4KPo&ab_channel=AlChemist',
     video_id: '87Z2Kds4KPo',
@@ -1554,17 +1555,18 @@ const videos = [
   {
     id: '2387',
     created_at: '2023-02-09 16:45:15.993446+00',
-    title: '"Talib Kweli & Mount Westmore On The New Album',
-    username: ' 2Pac Stories',
-    url: ' Snoop',
-    video_id: ' E-40 Slang | People\'s Party Full"',
-    channel_id: 'DunnD',
+    title:
+      "Talib Kweli & Mount Westmore On The New Album, 2Pac Stories, Snoop, E-40 Slang | People's Party Full",
+    username: 'DunnD',
+    url: 'https://www.youtube.com/watch?v=C8JuX75vbcg',
+    video_id: 'C8JuX75vbcg',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2397',
     created_at: '2023-02-09 16:45:16.014453+00',
     title:
-      '"DJ SHORTEE SCRATCH ROUTINE ★ KSHMR ""Song of War"" (Future Freestyle Scratch DJ Session)"',
+      'DJ SHORTEE SCRATCH ROUTINE ★ KSHMR "Song of War" (Future Freestyle Scratch DJ Session)',
     username: 'DunnD',
     url: 'https://www.youtube.com/watch?v=W7xCweLkybs',
     video_id: 'W7xCweLkybs',
@@ -1602,7 +1604,7 @@ const videos = [
     id: '2437',
     created_at: '2023-02-09 16:45:16.140713+00',
     title:
-      '"The Trill Cosby Show - Lew Sid - ""How You Feelin\' ?"" (Ft. Jade Josephine & Intalek) (Official Video)"',
+      'The Trill Cosby Show - Lew Sid - "How You Feelin\' ?" (Ft. Jade Josephine & Intalek) (Official Video)',
     username: 'DunnD',
     url: 'https://www.youtube.com/watch?v=VT7hmCkIq4o',
     video_id: 'VT7hmCkIq4o',
@@ -1730,11 +1732,11 @@ const videos = [
   {
     id: '2577',
     created_at: '2023-02-09 16:45:17.127326+00',
-    title: '"Nicholas Hill',
-    username: ' Ben Sumner',
-    url: ' & Glenn Herweijer - Off On"',
-    video_id: 'DunnD',
-    channel_id: 'https://www.youtube.com/watch?v=HYhpz3Yzlm8',
+    title: 'Nicholas Hill, Ben Sumner, & Glenn Herweijer - Off On',
+    username: 'DunnD',
+    url: 'https://www.youtube.com/watch?v=HYhpz3Yzlm8',
+    video_id: 'HYhpz3Yzlm8',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2587',
@@ -1749,7 +1751,7 @@ const videos = [
     id: '2597',
     created_at: '2023-02-09 16:45:17.388727+00',
     title:
-      '"""Bbbbbbbbiiiiiiiiiaaaatch"" Invisibl Skratch Piklz @ HipHopSlam/Pirate Fuckin Radio (Jan \'96)"',
+      '"Bbbbbbbbiiiiiiiiiaaaatch" Invisibl Skratch Piklz @ HipHopSlam/Pirate Fuckin Radio (Jan \'96)',
     username: 'ALF of Hip Hop Slam',
     url: 'https://youtu.be/IMQCfWxwjNI',
     video_id: 'IMQCfWxwjNI',
@@ -1804,11 +1806,11 @@ const videos = [
   {
     id: '2366',
     created_at: '2023-02-09 16:45:15.92543+00',
-    title: '"Skrillex',
-    username: ' Fred again.. & Flowdan - Rumble [Official Audio]"',
-    url: 'Tek Jones',
-    video_id: 'https://www.youtube.com/watch?v=7z25ZZ3DHds',
-    channel_id: '7z25ZZ3DHds',
+    title: 'Skrillex, Fred again.. & Flowdan - Rumble [Official Audio]',
+    username: 'Tek Jones',
+    url: 'https://www.youtube.com/watch?v=7z25ZZ3DHds',
+    video_id: '7z25ZZ3DHds',
+    channel_id: '1057747211468943450',
   },
   {
     id: '2376',
@@ -1840,11 +1842,12 @@ const videos = [
   {
     id: '2406',
     created_at: '2023-02-09 16:45:16.050825+00',
-    title: '"Jungle Brothers ft. De La Soul',
-    username: ' Q-Tip And Monie Love - Doin\' Our Own Dang (Official Video)"',
-    url: 'DunnD',
-    video_id: 'https://www.youtube.com/watch?v=Dwbe13hTvEw',
-    channel_id: 'Dwbe13hTvEw',
+    title:
+      "Jungle Brothers ft. De La Soul, Q-Tip And Monie Love - Doin' Our Own Dang (Official Video)",
+    username: 'DunnD',
+    url: 'https://www.youtube.com/watch?v=Dwbe13hTvEw',
+    video_id: 'Dwbe13hTvEw',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2416',
@@ -1894,11 +1897,11 @@ const videos = [
   {
     id: '2466',
     created_at: '2023-02-09 16:45:16.213882+00',
-    title: '"Childish Major - Thank you',
-    username: ' God. For it all. [Official Audio]"',
-    url: 'Tek Jones',
+    title: 'Childish Major - Thank you, God. For it all. [Official Audio]',
+    username: 'Tek Jones',
+    url: 'https://www.youtube.com/watch?v=ZpXd4_CjE_0',
     video_id: 'ZpXd4_CjE_0',
-    channel_id: 'ZpXd4_CjE_0',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2476',
@@ -2248,7 +2251,7 @@ const videos = [
   {
     id: '2564',
     created_at: '2023-02-09 16:45:16.929636+00',
-    title: '"Union Analogtronics ""Time Leak (Instrumental)"""',
+    title: 'Union Analogtronics Time Leak (Instrumental)',
     username: 'DunnD',
     url: 'https://www.youtube.com/watch?v=HEqqkKhCkMI',
     video_id: 'HEqqkKhCkMI',
@@ -2348,7 +2351,7 @@ const videos = [
   {
     id: '2388',
     created_at: '2023-02-09 16:45:15.998595+00',
-    title: '"Jet Life - ""1st Place"" [Official Music Video]"',
+    title: 'Jet Life - "1st Place" [Official Music Video]',
     username: 'DunnD',
     url: 'https://www.youtube.com/watch?v=RlXgf1vYz88',
     video_id: 'RlXgf1vYz88',
@@ -2448,11 +2451,11 @@ const videos = [
   {
     id: '2497',
     created_at: '2023-02-09 16:45:16.281328+00',
-    title: '"Instrumental - Sade',
-    username: ' Tribe called quest',
-    url: ' Lo Fi type beat"',
-    video_id: 'precise',
-    channel_id: 'https://youtu.be/1rT7sdksYTA',
+    title: 'Instrumental - Sade, Tribe called quest, Lo Fi type beat',
+    username: 'precise',
+    url: 'https://youtu.be/1rT7sdksYTA',
+    video_id: '1rT7sdksYTA',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2509',
@@ -2540,7 +2543,7 @@ const videos = [
     id: '2599',
     created_at: '2023-02-09 16:45:17.409605+00',
     title:
-      '"ALF of Hip Hop Slam & Jam Burglar ""Public Safety Announcement"" (2022)"',
+      'ALF of Hip Hop Slam & Jam Burglar "Public Safety Announcement" (2022)',
     username: 'ALF of Hip Hop Slam',
     url: 'https://youtu.be/sMSxwh4wE9U',
     video_id: 'sMSxwh4wE9U',
@@ -2567,11 +2570,11 @@ const videos = [
   {
     id: '2629',
     created_at: '2023-02-09 16:45:17.835042+00',
-    title: '"Baby Keem',
-    username: ' Kendrick Lamar - family ties (Official Video)"',
-    url: 'DunnD',
-    video_id: 'https://www.youtube.com/watch?v=v6HBZC9pZHQ',
-    channel_id: 'v6HBZC9pZHQ',
+    title: 'Baby Keem, Kendrick Lamar - family ties (Official Video)',
+    username: 'DunnD',
+    url: 'https://www.youtube.com/watch?v=v6HBZC9pZHQ',
+    video_id: 'v6HBZC9pZHQ',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2349',
@@ -2603,8 +2606,7 @@ const videos = [
   {
     id: '2379',
     created_at: '2023-02-09 16:45:15.96124+00',
-    title:
-      '"Father & Son Jam Session: ""Bring the funk again"" | Wilson World"',
+    title: 'Father & Son Jam Session: "Bring the funk again" | Wilson World',
     username: 'precise',
     url: 'https://www.youtube.com/watch?v=pJ7_9FnOaFE',
     video_id: 'pJ7_9FnOaFE',
@@ -2741,11 +2743,11 @@ const videos = [
   {
     id: '2531',
     created_at: '2023-02-09 16:45:16.509424+00',
-    title: '"Rapsody - Ibtihaj ft. D\'Angelo',
-    username: ' GZA"',
-    url: 'DunnD',
-    video_id: 'https://www.youtube.com/watch?v=jhMk_wLm07E',
-    channel_id: 'jhMk_wLm07E',
+    title: "Rapsody - Ibtihaj ft. D'Angelo, GZA",
+    username: 'DunnD',
+    url: 'https://www.youtube.com/watch?v=jhMk_wLm07E',
+    video_id: 'jhMk_wLm07E',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2541',
@@ -2805,7 +2807,7 @@ const videos = [
     id: '2601',
     created_at: '2023-02-09 16:45:17.421165+00',
     title:
-      '"The Grouch ""Hot Air Balloons"" featuring Bicasso & Scarub (Official Music Video)"',
+      'The Grouch "Hot Air Balloons" featuring Bicasso & Scarub (Official Music Video)',
     username: 'DunnD',
     url: 'https://www.youtube.com/watch?v=KQaVDWtnVZ0',
     video_id: 'KQaVDWtnVZ0',
@@ -2850,7 +2852,7 @@ const videos = [
   {
     id: '2360',
     created_at: '2023-02-09 16:45:15.91351+00',
-    title: '"Disko Dave ""Filipremo"" beat vid"',
+    title: 'Disko Dave "Filipremo" beat vid',
     username: 'DunnD',
     url: 'https://www.youtube.com/watch?v=lcuFpIft574&list=LL&index=1482',
     video_id: 'lcuFpIft574',
@@ -2859,7 +2861,7 @@ const videos = [
   {
     id: '2370',
     created_at: '2023-02-09 16:45:15.933727+00',
-    title: '"D-STYLES ""PHANTAZMAGOREA"" (2002) - DJ ALF of HipHopSlam (2022)"',
+    title: 'D-STYLES "PHANTAZMAGOREA" (2002) - DJ ALF of HipHopSlam (2022)',
     username: 'ALF of Hip Hop Slam',
     url: 'https://youtu.be/EHr9Vcjy9F0',
     video_id: 'EHr9Vcjy9F0',
@@ -3086,11 +3088,12 @@ const videos = [
   {
     id: '2620',
     created_at: '2023-02-09 16:45:17.697485+00',
-    title: '"GoldLink - U Say (Official Video) ft. Tyler',
-    username: ' The Creator',
-    url: ' Jay Prince"',
-    video_id: 'Tek Jones',
-    channel_id: 'https://www.youtube.com/watch?v=olLlcGnziNw\\',
+    title:
+      'GoldLink - U Say (Official Video) ft. Tyler, The Creator, Jay Prince',
+    username: 'Tek Jones',
+    url: 'https://www.youtube.com/watch?v=olLlcGnziNw\\',
+    video_id: 'olLlcGnziNw',
+    channel_id: '1049841438919245925',
   },
   {
     id: '2630',
