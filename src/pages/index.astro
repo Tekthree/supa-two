@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import galleryData from '../../public/galleryData.js';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import PlayerBottom from '../components/PlayerBottom.astro';
+import videos from '../../public/video.js';
 // import { createClient } from '@supabase/supabase-js';
 // import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
 
@@ -16,7 +17,7 @@ import PlayerBottom from '../components/PlayerBottom.astro';
 // }); // Create a new Discord client
 
 // const token = import.meta.env.DISCORD_BOT_TOKEN;
-// const apiKey = import.meta.env.YOUTUBE_API_KEY;
+const apiKey = import.meta.env.YOUTUBE_API_KEY;
 
 // const supabaseAdin = createClient(
 //   import.meta.env.PUBLIC_SUPABASE_URL,
@@ -25,7 +26,6 @@ import PlayerBottom from '../components/PlayerBottom.astro';
 
 // const { data } = await supabaseAdin.from('music').select('*').order('id');
 
-// Replace with the ID of the text channel you want to search
 // const channelIds = [
 //   '1057747211468943450',
 //   '1049841438919245925',
@@ -35,6 +35,8 @@ import PlayerBottom from '../components/PlayerBottom.astro';
 //   '1062327975091126342',
 //   '1071400000216641566',
 // ];
+
+// const processedVideos = new Set();
 
 // client.on('ready', () => {
 //   console.log(`Logged in as ${client.user.tag}!`);
@@ -53,37 +55,46 @@ import PlayerBottom from '../components/PlayerBottom.astro';
 //           if (messages.size === 100) {
 //             fetchMessages();
 //           } else {
-//             const youtubeMessages = messages.filter((message) => {
-//               return message.content.includes('youtu');
-//             });
+//           }
 
-//             let youtubeVideos = [];
-//             youtubeMessages.forEach(async (message) => {
-//               const url = message.content.match(/https?:\/\/[^\s]+/)[0];
-//               const channelId = message.channel.id;
-//               const username = message.author.username;
+//           const youtubeMessages = messages.filter((message) => {
+//             return message.content.includes('youtu');
+//           });
 
-//               const urlRegex =
-//                 /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-//               const videoId = url.match(urlRegex);
+//           let youtubeVideos = [];
+//           youtubeMessages.forEach(async (message) => {
+//             const url = message.content.match(/https?:\/\/[^\s]+/)[0];
+//             const channelId = message.channel.id;
+//             const username = message.author.username;
 
-//               if (videoId && videoId[1].length === 11) {
-//                 const response = await fetch(
-//                   `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId[1]}&key=${apiKey}`
+//             const urlRegex =
+//               /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+//             const videoId = url.match(urlRegex);
+
+//             if (videoId && videoId[1].length === 11) {
+//               const response = await fetch(
+//                 `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId[1]}&key=${apiKey}`
+//               ).catch((error) => {
+//                 console.error(
+//                   `Error retrieving information from the YouTube API: ${error}`
 //                 );
-//                 const info = await response.json();
+//               });
+//               const info = await response.json();
 
-//                 // await supabaseAdin.from('music').insert([
-//                 //   {
-//                 //     title: info.items[0].snippet.title,
-//                 //     url: url,
-//                 //     video_id: videoId[1],
-//                 //     channel_id: channelId,
-//                 //     username: username,
-//                 //   },
-//                 // ]);
+//               if (!processedVideos.has(videoId[1])) {
+//                 processedVideos.add(videoId[1]);
 
-//                 if (info.items[0]) {
+//                 if (info.items && info.items[0] && info.items[0].snippet) {
+//                   await supabaseAdin.from('music').insert([
+//                     {
+//                       title: info.items[0].snippet.title,
+//                       url: url,
+//                       video_id: videoId[1],
+//                       channel_id: channelId,
+//                       username: username,
+//                     },
+//                   ]);
+
 //                   youtubeVideos.push({
 //                     title: info.items[0].snippet.title,
 //                     url,
@@ -92,12 +103,14 @@ import PlayerBottom from '../components/PlayerBottom.astro';
 //                     username,
 //                   });
 //                 } else {
-//                   console.error('No video found with the given videoId');
+//                   console.error(
+//                     'Unable to retrieve snippet information from the YouTube API'
+//                   );
 //                 }
 //               }
-//               console.log(youtubeVideos);
-//             });
-//           }
+//             }
+//             console.log(youtubeVideos);
+//           });
 //         });
 //     };
 //     fetchMessages();
@@ -128,18 +141,39 @@ import PlayerBottom from '../components/PlayerBottom.astro';
             class='pt-20 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
           >
             {
-              galleryData.map((card) => (
-                <div class='group border border-[#121212] p-4 rounded-2xl '>
+              videos.map((card) => (
+                <div class='group border-[1.5px] border-[#2c2844] p-4 rounded-2xl flex flex-col'>
                   <div class='aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray xl:aspect-w-7 xl:aspect-h-8'>
                     <YouTube
                       class='h-full w-full object-cover object-center group-hover:opacity-75'
                       id={card.url}
                     />
                   </div>
-                  <h3 class='mt-4 text-lg font-bold text-gray-600'>{card.title}</h3>
-                  <p class='mt-1 text-sm font-medium text-gray-800'>
+                  <h3 class='mt-4 text-lg font-bold text-gray-600 line-clamp-2'>
+                    {card.title}
+                  </h3>
+                  <p class='mt-1 mb-8 text-sm font-medium text-gray-800'>
                     {card.username}
                   </p>
+                  <div class='mt-auto '>
+                    <p class='px-3 py-1 inline-block border-[1.5px] border-[#211e33] rounded-md text-sm font-medium text-gray-800'>
+                      {card.channel_id === '1057747211468943450'
+                        ? 'Gems'
+                        : card.channel_id === '1049841438919245925'
+                        ? 'Hip-Hop'
+                        : card.channel_id === '1062329322477727764'
+                        ? 'Beat Suite'
+                        : card.channel_id === '1062325851418525776'
+                        ? 'House Love'
+                        : card.channel_id === '1062325992137424986'
+                        ? 'Drum n Bass'
+                        : card.channel_id === '1062327975091126342'
+                        ? 'Turntablism'
+                        : card.channel_id === '1071400000216641566'
+                        ? 'Ragga/Soundclash'
+                        : ''}
+                    </p>
+                  </div>
                 </div>
               ))
             }
