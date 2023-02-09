@@ -459,7 +459,7 @@ const videos = [
     username:
       " Monologue 'Far Outta Space' [Demand Records] ***OUT 16/12/22***\"",
     url: 'JohnGlist',
-    video_id: 'https://youtu.be/7lFvL9xl8eg',
+    video_id: '7lFvL9xl8eg',
     channel_id: '7lFvL9xl8eg',
   },
   {
@@ -641,7 +641,7 @@ const videos = [
     title: '"Andy Mineo',
     username: ' Wordsplayed - You Know the Drill"',
     url: 'DunnD',
-    video_id: 'https://www.youtube.com/watch?v=YDWI7MV-7WE',
+    video_id: 'YDWI7MV-7WE',
     channel_id: 'YDWI7MV-7WE',
   },
   {
@@ -888,7 +888,7 @@ const videos = [
     title: '"Jean Grae',
     username: ' ""Before the Summer Broke"""',
     url: 'DunnD',
-    video_id: 'https://www.youtube.com/watch?v=oF2ukpB8JVI',
+    video_id: 'oF2ukpB8JVI',
     channel_id: 'oF2ukpB8JVI',
   },
   {
@@ -1897,7 +1897,7 @@ const videos = [
     title: '"Childish Major - Thank you',
     username: ' God. For it all. [Official Audio]"',
     url: 'Tek Jones',
-    video_id: 'https://www.youtube.com/watch?v=ZpXd4_CjE_0',
+    video_id: 'ZpXd4_CjE_0',
     channel_id: 'ZpXd4_CjE_0',
   },
   {
