@@ -4,6 +4,7 @@ import galleryData from '../../public/galleryData.js';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import PlayerBottom from '../components/PlayerBottom.astro';
 import videos from '../../public/video.js';
+import profileImage from '/jam.jpg';
 
 // import video from '../../public/video';
 // var videoId = video.map((item) => item.video_id);
@@ -134,7 +135,6 @@ const apiKey = import.meta.env.YOUTUBE_API_KEY;
           class='mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'
         >
           <h2 class='sr-only'>Products</h2>
-          
 
           <div
             class='pt-20 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
@@ -151,9 +151,12 @@ const apiKey = import.meta.env.YOUTUBE_API_KEY;
                   <h3 class='mt-4 text-lg font-bold text-[#464e6b] line-clamp-2'>
                     {card.title}
                   </h3>
-                  <p class='mt-1 mb-8 text-sm font-medium text-gray-800'>
-                    {card.username}
-                  </p>
+                  <div class='flex mb-8 mt-1'>
+                    <img class="rounded-full opacity-40 hover:opacity-80" src={profileImage} width='26' />
+                    <p class='text-sm ml-2 mt-1 font-medium text-gray-800'>
+                      {card.username}
+                    </p>
+                  </div>
                   <div class='mt-auto '>
                     <p class='px-3 py-1 inline-block border-[1.5px] border-[#111522] rounded-md text-sm font-medium text-gray-800'>
                       {card.channel_id === '1057747211468943450'
