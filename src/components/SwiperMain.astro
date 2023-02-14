@@ -1,55 +1,57 @@
 ---
+import Card from './Card.astro';
+import uniqueVideos from '../scripts/video';
+var firstTen = uniqueVideos.slice(0, 10);
 ---
 
 <style>
   .swiper {
-    width: 600px;
-    height: 300px;
+    width: 100%;
   }
 </style>
 
-<div>Hello</div>
 <!-- Slider main container -->
 <div class='swiper'>
   <!-- Additional required wrapper -->
-  <div class='swiper-wrapper text-white'>
+  <div class='swiper-wrapper w-full text-white'>
     <!-- Slides -->
-    <div class='swiper-slide bg-gray-600'>Slide 1</div>
-    <div class='swiper-slide bg-gray-600'>Slide 2</div>
-    <div class='swiper-slide bg-gray-600'>Slide 3</div>
+    {
+      firstTen.map((ytVideos) => (
+        <div class='swiper-slide'>
+          <Card
+            url={ytVideos.url}
+            title={ytVideos.title}
+            username={ytVideos.username}
+            channel_id={ytVideos.channel_id}
+          />
+        </div>
+      ))
+    }
   </div>
   <!-- If we need pagination -->
-  <div class='swiper-pagination'></div>
-
-  <!-- If we need navigation buttons -->
-  <div class='swiper-button-prev'></div>
-  <div class='swiper-button-next'></div>
-
-  <!-- If we need scrollbar -->
-  <div class='swiper-scrollbar'></div>
 </div>
 
 <script type='module'>
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js';
   const swiper = new Swiper('.swiper', {
     // Optional parameters
+    slidesPerView: 2,
+    spaceBetween: 20,
     direction: 'horizontal',
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+    loop: false,
+    breakpoints: {
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
   });
 </script>

@@ -5,6 +5,8 @@ import PlayerBottom from '../components/PlayerBottom.astro';
 import uniqueVideos from '../scripts/video.js';
 import SwiperMain from '../components/SwiperMain.astro';
 
+var first40 = uniqueVideos.slice(0, 40);
+
 // import { createClient } from '@supabase/supabase-js';
 // import { Client, GatewayIntentBits } from 'discord.js'; // Import the Discord library
 
@@ -38,8 +40,6 @@ import SwiperMain from '../components/SwiperMain.astro';
 //   '1062327975091126342',
 //   '1071400000216641566',
 // ];
-
-
 
 // const processedVideos = new Set();
 
@@ -138,7 +138,7 @@ import SwiperMain from '../components/SwiperMain.astro';
 ---
 
 <Layout title='Okizoo Homepage'>
-  <main class='bg-black'>
+  <main class='bg-black overflow-hidden'>
     <div class='mx-auto max-w-7xl sm:px-6 lg:px-8'>
       <!-- Content goes here -->
 
@@ -147,13 +147,25 @@ import SwiperMain from '../components/SwiperMain.astro';
           class='mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'
         >
           <h2 class='sr-only'>Products</h2>
+          <div class=' max-w-7xl mb-8'>
+            <div class=' max-w-2xl  lg:max-w-4xl'>
+              <h1
+                class='text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl'
+              >
+               OKIZOO PICKS
+              </h1>
+              <p class='text-lg text-gray-600'>
+                Recent highlights hand picked by Okizoo
+              </p>
+            </div>
+          </div>
 
           <SwiperMain />
           <div
             class='pt-20 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
           >
             {
-              uniqueVideos.map((ytVideos) => (
+              first40.map((ytVideos) => (
                 <Card
                   url={ytVideos.url}
                   title={ytVideos.title}
