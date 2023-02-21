@@ -2,7 +2,6 @@
 import Card from './Card.astro';
 import uniqueVideos from '../scripts/video';
 var firstTen = uniqueVideos.slice(0, 20);
-
 ---
 
 <style>
@@ -14,93 +13,91 @@ var firstTen = uniqueVideos.slice(0, 20);
 
 <!-- Slider main container -->
 
-
 <div class='overflow-hidden'>
   <div class=''>
-    
     <div class='swiper'>
       <!-- Additional required wrapper -->
       <div class='max-w-7xl mb-8'>
-  <div class='flex'>
-    <div class='h-full mr-3 mt-3'>
-      <button class='button rounded-full' id='play-button'
-        ><svg
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke-width='1.5'
-          stroke='currentColor'
-          class='w-8 h-8'
-        >
-          <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
-          <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            d='M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z'
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div class='w-full flex justify-between align-items'>
-      <div>
-        <h1
-          class='text-2xl text-[#242736] font-bold tracking-tight sm:text-3xl'
-        >
-          OKIZOO PICKS
-        </h1>
-        <p class='text-sm md:text-lg text-gray-600'>
-          Recent highlights hand picked by Okizoo
-        </p>
+        <div class='flex'>
+          <div class='h-full mr-3 mt-3'>
+            <button class='button rounded-full' id='play-button'
+              ><svg
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke-width='1.5'
+                stroke='currentColor'
+                class='w-8 h-8'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  d='M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z'
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class='w-full flex justify-between items-center '>
+            <div>
+              <h1
+                class='text-2xl text-[#242736] font-bold tracking-tight sm:text-3xl'
+              >
+                OKIZOO PICKS
+              </h1>
+              <p class='hidden sm:block text-xs mr-4 md:text-lg text-gray-600'>
+                Recent highlights hand picked by Okizoo
+              </p>
+            </div>
+            <div class='flex space-x-1'>
+              <button
+                class='text-gray-600 p-2 px-3  leading-none border rounded-full border-[#212840]'
+              >
+                more</button
+              >
+              <button
+                class='text-gray-600 p-2  border rounded-full border-[#212840] sb-prev hover:bg-[#1c2236]'
+                ><svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke-width='1.5'
+                  stroke='currentColor'
+                  class='w-6 h-6'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    d='M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+                  ></path>
+                </svg>
+              </button>
+              <button
+                class='text-gray-600 p-2  border rounded-full border-[#212840] sb-next hover:bg-[#1c2236]'
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke-width='1.5'
+                  stroke='currentColor'
+                  class='w-6 h-6'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    d='M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class='flex p-4 space-x-1'>
-        <button
-          class='text-gray-600 leading-none border px-4 py-3 rounded-full border-[#212840]'
-        >
-          more</button
-        >
-        <button
-          class='text-gray-600 border px-4 py-2 rounded-full border-[#212840] sb-prev hover:bg-[#1c2236]'
-          ><svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke-width='1.5'
-            stroke='currentColor'
-            class='w-6 h-6'
-          >
-            <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-            ></path>
-          </svg>
-        </button>
-        <button
-          class='text-gray-600 border px-4 py-2 rounded-full border-[#212840] sb-next hover:bg-[#1c2236]'
-        >
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke-width='1.5'
-            stroke='currentColor'
-            class='w-6 h-6'
-          >
-            <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-      
+
       <div class='swiper-wrapper'>
         <!-- Slides -->
         {
@@ -117,7 +114,6 @@ var firstTen = uniqueVideos.slice(0, 20);
         }
       </div>
       <!-- If we need pagination -->
-      
     </div>
   </div>
 </div>
