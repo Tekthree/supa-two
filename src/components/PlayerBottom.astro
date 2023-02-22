@@ -4,7 +4,14 @@ const videoId = videos.map((object) => object.video_id);
 ---
 
 <div class='fixed z-50 inset-x-0 bottom-0 p-4 bg-[#090c14]'>
-  <div class='flex justify-center space-x-4'>
+  <div class='flex items-center justify-center space-x-4'>
+    <img
+      src=''
+      class='aspect-[4/3] h-12'
+      alt=''
+      id='video-thumbnail'
+      style="display:none"
+    />
     <button class='button rounded-full' id='back-button'
       ><svg
         xmlns='http://www.w3.org/2000/svg'
@@ -37,7 +44,7 @@ const videoId = videos.map((object) => object.video_id);
           d='M14.25 9v6m-4.5 0V9M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
       </svg>
     </button>
-    <button class='button rounded-full' id='play-button'
+    <button class='button rounded-full' id='play-btn'
       ><svg
         xmlns='http://www.w3.org/2000/svg'
         fill='none'
@@ -115,8 +122,6 @@ const videoId = videos.map((object) => object.video_id);
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
       playerVars: {
-        disablekb: 1,
-        rel: 0,
         showinfo: 0,
         modestbranding: 1,
       },
@@ -129,38 +134,49 @@ const videoId = videos.map((object) => object.video_id);
   function onPlayerReady(event) {
     event.target.loadVideoById(videoId[currentVideoId]);
 
+    const thumbnailImage = document.getElementById('video-thumbnail');
+    thumbnailImage.style.display = 'block';
+
+    // Set the src attribute of the img tag to the URL of the thumbnail for the current video ID
+    thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
+    
+
     // bind events
-    var playButton = document.getElementById('play-button');
+    var playButton = document.getElementById('play-btn');
+
+    var pauseButton = document.getElementById('pause-button');
+    var stopButton = document.getElementById('stop-button');
+    var nextButton = document.getElementById('next-button');
+    var backButton = document.getElementById('back-button');
+
     playButton.addEventListener('click', function () {
       player.playVideo();
     });
 
-    var pauseButton = document.getElementById('pause-button');
     pauseButton.addEventListener('click', function () {
       player.pauseVideo();
     });
 
-    var stopButton = document.getElementById('stop-button');
     stopButton.addEventListener('click', function () {
       player.stopVideo();
     });
 
-    var nextButton = document.getElementById('next-button');
     nextButton.addEventListener('click', function () {
       currentVideoId++;
       if (currentVideoId >= videoId.length) {
         currentVideoId = 0;
       }
       player.loadVideoById(videoId[currentVideoId]);
+      thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
     });
 
-    var backButton = document.getElementById('back-button');
     backButton.addEventListener('click', function () {
       currentVideoId--;
       if (currentVideoId < 0) {
         currentVideoId = videoId.length - 1;
       }
       player.loadVideoById(videoId[currentVideoId]);
+      thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
     });
   }
 
@@ -173,6 +189,23 @@ const videoId = videos.map((object) => object.video_id);
         currentVideoId = 0;
         event.target.loadVideoById(videoId[currentVideoId]);
       }
+    }
+  }
+
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+      var playButton = document.getElementById('play-btn');
+      var pauseButton = document.getElementById('pause-button');
+      var stopButton = document.getElementById('stop-button');
+      playButton.style.display = 'none';
+      stopButton.style.display = 'none';
+      pauseButton.style.display = 'block';
+    } else if (event.data == YT.PlayerState.PAUSED) {
+      var playButton = document.getElementById('play-btn');
+      var pauseButton = document.getElementById('pause-button');
+      var stopButton = document.getElementById('stop-button');
+      pauseButton.style.display = 'none';
+      playButton.style.display = 'block';
     }
   }
 </script>
