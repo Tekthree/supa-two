@@ -10,7 +10,7 @@ const videoId = videos.map((object) => object.video_id);
       class='aspect-[4/3] h-12'
       alt=''
       id='video-thumbnail'
-      style="display:none"
+      style='display:none'
     />
     <button class='button rounded-full' id='back-button'
       ><svg
@@ -29,7 +29,7 @@ const videoId = videos.map((object) => object.video_id);
       </svg>
     </button>
 
-    <button class='button rounded-full' id='pause-button'
+    <button class='button rounded-full' style='display:none' id='pause-button'
       ><svg
         xmlns='http://www.w3.org/2000/svg'
         fill='none'
@@ -64,7 +64,7 @@ const videoId = videos.map((object) => object.video_id);
         ></path>
       </svg>
     </button>
-    
+
     <button class='button rounded-full' id='next-button'
       ><svg
         xmlns='http://www.w3.org/2000/svg'
@@ -120,13 +120,12 @@ const videoId = videos.map((object) => object.video_id);
 
     // Set the src attribute of the img tag to the URL of the thumbnail for the current video ID
     thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
-    
 
     // bind events
     var playButton = document.getElementById('play-btn');
 
     var pauseButton = document.getElementById('pause-button');
-   
+
     var nextButton = document.getElementById('next-button');
     var backButton = document.getElementById('back-button');
 
@@ -137,8 +136,6 @@ const videoId = videos.map((object) => object.video_id);
     pauseButton.addEventListener('click', function () {
       player.pauseVideo();
     });
-
-    
 
     nextButton.addEventListener('click', function () {
       currentVideoId++;
@@ -175,9 +172,9 @@ const videoId = videos.map((object) => object.video_id);
     if (event.data == YT.PlayerState.PLAYING) {
       var playButton = document.getElementById('play-btn');
       var pauseButton = document.getElementById('pause-button');
-     
+
       playButton.style.display = 'none';
-    
+
       pauseButton.style.display = 'block';
     } else if (event.data == YT.PlayerState.PAUSED) {
       var playButton = document.getElementById('play-btn');
