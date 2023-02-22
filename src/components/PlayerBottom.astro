@@ -104,7 +104,10 @@ const videoId = videos.map((object) => object.video_id);
     player = new YT.Player('player', {
       playerVars: {
         showinfo: 0,
+        rel: 0,
         modestbranding: 1,
+        autoplay: 0,
+        origin: 'https://okizoocrew.com/',
       },
       events: {
         onReady: onPlayerReady,
@@ -156,6 +159,8 @@ const videoId = videos.map((object) => object.video_id);
     });
   }
 
+
+
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
       currentVideoId++;
@@ -166,9 +171,7 @@ const videoId = videos.map((object) => object.video_id);
         event.target.loadVideoById(videoId[currentVideoId]);
       }
     }
-  }
 
-  function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
       var playButton = document.getElementById('play-btn');
       var pauseButton = document.getElementById('pause-button');
@@ -184,4 +187,6 @@ const videoId = videos.map((object) => object.video_id);
       playButton.style.display = 'block';
     }
   }
+
+  
 </script>
