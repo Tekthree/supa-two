@@ -4,10 +4,9 @@ import Card from '../components/Card.astro';
 import PlayerBottom from '../components/PlayerBottom.astro';
 import uniqueVideos from '../scripts/video.js';
 import SwiperMain from '../components/SwiperMain.astro';
+import HipHop from '../components/HipHop.astro';
 
 var first40 = uniqueVideos.slice(0, 40);
-
-
 ---
 
 <Layout title='Okizoo Homepage'>
@@ -22,10 +21,45 @@ var first40 = uniqueVideos.slice(0, 40);
           <h2 class='sr-only'>Products</h2>
 
           <SwiperMain />
-          <div class='mt-10 border-b border-[4px] border-[#111522]'></div>
+          <HipHop />
 
+          
+
+          <div class='pt-28'>
+            <div class='h-full flex items-center'>
+            <button class='button rounded-full mr-3' id='play-btn-one'
+              ><svg
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke-width='1.5'
+                stroke='currentColor'
+                class='w-8 h-8'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  d='M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z'
+                ></path>
+              </svg>
+            </button>
+            <div>
+              <h1
+                class='text-2xl text-[#242736] font-bold tracking-tight sm:text-3xl'
+              >
+                ENDLESS ZOO PLAYLIST
+              </h1>
+              <p class='hidden sm:block text-xs mr-4 md:text-lg text-gray-600'>
+                listen to all the cuts
+              </p>
+            </div>
+          </div>
           <div
-            class='pt-16 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
+            class='pt-8 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
           >
             {
               first40.map((ytVideos) => (
@@ -39,7 +73,9 @@ var first40 = uniqueVideos.slice(0, 40);
             }
           </div>
         </div>
+        <div class='mt-10 border-b border-[4px] border-[#111522]'></div>
       </div>
+      
     </div>
 
     <PlayerBottom />

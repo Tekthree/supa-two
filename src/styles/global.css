@@ -10,6 +10,15 @@
     color: white;
     background-color: #141a2c;
   }
+
+  .btn{
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: #141a2c;
+  }
+
+
   .button:hover {
     background-color: #2b3860;
   }

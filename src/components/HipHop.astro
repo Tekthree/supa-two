@@ -1,7 +1,14 @@
 ---
 import Card from './Card.astro';
 import uniqueVideos from '../scripts/video';
-var firstTen = uniqueVideos.slice(0, 20);
+
+const data = [];
+const channelIdToFilter = 1049841438919245925;
+
+const filteredData = uniqueVideos.filter(item => item.channel_id === channelIdToFilter);
+
+
+var firstTen = filteredData.slice(0, 20);
 ---
 
 <style>
@@ -17,7 +24,7 @@ var firstTen = uniqueVideos.slice(0, 20);
   <div class=''>
     <div class='swiper'>
       <!-- Additional required wrapper -->
-      <div class='max-w-7xl mb-8'>
+      <div class='max-w-7xl mb-8 mt-28'>
         <div class='flex'>
           <div class='h-full mr-3 mt-3'>
             <button class='button rounded-full' id='play-btn-one'
@@ -41,25 +48,25 @@ var firstTen = uniqueVideos.slice(0, 20);
               </svg>
             </button>
           </div>
-          <div class='w-full flex justify-between items-center '>
+          <div class='w-full flex justify-between items-center'>
             <div>
               <h1
                 class='text-2xl text-[#242736] font-bold tracking-tight sm:text-3xl'
               >
-                OKIZOO PICKS
+                HIP-HOP
               </h1>
               <p class='hidden sm:block text-xs mr-4 md:text-lg text-gray-600'>
-                Recent highlights, hand picked by the Crew
+                Recent spins on the Hip-Hop channel 
               </p>
             </div>
             <div class='flex space-x-1'>
               <button
-                class='text-gray-600 p-2 px-3  leading-none border rounded-full border-[#212840]'
+                class='text-gray-600 p-2 px-3 leading-none border rounded-full border-[#212840]'
               >
                 more</button
               >
               <button
-                class='text-gray-600 p-2  border rounded-full border-[#212840] sb-prev hover:bg-[#1c2236]'
+                class='text-gray-600 p-2 border rounded-full border-[#212840] sb-prev hover:bg-[#1c2236]'
                 ><svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -76,7 +83,7 @@ var firstTen = uniqueVideos.slice(0, 20);
                 </svg>
               </button>
               <button
-                class='text-gray-600 p-2  border rounded-full border-[#212840] sb-next hover:bg-[#1c2236]'
+                class='text-gray-600 p-2 border rounded-full border-[#212840] sb-next hover:bg-[#1c2236]'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -97,7 +104,6 @@ var firstTen = uniqueVideos.slice(0, 20);
           </div>
         </div>
       </div>
-      
 
       <div class='swiper-wrapper'>
         <!-- Slides -->

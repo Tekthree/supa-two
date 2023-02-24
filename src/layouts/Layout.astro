@@ -28,7 +28,7 @@ const { title } = Astro.props;
   <body class='bg-[#090a0d] pb-20'>
     <!-- This example requires Tailwind CSS v3.0+ -->
     <div class='relative isolate overflow-hidden'>
-      <div class='pt-32 px-1 sm:px-6 sm:py-18 lg:px-8'>
+      <div class='pt-1 px-1 sm:px-6 sm:py-18 lg:px-8'>
         <Header />
         <BottomNav />
       </div>
@@ -59,65 +59,7 @@ const { title } = Astro.props;
         </defs>
       </svg>
     </div>
-    <div class='mx-auto max-w-3xl px-6 pt-20 lg:px-6'>
-      <p class='text-center text-lg text-gray-600'>
-        Music-only radio streams, made from okizoo residents
-      </p>
-      <div class='mt-6 grid grid-cols-2 gap-1.5 md:grid-cols-3 lg:mt-8'>
-        <div
-          class='col-span-1 rounded-lg flex justify-center border-[1.5px] border-[#111522] py-4 px-6'
-        >
-          <h3 class=''>
-            <a class='text-lg font-bold text-[#464e6b]' href='/hiphop'
-              >Hip-Hop</a
-            >
-          </h3>
-        </div>
-        <div
-          class='col-span-1 rounded-lg flex justify-center border-[1.5px] border-[#111522] py-4 px-6'
-        >
-          <h3 class=''>
-            <a class='text-lg font-bold text-[#464e6b]' href='/gems'>Gems</a>
-          </h3>
-        </div>
-        <div
-          class='col-span-1 rounded-lg flex justify-center border-[1.5px] border-[#111522] py-4 px-6'
-        >
-          <h3 class=''>
-            <a class='text-lg font-bold text-[#464e6b]' href='/house'
-              >House Love</a
-            >
-          </h3>
-        </div>
-        <div
-          class='col-span-1 rounded-lg flex justify-center border-[1.5px] border-[#111522] py-4 px-6'
-        >
-          <h3 class=''>
-            <a class='text-lg font-bold text-[#464e6b]' href='/beats'
-              >Beat Suite</a
-            >
-          </h3>
-        </div>
-        <div
-          class='col-span-1 rounded-lg flex justify-center border-[1.5px] border-[#111522] py-4 px-6'
-        >
-          <h3 class=''>
-            <a class='text-lg font-bold text-[#464e6b]' href='/drumandbass'
-              >Drun n Bass</a
-            >
-          </h3>
-        </div>
-        <div
-          class='col-span-1 rounded-lg flex justify-center border-[1.5px] border-[#111522] py-4 px-6'
-        >
-          <h3 class=''>
-            <a class='text-lg font-bold text-[#464e6b]' href='/turntablism'
-              >Turntablism</a
-            >
-          </h3>
-        </div>
-      </div>
-    </div>
+   
     <slot />
   </body>
 
