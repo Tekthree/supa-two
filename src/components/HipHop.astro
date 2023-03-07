@@ -25,8 +25,8 @@ var firstTen = filteredData.slice(0, 20);
     <div class='swiper'>
       <!-- Additional required wrapper -->
       <div class='max-w-7xl mb-8 mt-28'>
-        <div class='flex'>
-          <div class='h-full mr-3 mt-3'>
+        <div class='flex justify-between items-center'>
+          <div class='mr-3 flex justify-between items-center'>
             <button class='button rounded-full' id='play-btn-one'
               ><svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -51,22 +51,20 @@ var firstTen = filteredData.slice(0, 20);
           <div class='w-full flex justify-between items-center'>
             <div>
               <h1
-                class='text-2xl text-[#242736] font-bold tracking-tight sm:text-3xl'
+                class='text-lg md:text-2xl text-mt font-bold tracking-tight sm:text-xl'
               >
                 HIP-HOP
               </h1>
-              <p class='hidden sm:block text-xs mr-4 md:text-lg text-gray-600'>
-                Recent spins on the Hip-Hop channel 
+              <p class='hidden sm:block mr-4 text-mtLight'>
+                Recent drops in Hip-hop
               </p>
             </div>
             <div class='flex space-x-1'>
-              <button
-                class='text-gray-600 p-2 px-3 leading-none border rounded-full border-[#212840]'
-              >
+              <button class='text-mtLight p-2 px-3 leading-none rounded-full'>
                 more</button
               >
               <button
-                class='text-gray-600 p-2 border rounded-full border-[#212840] sb-prev hover:bg-[#1c2236]'
+                class='text-mtLight p-2 rounded-full sb-prev hover:bg-[#1c2236]'
                 ><svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -83,7 +81,7 @@ var firstTen = filteredData.slice(0, 20);
                 </svg>
               </button>
               <button
-                class='text-gray-600 p-2 border rounded-full border-[#212840] sb-next hover:bg-[#1c2236]'
+                class='text-mtLight p-2 rounded-full sb-next hover:bg-[#1c2236]'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -123,7 +121,7 @@ var firstTen = filteredData.slice(0, 20);
       <!-- If we need pagination -->
     </div>
   </div>
-  <div class='mt-10 border-b border-[4px] border-[#111522]'></div>
+  
 </div>
 
 <script type='module'>

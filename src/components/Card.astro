@@ -1,6 +1,12 @@
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import profileImage from '/jam.jpg';
+import atwo from '/images/a2.jpg';
+import athree from '/images/a3.png';
+import afour from '/images/a4.png';
+import afive from '/images/a5.png';
+
+
 
 export interface Props {
   url?: string;
@@ -12,33 +18,43 @@ export interface Props {
 const { url, title, username, channel_id } = Astro.props as Props;
 ---
 
-<div
-  class='group h-[370px] border-[1.5px] border-[#171c2e] p-4 rounded-2xl flex flex-col'
->
+<div class='back group h-[380px] md:h-[335px] rounded-lg flex flex-col'>
   <div
-    class='aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray xl:aspect-w-7 xl:aspect-h-8'
+    class='aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg bg-gray xl:aspect-w-7 xl:aspect-h-8'
   >
     <YouTube
       class='w-full object-cover object-center group-hover:opacity-75'
       id={url}
     />
   </div>
-  <h3 class='mt-4 text-lg font-bold text-[#464e6b] line-clamp-2'>
-    {title}
-  </h3>
-  <div class='flex mb-8 mt-1'>
-    <img
-      class='rounded-full opacity-40 hover:opacity-80'
-      src={profileImage}
-      width='26'
-    />
-    <p class='text-sm ml-2 mt-1 font-medium text-gray-800'>
-      {username}
-    </p>
+  <div class='px-3'>
+    <h3 class='mt-4 text-md font-bold text-mt line-clamp-2'>
+      {title}
+    </h3>
+    <div class='flex mb-8 mt-1'>
+      <img
+        class='rounded-full opacity-40 hover:opacity-80'
+        src={username === 'DunnD'
+          ? afive
+          : username === 'Tek Jones'
+          ? athree
+          : username === 'JohnGlist'
+          ? atwo
+          : username === 'Nations'
+          ? afour
+          : username === 'ALF of Hip Hop Slam'
+          ? atwo
+          : profileImage}
+        width='26'
+      />
+      <p class='text-sm ml-2 mt-1 font-medium text-mt'>
+        {username}
+      </p>
+    </div>
   </div>
-  <div class='mt-auto'>
+  <div class='mt-auto p-3 border-t-[1px] flex justify-between'>
     <p
-      class='px-3 py-1 inline-block border-[1.5px] border-[#111522] rounded-md text-sm font-medium text-gray-800'
+      class='text-mtLight opacity-80 font-semibold px-2 py-1 inline-block border-mtLight rounded-md text-xs'
     >
       {
         channel_id === 1057747211468943450
@@ -48,7 +64,7 @@ const { url, title, username, channel_id } = Astro.props as Props;
           : channel_id === 1062329322477727764
           ? 'Beat Suite'
           : channel_id === 1062325851418525776
-          ? 'House Love'
+          ? 'House'
           : channel_id === 1062325992137424986
           ? 'Drum n Bass'
           : channel_id === 1062327975091126342
@@ -58,7 +74,34 @@ const { url, title, username, channel_id } = Astro.props as Props;
           : ''
       }
     </p>
+    <div class='flex'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 24 24'
+        fill='currentColor'
+        class='w-[18px] h-[18px] mr-2 text-mtLight'
+      >
+        <path
+          d='M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z'
+        ></path>
+      </svg>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 24 24'
+        fill='currentColor'
+        class='w-[18px] h-[18px] text-mtLight'
+      >
+        <path
+          fill-rule='evenodd'
+          d='M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z'
+          clip-rule='evenodd'></path>
+      </svg>
+    </div>
   </div>
 </div>
 
-<style></style>
+<style>
+  .back {
+    background-color: #212330;
+  }
+</style>
