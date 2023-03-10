@@ -1,7 +1,8 @@
 ---
 import Card from './Card.astro';
-import uniqueVideos from '../scripts/video';
-var firstTen = uniqueVideos.slice(0, 20);
+import strippedVideo from '../scripts/dnbVideosCall';
+
+const firstTen = strippedVideo.slice(0, 20);
 ---
 
 <style>
@@ -17,10 +18,10 @@ var firstTen = uniqueVideos.slice(0, 20);
   <div class=''>
     <div class='swiper'>
       <!-- Additional required wrapper -->
-      <div class='max-w-7xl mb-8'>
+      <div class='max-w-7xl mb-8 mt-28'>
         <div class='flex justify-between items-center'>
           <div class='mr-3 flex justify-between items-center'>
-            <button class='button rounded-full' id='playbtnone' onclick="changeVideoId('myDivone')"
+            <button class='button rounded-full'  id='playbtntwo' onclick="changeVideoId('myDivfive')"
               ><svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
@@ -39,10 +40,10 @@ var firstTen = uniqueVideos.slice(0, 20);
               <h1
                 class='text-lg md:text-2xl text-mt font-bold tracking-tight sm:text-xl'
               >
-                OKIZOO PICKS
+                DRUM AND BASS
               </h1>
               <p class='hidden sm:block mr-4 text-mtLight'>
-                Recent highlights, hand picked by the Crew
+                Recent heat from the dnb scene
               </p>
             </div>
             <div class='flex space-x-1'>
@@ -90,7 +91,6 @@ var firstTen = uniqueVideos.slice(0, 20);
       </div>
 
       <div class='swiper-wrapper'>
-        <!-- Slides -->
         {
           firstTen.map((ytVideos) => (
             <div class='swiper-slide'>
@@ -137,9 +137,3 @@ var firstTen = uniqueVideos.slice(0, 20);
     },
   });
 </script>
-
-<style>
-  .bug {
-    background-color: black;
-  }
-</style>

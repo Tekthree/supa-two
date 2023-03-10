@@ -1,4 +1,4 @@
-const videos = [
+let videos = [
   {
     id: 5717,
     created_at: '2023-02-24 06:26:33.130898+00',
@@ -3570,6 +3570,17 @@ const videos = [
     thumb: 'https://img.youtube.com/vi/HB23FDDcB7w/default.jpg',
   },
   {
+    id: 6050,
+    created_at: '2023-03-08 07:13:38.366631+00',
+    title: 'Interblaktic',
+    username: 'Tek Jones',
+    url: 'https://music.youtube.com/watch?v=MKvnw3nfYKg',
+    video_id: 'MKvnw3nfYKg',
+    channel_id: 1062325851418525800,
+    message_timestamp: '2023-03-08T07:09:14.215Z',
+    thumb: 'https://img.youtube.com/vi/MKvnw3nfYKg/default.jpg',
+  },
+  {
     id: 6039,
     created_at: '2023-03-07 18:31:47.117029+00',
     title: 'BMW SCRAPES THE FLOOR ft. Action Bronson (prod. J-Nag)',
@@ -3592,6 +3603,17 @@ const videos = [
     thumb: 'https://img.youtube.com/vi/1MGRsXTjDcY/default.jpg',
   },
   {
+    id: 6052,
+    created_at: '2023-03-08 07:13:38.401369+00',
+    title: 'DUCKWRTH - Super Bounce (Audio) ft. EARTHGANG',
+    username: 'Tek Jones',
+    url: 'https://music.youtube.com/watch?v=IBDgHaTy_wU',
+    video_id: 'IBDgHaTy_wU',
+    channel_id: 1049841438919246000,
+    message_timestamp: '2023-03-08T07:08:01.510Z',
+    thumb: 'https://img.youtube.com/vi/IBDgHaTy_wU/default.jpg',
+  },
+  {
     id: 6041,
     created_at: '2023-03-07 18:31:47.282922+00',
     title: 'Watch the HIP-HOP 50 Medley Part 1 | 2023 GRAMMYs',
@@ -3601,6 +3623,17 @@ const videos = [
     channel_id: 1049841438919246000,
     message_timestamp: '2023-03-06T09:25:16.783Z',
     thumb: 'https://img.youtube.com/vi/HXsqCrHSKvU/default.jpg',
+  },
+  {
+    id: 6047,
+    created_at: '2023-03-08 07:13:38.270817+00',
+    title: 'Dollas and Cents',
+    username: 'Tek Jones',
+    url: 'https://music.youtube.com/watch?v=3vxoGWjs-Xs',
+    video_id: '3vxoGWjs-Xs',
+    channel_id: 1062325851418525800,
+    message_timestamp: '2023-03-08T07:12:48.054Z',
+    thumb: 'https://img.youtube.com/vi/3vxoGWjs-Xs/default.jpg',
   },
   {
     id: 6042,
@@ -3614,6 +3647,17 @@ const videos = [
     thumb: 'https://img.youtube.com/vi/d-H99Ko-ddQ/default.jpg',
   },
   {
+    id: 6048,
+    created_at: '2023-03-08 07:13:38.295954+00',
+    title: 'Aang',
+    username: 'Tek Jones',
+    url: 'https://music.youtube.com/watch?v=qOvyYThtckY',
+    video_id: 'qOvyYThtckY',
+    channel_id: 1049841438919246000,
+    message_timestamp: '2023-03-08T07:06:29.971Z',
+    thumb: 'https://img.youtube.com/vi/qOvyYThtckY/default.jpg',
+  },
+  {
     id: 6043,
     created_at: '2023-03-07 18:31:47.378714+00',
     title: "Machinedrum - 'Kane Train (feat. Freddie Gibbs)' (Official Audio)",
@@ -3623,6 +3667,39 @@ const videos = [
     channel_id: 1049841438919246000,
     message_timestamp: '2023-03-07T00:03:33.589Z',
     thumb: 'https://img.youtube.com/vi/ab2rqdzUv14/default.jpg',
+  },
+  {
+    id: 6051,
+    created_at: '2023-03-08 07:13:38.371467+00',
+    title: 'Young Man',
+    username: 'Tek Jones',
+    url: 'https://music.youtube.com/watch?v=UkfvgcrlPMY&feature=share',
+    video_id: 'UkfvgcrlPMY',
+    channel_id: 1049841438919246000,
+    message_timestamp: '2023-03-08T07:04:20.443Z',
+    thumb: 'https://img.youtube.com/vi/UkfvgcrlPMY/default.jpg',
+  },
+  {
+    id: 6044,
+    created_at: '2023-03-08 07:13:37.963605+00',
+    title: 'Misfit',
+    username: 'Tek Jones',
+    url: 'https://music.youtube.com/watch?v=dw5Z7bbxdPY',
+    video_id: 'dw5Z7bbxdPY',
+    channel_id: 1057747211468943500,
+    message_timestamp: '2023-03-08T07:08:48.513Z',
+    thumb: 'https://img.youtube.com/vi/dw5Z7bbxdPY/default.jpg',
+  },
+  {
+    id: 6045,
+    created_at: '2023-03-08 07:13:38.118136+00',
+    title: 'Mncane',
+    username: 'Tek Jones',
+    url: 'https://music.youtube.com/watch?v=mrIvIYXY6nE',
+    video_id: 'mrIvIYXY6nE',
+    channel_id: 1062325851418525800,
+    message_timestamp: '2023-03-08T07:10:52.135Z',
+    thumb: 'https://img.youtube.com/vi/mrIvIYXY6nE/default.jpg',
   },
   {
     id: 5641,
@@ -4049,6 +4126,17 @@ const videos = [
     thumb: 'https://img.youtube.com/vi/7BXOFtd9elU/default.jpg',
   },
   {
+    id: 6046,
+    created_at: '2023-03-08 07:13:38.261131+00',
+    title: 'Hero',
+    username: 'Tek Jones',
+    url: 'https://music.youtube.com/watch?v=8ndnPNQEoa8',
+    video_id: '8ndnPNQEoa8',
+    channel_id: 1049841438919246000,
+    message_timestamp: '2023-03-08T07:07:15.227Z',
+    thumb: 'https://img.youtube.com/vi/8ndnPNQEoa8/default.jpg',
+  },
+  {
     id: 5674,
     created_at: '2023-02-24 06:26:32.227018+00',
     title: 'Walkin',
@@ -4092,6 +4180,17 @@ const videos = [
     channel_id: 1049841438919246000,
     message_timestamp: '2023-01-27T19:18:36.837Z',
     thumb: 'https://img.youtube.com/vi/FbIMSdn4ZY0/default.jpg',
+  },
+  {
+    id: 6049,
+    created_at: '2023-03-08 07:13:38.289336+00',
+    title: 'Soul II Stro',
+    username: 'Tek Jones',
+    url: 'https://music.youtube.com/watch?v=gaM7u4qX3n4',
+    video_id: 'gaM7u4qX3n4',
+    channel_id: 1049841438919246000,
+    message_timestamp: '2023-03-08T07:04:56.634Z',
+    thumb: 'https://img.youtube.com/vi/gaM7u4qX3n4/default.jpg',
   },
   {
     id: 5675,
@@ -4474,18 +4573,31 @@ const videos = [
   },
 ];
 
-videos.sort(function (a, b) {
-  return new Date(b.message_timestamp) - new Date(a.message_timestamp);
-});
+let uniqueVideos;
 
-let uniqueVideos = [];
-let seen = new Set();
+try {
+  const response = await fetch(
+    'https://okizoo-backend.herokuapp.com/api/urls/allmusic'
+  );
+  const { data } = await response.json();
+  data.sort(function (a, b) {
+    return new Date(b.message_timestamp) - new Date(a.message_timestamp);
+  });
 
-for (let object of videos) {
-  if (!seen.has(object.video_id)) {
-    uniqueVideos.push(object);
-    seen.add(object.video_id);
+  let strippedVideo = [];
+  let seen = new Set();
+
+  for (let object of data) {
+    if (!seen.has(object.video_id)) {
+      strippedVideo.push(object);
+      seen.add(object.video_id);
+    }
   }
+
+  uniqueVideos = strippedVideo;
+} catch (error) {
+  console.error(`An error occurred while fetching the videos: ${error}`);
+  uniqueVideos = videos;
 }
 
 export default uniqueVideos;

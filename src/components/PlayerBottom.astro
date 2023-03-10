@@ -1,9 +1,35 @@
 ---
 import videos from '../scripts/video.js';
 const videoId = videos.map((object) => object.video_id);
+var firstTen = videoId.slice(0, 20);
+
+import hipVideos from '../scripts/hipVideosCall.js';
+const hipvideoId = hipVideos.map((object) => object.video_id);
+
+import houseVideos from '../scripts/houseVideosCall.js';
+const housevideoId = houseVideos.map((object) => object.video_id);
+
+import dnbVideos from '../scripts/dnbVideosCall.js';
+const dnbvideoId = dnbVideos.map((object) => object.video_id);
+
+import gemsVideos from '../scripts/gemsVideosCall.js';
+const gemsvideoId = gemsVideos.map((object) => object.video_id);
+
+import turnVideos from '../scripts/turnVideosCall.js';
+const turnvideoId = turnVideos.map((object) => object.video_id);
+
+import reggaVideos from '../scripts/reggaVideosCall.js';
+const reggavideoId = reggaVideos.map((object) => object.video_id);
+
+import beatVideos from '../scripts/beatVideosCall.js';
+const beatvideoId = beatVideos.map((object) => object.video_id);
+
+
 ---
 
-<div class='fixed z-50 inset-x-0 bottom-0 p-4 bg-mcBg shadow-[0px_-20px_70px_4px_rgba(0,0,0,0.26)]'>
+<div
+  class='fixed z-50 inset-x-0 bottom-0 p-4 bg-mcBg shadow-[0px_-20px_70px_4px_rgba(0,0,0,0.26)]'
+>
   <div class='flex items-center justify-center space-x-4'>
     <img
       src=''
@@ -32,36 +58,27 @@ const videoId = videos.map((object) => object.video_id);
     <button class='button rounded-full' style='display:none' id='pause-button'
       ><svg
         xmlns='http://www.w3.org/2000/svg'
-        fill='none'
         viewBox='0 0 24 24'
-        stroke-width='1.5'
-        stroke='currentColor'
+        fill='currentColor'
         class='w-6 h-6'
       >
         <path
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          d='M14.25 9v6m-4.5 0V9M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+          fill-rule='evenodd'
+          d='M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z'
+          clip-rule='evenodd'></path>
       </svg>
     </button>
     <button class='button rounded-full' id='play-btn'
       ><svg
         xmlns='http://www.w3.org/2000/svg'
-        fill='none'
         viewBox='0 0 24 24'
-        stroke-width='1.5'
-        stroke='currentColor'
+        fill='currentColor'
         class='w-6 h-6'
       >
         <path
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
-        <path
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          d='M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z'
-        ></path>
+          fill-rule='evenodd'
+          d='M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z'
+          clip-rule='evenodd'></path>
       </svg>
     </button>
 
@@ -85,6 +102,14 @@ const videoId = videos.map((object) => object.video_id);
 </div>
 
 <div id='myDiv' data-myVariable={videoId}></div>
+<div id='myDivone' data-myVariable={firstTen}></div>
+<div id='myDivtwo' data-myVariable={hipvideoId}></div>
+<div id='myDivthree' data-myVariable={housevideoId}></div>
+<div id='myDivfive' data-myVariable={dnbvideoId}></div>
+<div id='myDivsix' data-myVariable={gemsvideoId}></div>
+<div id='myDivseven' data-myVariable={reggavideoId}></div>
+<div id='myDiveight' data-myVariable={turnvideoId}></div>
+<div id='myDivnine' data-myVariable={beatvideoId}></div>
 
 <script is:inline>
   var tag = document.createElement('script');
@@ -96,7 +121,27 @@ const videoId = videos.map((object) => object.video_id);
   const dataArray = data.split(',');
   const dataJSON = JSON.stringify(dataArray);
 
-  const videoId = JSON.parse(dataJSON);
+  var videoId = JSON.parse(dataJSON);
+
+  function changeVideoId(elementId) {
+    var data = document
+      .getElementById(elementId)
+      .getAttribute('data-myVariable');
+    const dataArray = data.split(',');
+    const dataJSON = JSON.stringify(dataArray);
+
+    videoId = JSON.parse(dataJSON);
+
+    // Reload the player with the new video ID
+    currentVideoId = 0;
+    player.loadVideoById(videoId[currentVideoId]);
+
+    // Update the thumbnail image
+    const thumbnailImage = document.getElementById('video-thumbnail');
+    thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
+  }
+
+  
 
   var player;
   currentVideoId = 0;

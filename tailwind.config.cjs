@@ -8,6 +8,7 @@ module.exports = {
       cardColor: '#212330',
       mt: '#898a91',
       mtLight: '#adaeb7',
+      hlcolor: '#3e1e5e',
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],
