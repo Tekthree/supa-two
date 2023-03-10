@@ -4,11 +4,12 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      mcBg: '#13141c',
+      mcBg: '#0c0d12',
       cardColor: '#212330',
       mt: '#898a91',
       mtLight: '#adaeb7',
-      hlcolor: '#3e1e5e',
+      hlcolor: '#4d377a',
+      bnav: '#0e0f15',
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],

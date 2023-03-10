@@ -5,7 +5,7 @@ var firstTen = uniqueVideos.slice(0, 20);
 ---
 
 <style>
-  .swiper {
+  .swiperthree {
     width: 100%;
     height: 100%;
   }
@@ -15,12 +15,15 @@ var firstTen = uniqueVideos.slice(0, 20);
 
 <div class='overflow-hidden'>
   <div class=''>
-    <div class='swiper'>
+    <div class='swiperthree'>
       <!-- Additional required wrapper -->
       <div class='max-w-7xl mb-8'>
         <div class='flex justify-between items-center'>
           <div class='mr-3 flex justify-between items-center'>
-            <button class='button rounded-full' id='playbtnone' onclick="changeVideoId('myDivone')"
+            <button
+              class='button rounded-full'
+              id='playbtnone'
+              onclick="changeVideoId('myDivone')"
               ><svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
@@ -88,7 +91,7 @@ var firstTen = uniqueVideos.slice(0, 20);
           </div>
         </div>
       </div>
-
+      
       <div class='swiper-wrapper'>
         <!-- Slides -->
         {
@@ -111,10 +114,12 @@ var firstTen = uniqueVideos.slice(0, 20);
 
 <script type='module'>
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js';
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('.swiperthree', {
     // Optional parameters
-    slidesPerView: 'auto',
-    spaceBetween: 20,
+    slidesPerView: 2.3,
+    spaceBetween: 12,
+    freeMode: true,
+    momentumRatio: 1,
     direction: 'horizontal',
     loop: false,
     navigation: {
@@ -123,16 +128,16 @@ var firstTen = uniqueVideos.slice(0, 20);
     },
     breakpoints: {
       640: {
-        slidesPerView: 2,
-        spaceBetween: 25,
+        slidesPerView: 2.5,
+        spaceBetween: 15,
       },
       768: {
-        slidesPerView: 2,
-        spaceBetween: 25,
+        slidesPerView: 3.5,
+        spaceBetween: 15,
       },
       1024: {
-        slidesPerView: 3,
-        spaceBetween: 25,
+        slidesPerView: 4.5,
+        spaceBetween: 15,
       },
     },
   });
@@ -142,4 +147,6 @@ var firstTen = uniqueVideos.slice(0, 20);
   .bug {
     background-color: black;
   }
+
+ 
 </style>
