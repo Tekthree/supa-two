@@ -1,6 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
 import uniqueVideos from '../../scripts/video.js';
+import TopNav from '../../components/TopNav.astro';
 import Card from '../../components/Card.astro';
 import PlayerBottom from '../../components/PlayerBottom.astro';
 import profileImage from '/jam.jpg';
@@ -30,57 +30,55 @@ const user = JSON.stringify(username);
 ---
 
 <>
-  <Layout title={username}>
-    <div class='flex h-full'>
-      <div class='flex min-w-0 flex-1 flex-col overflow-hidden'>
-        <div class='relative z-0 flex flex-1 overflow-hidden'>
-          <main
-            class='relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last'
-          >
-            <!-- Breadcrumb -->
+  <TopNav />
+  <div class='flex h-[100vh] bg-mcBg pb-20'>
+    <div class='flex min-w-0 flex-1 flex-col overflow-hidden'>
+      <div class='relative z-0 flex flex-1 overflow-hidden'>
+        <main
+          class='relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last'
+        >
+          <!-- Breadcrumb -->
 
-            <article>
-              <!-- Profile header -->
+          <article>
+            <!-- Profile header -->
+            <div>
               <div>
-                <div>
-                  <img
-                    class='h-32 w-full object-cover lg:h-48'
-                    src='https://images.unsplash.com/photo-1674889390421-fd23ba33745c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80'
-                    alt=''
-                  />
-                </div>
-                <div class='mx-auto max-w-5xl px-4 sm:px-6 lg:px-8'>
+                <img
+                  class='h-32 w-full object-cover lg:h-48'
+                  src='https://images.unsplash.com/photo-1674889390421-fd23ba33745c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80'
+                  alt=''
+                />
+              </div>
+              <div class='mx-auto max-w-5xl px-4 sm:px-6 lg:px-8'>
+                <div class='-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5'>
+                  <div class='flex'>
+                    <img
+                      class='h-24 w-24 rounded-full ring-4 ring-hlcolor sm:h-32 sm:w-32'
+                      src={username === 'DunnD'
+                        ? afive
+                        : username === 'Tek Jones'
+                        ? athree
+                        : username === 'JohnGlist'
+                        ? atwo
+                        : username === 'Nations'
+                        ? afour
+                        : username === 'ALF of Hip Hop Slam'
+                        ? atwo
+                        : profileImage}
+                    />
+                  </div>
                   <div
-                    class='-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5'
+                    class='mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1'
                   >
-                    <div class='flex'>
-                      <img
-                        class='h-24 w-24 rounded-full ring-4 ring-hlcolor sm:h-32 sm:w-32'
-                        src={username === 'DunnD'
-                          ? afive
-                          : username === 'Tek Jones'
-                          ? athree
-                          : username === 'JohnGlist'
-                          ? atwo
-                          : username === 'Nations'
-                          ? afour
-                          : username === 'ALF of Hip Hop Slam'
-                          ? atwo
-                          : profileImage}
-                      />
+                    <div class='mt-6 min-w-0 flex-1 sm:hidden 2xl:block'>
+                      <h1 class='truncate text-2xl font-bold text-mtLight'>
+                        {username}
+                      </h1>
                     </div>
                     <div
-                      class='mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1'
+                      class='justify-stretch mt-6 flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4'
                     >
-                      <div class='mt-6 min-w-0 flex-1 sm:hidden 2xl:block'>
-                        <h1 class='truncate text-2xl font-bold text-mtLight'>
-                          {username}
-                        </h1>
-                      </div>
-                      <div
-                        class='justify-stretch mt-6 flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4'
-                      >
-                        <!-- <button
+                      <!-- <button
                           class='button rounded-full'
                           id='playbtnthree'
                           onclick='changeVideoId(`Robert Brownie Jr.`)'
@@ -96,36 +94,35 @@ const user = JSON.stringify(username);
                               clip-rule='evenodd'></path>
                           </svg>
                         </button> -->
-                      </div>
                     </div>
                   </div>
-                  <div class='mt-6 hidden min-w-0 flex-1 sm:block 2xl:hidden'>
-                    <h1 class='truncate text-2xl font-bold text-mtLight'>
-                      {username}
-                    </h1>
-                  </div>
+                </div>
+                <div class='mt-6 hidden min-w-0 flex-1 sm:block 2xl:hidden'>
+                  <h1 class='truncate text-2xl font-bold text-mtLight'>
+                    {username}
+                  </h1>
                 </div>
               </div>
-            </article>
-            <div
-              class='mx-auto px-4 lg:max-w-7xl pt-8 grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-6'
-            >
-              {
-                filteredVideos.map((ytVideos) => (
-                  <Card
-                    url={ytVideos.url}
-                    title={ytVideos.title}
-                    username={ytVideos.username}
-                    channel_id={ytVideos.channel_id}
-                  />
-                ))
-              }
             </div>
-          </main>
-        </div>
+          </article>
+          <div
+            class='mx-auto px-4 lg:max-w-7xl pt-8 grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-6'
+          >
+            {
+              filteredVideos.map((ytVideos) => (
+                <Card
+                  url={ytVideos.url}
+                  title={ytVideos.title}
+                  username={ytVideos.username}
+                  channel_id={ytVideos.channel_id}
+                />
+              ))
+            }
+          </div>
+        </main>
       </div>
     </div>
-  </Layout>
+  </div>
 
   <PlayerBottom />
 </>

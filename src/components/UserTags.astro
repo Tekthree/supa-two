@@ -1,5 +1,4 @@
 ---
-
 let users = [
   'DunnD',
   'Tek Jones',
@@ -7,11 +6,10 @@ let users = [
   'Nations',
   'ALF of Hip Hop Slam',
   'Robert Brownie Jr.',
-  'Robert Brownie Jr.',
+  'hecto',
+  'precise',
+  'khemetadisabey',
 ];
-
-
-
 ---
 
 <style>
@@ -22,8 +20,6 @@ let users = [
 </style>
 
 <!-- Slider main container -->
-
-
 
 <div class='overflow-hidden sm:max-w-7xl'>
   <div class=''>
@@ -39,25 +35,27 @@ let users = [
         </p>
       </div>
     </div>
-    <div class='swiperuser'>
-      <div class='swiper-wrapper flex justify-start'>
-        <!-- Slides -->
+    <div class=''>
+      <div class='swiperuser'>
+        <div class='swiper-wrapper flex justify-start'>
+          <!-- Slides -->
 
-        {
-          users.map((user) => (
-            <div class='swiper-slide w-fit'>
-              <a href={`/profiles/${user}`}>
-                <div class='mr-2'>
-                  <button class='inline-flex flex-nowrap items-center px-3 py-2 justify-center text-xs whitespace-nowrap font-bold text-center text-hlcolor no-underline align-middle transition-all duration-300 ease-in-out bg-transparent border-2 border-hlcolor border-solid rounded-full cursor-pointer select-none hover:text-mtLight hover:border-mtLight focus:shadow-xs focus:no-underline'>
-                    {user}
-                  </button>
-                </div>
-              </a>
-            </div>
-          ))
-        }
+          {
+            users.map((user) => (
+              <div class='swiper-slide w-fit'>
+                <a href={`/profiles/${user}`}>
+                  <div class='mr-2'>
+                    <button class='inline-flex flex-nowrap items-center px-3 py-2 justify-center text-xs whitespace-nowrap font-bold text-center text-hlcolor no-underline align-middle transition-all duration-300 ease-in-out bg-transparent border-2 border-hlcolor border-solid rounded-full cursor-pointer select-none hover:text-mtLight hover:border-mtLight focus:shadow-xs focus:no-underline'>
+                      {user}
+                    </button>
+                  </div>
+                </a>
+              </div>
+            ))
+          }
 
-        <!-- If we need pagination -->
+          <!-- If we need pagination -->
+        </div>
       </div>
     </div>
   </div>
@@ -67,15 +65,9 @@ let users = [
     const swiper = new Swiper('.swiperuser', {
       slidesPerView: 'auto',
       grabCursor: true,
-      speed: 10000,
       spaceBetween: 5,
-      freeMode: true,
       loop: true,
       centeredSlides: true,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-      },
     });
   </script>
 
