@@ -1,34 +1,68 @@
 ---
 import videos from '../scripts/video.js';
-const videoId = videos.map((object) => object.video_id);
+const videoId = videos.map((object) => ({
+  video_id: object.video_id,
+  title: object.title,
+}));
 var firstTen = videoId.slice(0, 20);
 
+
+const random = videos.map((object) => ({
+  video_id: object.video_id,
+  title: object.title,
+}));
+
+var randomVideos = random.sort(()=>Math.random() - 0.5);
+
+
+
 import hipVideos from '../scripts/hipVideosCall.js';
-const hipvideoId = hipVideos.map((object) => object.video_id);
+const hipvideoId = hipVideos.map((object) => ({
+  video_id: object.video_id,
+  title: object.title,
+}));
 
 import houseVideos from '../scripts/houseVideosCall.js';
-const housevideoId = houseVideos.map((object) => object.video_id);
+const housevideoId = houseVideos.map((object) => ({
+  video_id: object.video_id,
+  title: object.title,
+}));
 
 import dnbVideos from '../scripts/dnbVideosCall.js';
-const dnbvideoId = dnbVideos.map((object) => object.video_id);
+const dnbvideoId = dnbVideos.map((object) => ({
+  video_id: object.video_id,
+  title: object.title,
+}));
 
 import gemsVideos from '../scripts/gemsVideosCall.js';
-const gemsvideoId = gemsVideos.map((object) => object.video_id);
+const gemsvideoId = gemsVideos.map((object) => ({
+  video_id: object.video_id,
+  title: object.title,
+}));
 
 import turnVideos from '../scripts/turnVideosCall.js';
-const turnvideoId = turnVideos.map((object) => object.video_id);
+const turnvideoId = turnVideos.map((object) => ({
+  video_id: object.video_id,
+  title: object.title,
+}));
 
 import reggaVideos from '../scripts/reggaVideosCall.js';
-const reggavideoId = reggaVideos.map((object) => object.video_id);
+const reggavideoId = reggaVideos.map((object) => ({
+  video_id: object.video_id,
+  title: object.title,
+}));
 
 import beatVideos from '../scripts/beatVideosCall.js';
-const beatvideoId = beatVideos.map((object) => object.video_id);
+const beatvideoId = beatVideos.map((object) => ({
+  video_id: object.video_id,
+  title: object.title,
+}));
 ---
 
 <div
   class='fixed z-50 inset-x-0 bottom-0 p-4 bg-bnav shadow-[0px_-20px_70px_4px_rgba(0,0,0,0.26)]'
 >
-  <div class='flex items-center justify-between md:max-w-xs mx-auto'>
+  <div class='flex items-center justify-between space-x-3 md:max-w-lg mx-auto'>
     <img
       src=''
       class='aspect-[4/3] h-12'
@@ -36,7 +70,13 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
       id='video-thumbnail'
       style='display:none'
     />
-    <div class='flex space-x-4'>
+    <h3
+      class='text-xs leading-snug md:text-sm lg:font-medium text-mt line-clamp-2'
+      id='song-title'
+    >
+      song title
+    </h3>
+    <div class='flex space-x-2'>
       <button class='button rounded-full' id='back-button'
         ><svg
           xmlns='http://www.w3.org/2000/svg'
@@ -44,7 +84,7 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
           viewBox='0 0 24 24'
           stroke-width='1.5'
           stroke='currentColor'
-          class='w-6 h-6'
+          class='w-5 h-5'
         >
           <path
             stroke-linecap='round'
@@ -59,7 +99,7 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 24 24'
           fill='currentColor'
-          class='w-6 h-6'
+          class='w-5 h-5'
         >
           <path
             fill-rule='evenodd'
@@ -72,7 +112,7 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 24 24'
           fill='currentColor'
-          class='w-6 h-6'
+          class='w-5 h-5'
         >
           <path
             fill-rule='evenodd'
@@ -88,7 +128,7 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
           viewBox='0 0 24 24'
           stroke-width='1.5'
           stroke='currentColor'
-          class='w-6 h-6'
+          class='w-5 h-5'
         >
           <path
             stroke-linecap='round'
@@ -101,15 +141,16 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
   </div>
 </div>
 
-<div id='myDiv' data-myVariable={videoId}></div>
-<div id='myDivone' data-myVariable={firstTen}></div>
-<div id='myDivtwo' data-myVariable={hipvideoId}></div>
-<div id='myDivthree' data-myVariable={housevideoId}></div>
-<div id='myDivfive' data-myVariable={dnbvideoId}></div>
-<div id='myDivsix' data-myVariable={gemsvideoId}></div>
-<div id='myDivseven' data-myVariable={reggavideoId}></div>
-<div id='myDiveight' data-myVariable={turnvideoId}></div>
-<div id='myDivnine' data-myVariable={beatvideoId}></div>
+<div id='myDiv' data-myVariable={JSON.stringify(videoId)}></div>
+<div id='myDivone' data-myVariable={JSON.stringify(firstTen)}></div>
+<div id='myDivtwo' data-myVariable={JSON.stringify(hipvideoId)}></div>
+<div id='myDivthree' data-myVariable={JSON.stringify(housevideoId)}></div>
+<div id='myDivfive' data-myVariable={JSON.stringify(dnbvideoId)}></div>
+<div id='myDivsix' data-myVariable={JSON.stringify(gemsvideoId)}></div>
+<div id='myDivseven' data-myVariable={JSON.stringify(reggavideoId)}></div>
+<div id='myDiveight' data-myVariable={JSON.stringify(turnvideoId)}></div>
+<div id='myDivnine' data-myVariable={JSON.stringify(beatvideoId)}></div>
+<div id='myDivten' data-myVariable={JSON.stringify(randomVideos)}></div>
 
 <script is:inline>
   var tag = document.createElement('script');
@@ -118,19 +159,21 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   var data = document.getElementById('myDiv').getAttribute('data-myVariable');
-  const dataArray = data.split(',');
-  const dataJSON = JSON.stringify(dataArray);
-
-  var videoId = JSON.parse(dataJSON);
+  const songTitle = document.getElementById('song-title');
+  // Convert string back to array of objects
+  var parsedArray = JSON.parse(data);
+  var videoId = parsedArray.map((obj) => obj.video_id);
+  var videoTitle = parsedArray.map((obj) => obj.title);
+  songTitle.textContent = videoTitle;
 
   function changeVideoId(elementId) {
     var data = document
       .getElementById(elementId)
       .getAttribute('data-myVariable');
-    const dataArray = data.split(',');
-    const dataJSON = JSON.stringify(dataArray);
-
-    videoId = JSON.parse(dataJSON);
+    var parsedArray = JSON.parse(data);
+    videoId = parsedArray.map((obj) => obj.video_id);
+    videoTitle = parsedArray.map((obj) => obj.title);
+    songTitle.textContent = videoTitle;
 
     // Reload the player with the new video ID
     currentVideoId = 0;
@@ -158,8 +201,10 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
       },
     });
   }
+
   function onPlayerReady(event) {
     event.target.loadVideoById(videoId[currentVideoId]);
+    songTitle.textContent = videoTitle[currentVideoId];
 
     const thumbnailImage = document.getElementById('video-thumbnail');
     thumbnailImage.style.display = 'block';
@@ -189,6 +234,7 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
         currentVideoId = 0;
       }
       player.loadVideoById(videoId[currentVideoId]);
+      songTitle.textContent = videoTitle[currentVideoId];
       thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
     });
 
@@ -198,6 +244,7 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
         currentVideoId = videoId.length - 1;
       }
       player.loadVideoById(videoId[currentVideoId]);
+      songTitle.textContent = videoTitle[currentVideoId];
       thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
     });
   }
@@ -209,9 +256,11 @@ const beatvideoId = beatVideos.map((object) => object.video_id);
       currentVideoId++;
       if (currentVideoId < videoId.length) {
         player.loadVideoById(videoId[currentVideoId]);
+        songTitle.textContent = videoTitle[currentVideoId];
       } else {
         currentVideoId = 0;
         event.target.loadVideoById(videoId[currentVideoId]);
+        songTitle.textContent = videoTitle[currentVideoId];
       }
     }
 
