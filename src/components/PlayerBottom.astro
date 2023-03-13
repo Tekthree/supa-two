@@ -7,15 +7,12 @@ const videoId = videos.map((object) => ({
 }));
 var firstTen = videoId.slice(0, 20);
 
-
 const random = videos.map((object) => ({
   video_id: object.video_id,
   title: object.title,
 }));
 
-var randomVideos = random.sort(()=>Math.random() - 0.5);
-
-
+var randomVideos = random.sort(() => Math.random() - 0.5);
 
 import hipVideos from '../scripts/hipVideosCall.js';
 const hipvideoId = hipVideos.map((object) => ({
@@ -163,26 +160,28 @@ const beatvideoId = beatVideos.map((object) => ({
   const songTitle = document.getElementById('song-title');
   // Convert string back to array of objects
   var parsedArray = JSON.parse(data);
+  var currentVideo = parsedArray[0];
   var videoId = parsedArray.map((obj) => obj.video_id);
   var videoTitle = parsedArray.map((obj) => obj.title);
-  songTitle.textContent = videoTitle;
+  songTitle.textContent = currentVideo.title;
 
   function changeVideoId(elementId) {
     var data = document
       .getElementById(elementId)
       .getAttribute('data-myVariable');
     var parsedArray = JSON.parse(data);
+    currentVideo = parsedArray[0];
     videoId = parsedArray.map((obj) => obj.video_id);
     videoTitle = parsedArray.map((obj) => obj.title);
-    songTitle.textContent = videoTitle;
+    songTitle.textContent = currentVideo.title;
 
     // Reload the player with the new video ID
     currentVideoId = 0;
-    player.loadVideoById(videoId[currentVideoId]);
+    player.loadVideoById(currentVideo.video_id);
 
     // Update the thumbnail image
     const thumbnailImage = document.getElementById('video-thumbnail');
-    thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
+    thumbnailImage.src = `https://img.youtube.com/vi/${currentVideo.video_id}/default.jpg`;
   }
 
   var player;
@@ -204,14 +203,14 @@ const beatvideoId = beatVideos.map((object) => ({
   }
 
   function onPlayerReady(event) {
-    event.target.loadVideoById(videoId[currentVideoId]);
-    songTitle.textContent = videoTitle[currentVideoId];
+    event.target.loadVideoById(currentVideo.video_id);
+    songTitle.textContent = currentVideo.title;
 
     const thumbnailImage = document.getElementById('video-thumbnail');
     thumbnailImage.style.display = 'block';
 
     // Set the src attribute of the img tag to the URL of the thumbnail for the current video ID
-    thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
+    thumbnailImage.src = `https://img.youtube.com/vi/${currentVideo.video_id}/default.jpg`;
 
     // bind events
     var playButton = document.getElementById('play-btn');
@@ -234,9 +233,10 @@ const beatvideoId = beatVideos.map((object) => ({
       if (currentVideoId >= videoId.length) {
         currentVideoId = 0;
       }
-      player.loadVideoById(videoId[currentVideoId]);
-      songTitle.textContent = videoTitle[currentVideoId];
-      thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
+      currentVideo = parsedArray[currentVideoId];
+      player.loadVideoById(currentVideo.video_id);
+      songTitle.textContent = currentVideo.title;
+      thumbnailImage.src = `https://img.youtube.com/vi/${currentVideo.video_id}/default.jpg`;
     });
 
     backButton.addEventListener('click', function () {
@@ -244,9 +244,10 @@ const beatvideoId = beatVideos.map((object) => ({
       if (currentVideoId < 0) {
         currentVideoId = videoId.length - 1;
       }
-      player.loadVideoById(videoId[currentVideoId]);
-      songTitle.textContent = videoTitle[currentVideoId];
-      thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
+      currentVideo = parsedArray[currentVideoId];
+      player.loadVideoById(currentVideo.video_id);
+      songTitle.textContent = currentVideo.title;
+      thumbnailImage.src = `https://img.youtube.com/vi/${currentVideo.video_id}/default.jpg`;
     });
   }
 
@@ -258,10 +259,12 @@ const beatvideoId = beatVideos.map((object) => ({
       if (currentVideoId < videoId.length) {
         player.loadVideoById(videoId[currentVideoId]);
         songTitle.textContent = videoTitle[currentVideoId];
+        thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
       } else {
         currentVideoId = 0;
         event.target.loadVideoById(videoId[currentVideoId]);
         songTitle.textContent = videoTitle[currentVideoId];
+        thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
       }
     }
 
@@ -278,6 +281,13 @@ const beatvideoId = beatVideos.map((object) => ({
 
       pauseButton.style.display = 'none';
       playButton.style.display = 'block';
+    } else if (event.data == YT.PlayerState.CUED) {
+      // set the initial video title and thumbnail
+      songTitle.textContent = videoTitle[currentVideoId];
+      thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
+    } else if (event.data == YT.PlayerState.PLAYBACK_QUALITY_CHANGE) {
+      // update the thumbnail image when the playback quality changes
+      thumbnailImage.src = `https://img.youtube.com/vi/${videoId[currentVideoId]}/default.jpg`;
     }
   }
 </script>
