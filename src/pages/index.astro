@@ -7,6 +7,7 @@ import SwiperMain from '../components/SwiperMain.astro';
 import HipHop from '../components/HipHop.astro';
 import House from '../components/House.astro';
 import Dnb from '../components/Dnb.astro';
+import UserTags from '../components/UserTags.astro';
 
 var first40 = uniqueVideos.slice(0, 40);
 ---
@@ -17,18 +18,18 @@ var first40 = uniqueVideos.slice(0, 40);
       <!-- Content goes here -->
 
       <div class=''>
-        <div
-          class='mx-auto  py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'
-        >
+        <div class='mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'>
           <h2 class='sr-only'>Products</h2>
 
           <div class=''>
             <SwiperMain />
           </div>
 
+          <UserTags />
+
           <HipHop />
           <House />
-          <Dnb/>
+          <Dnb />
 
           <div class='pt-28'>
             <div class='h-full flex items-center'>
@@ -49,15 +50,15 @@ var first40 = uniqueVideos.slice(0, 40);
                 </svg>
               </button>
               <div>
-              <h1
-                class='text-lg md:text-2xl text-mt font-bold tracking-tight sm:text-xl'
-              >
-                ENDLESS ZOO PLAYLIST
-              </h1>
-              <p class='hidden sm:block mr-4 text-mtLight'>
-                Get into all the cuts
-              </p>
-            </div>
+                <h1
+                  class='text-lg md:text-2xl text-mt font-bold tracking-tight sm:text-xl'
+                >
+                  ENDLESS ZOO PLAYLIST
+                </h1>
+                <p class='hidden sm:block mr-4 text-mtLight'>
+                  Get into all the cuts
+                </p>
+              </div>
             </div>
             <div
               class='pt-8 grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-6'
