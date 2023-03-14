@@ -1,6 +1,7 @@
 ---
+import Layout from '../../layouts/Layout.astro';
 import uniqueVideos from '../../scripts/video.js';
-import TopNav from '../../components/TopNav.astro';
+
 import Card from '../../components/Card.astro';
 import PlayerBottom from '../../components/PlayerBottom.astro';
 import profileImage from '/jam.jpg';
@@ -26,12 +27,11 @@ const filteredVideos = uniqueVideos.filter(
   (video) => video.username === username
 );
 
-const user = JSON.stringify(username);
+const numVideos = filteredVideos.length;
 ---
 
-<>
-  <TopNav />
-  <div class='flex h-[100vh] bg-mcBg pb-20'>
+<Layout title={username}>
+  <div class='flex bg-mcBg pb-40'>
     <div class='flex min-w-0 flex-1 flex-col overflow-hidden'>
       <div class='relative z-0 flex flex-1 overflow-hidden'>
         <main
@@ -74,26 +74,27 @@ const user = JSON.stringify(username);
                       <h1 class='truncate text-2xl font-bold text-mtLight'>
                         {username}
                       </h1>
+                      <h3 class='text-mt'>Tracks Dropped: {numVideos}</h3>
                     </div>
                     <div
                       class='justify-stretch mt-6 flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4'
                     >
-                      <!-- <button
-                          class='button rounded-full'
-                          id='playbtnthree'
-                          onclick='changeVideoId(`Robert Brownie Jr.`)'
-                          ><svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            viewBox='0 0 24 24'
-                            fill='currentColor'
-                            class='w-6 h-6'
-                          >
-                            <path
-                              fill-rule='evenodd'
-                              d='M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z'
-                              clip-rule='evenodd'></path>
-                          </svg>
-                        </button> -->
+                      <button
+                        class='button rounded-full'
+                        id='playbtnthree'
+                        onclick='changeVideoId(`Robert Brownie Jr.`)'
+                        ><svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='currentColor'
+                          class='w-6 h-6'
+                        >
+                          <path
+                            fill-rule='evenodd'
+                            d='M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z'
+                            clip-rule='evenodd'></path>
+                        </svg>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -101,6 +102,7 @@ const user = JSON.stringify(username);
                   <h1 class='truncate text-2xl font-bold text-mtLight'>
                     {username}
                   </h1>
+                  <h3 class='text-mt'>Tracks Dropped: {numVideos}</h3>
                 </div>
               </div>
             </div>
@@ -123,6 +125,4 @@ const user = JSON.stringify(username);
       </div>
     </div>
   </div>
-
-  <PlayerBottom />
-</>
+</Layout>

@@ -3,6 +3,21 @@
 ::-webkit-scrollbar {
   width: 0px;
 }
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #212330;
+
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4d377a;
+}
+
+body::-webkit-scrollbar-track {
+  background: #161720; /* color of the tracking area */
+}
 
 body {
   -webkit-font-smoothing: antialiased;
