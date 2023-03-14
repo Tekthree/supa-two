@@ -21,7 +21,7 @@ export function getStaticPaths() {
   ];
 }
 
-const { username } = Astro.params;
+var { username } = Astro.params;
 
 const filteredVideos = uniqueVideos.filter(
   (video) => video.username === username
@@ -49,7 +49,7 @@ const numVideos = filteredVideos.length;
                   alt=''
                 />
               </div>
-              <div class='mx-auto max-w-5xl px-4 sm:px-6 lg:px-8'>
+              <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
                 <div class='-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5'>
                   <div class='flex'>
                     <img
@@ -79,10 +79,7 @@ const numVideos = filteredVideos.length;
                     <div
                       class='justify-stretch mt-6 flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4'
                     >
-                      <button
-                        class='button rounded-full'
-                        id='playbtnthree'
-                        onclick='changeVideoId(`Robert Brownie Jr.`)'
+                      <button class='button rounded-full' id='playbtnUser'
                         ><svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -107,6 +104,18 @@ const numVideos = filteredVideos.length;
               </div>
             </div>
           </article>
+          <div class='flex justify-center mt-10'>
+            <div
+              class="max-w-2xl w-full mx-4 p-2 bg-[url('/images/wood.jpg')] bg-no-repeat bg-cover rounded-lg"
+            >
+              <div
+                id='player'
+                class='w-full border border-[#2c2844] rounded-2xl'
+              >
+              </div>
+            </div>
+          </div>
+
           <div
             class='mx-auto px-4 lg:max-w-7xl pt-8 grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-6'
           >
@@ -126,3 +135,22 @@ const numVideos = filteredVideos.length;
     </div>
   </div>
 </Layout>
+
+<div id='username' data-myVariable='forprofile'></div>
+
+<script is:inline>
+  var data = document
+    .getElementById('username')
+    .getAttribute('data-myVariable');
+
+  const playbtn = document.getElementById('playbtnUser');
+
+  window.onload = (e) => {
+    console.log('loaded!');
+    changeVideoId(data);
+  };
+
+  playbtn.addEventListener('click', function () {
+    changeVideoId(data);
+  });
+</script>

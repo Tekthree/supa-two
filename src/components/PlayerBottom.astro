@@ -1,15 +1,15 @@
 ---
 import videos from '../scripts/video.js';
-import user from '../scripts/video.js'
+import user from '../scripts/video.js';
 
-const easeVideos = user.filter((video) => video.username === 'Robert Brownie Jr.');
+const easeVideos = user.filter(
+  (video) => video.username === Astro.params.username
+);
 
-
-const ease = easeVideos.map((object) => ({
+const profileVids = easeVideos.map((object) => ({
   video_id: object.video_id,
   title: object.title,
 }));
-
 
 const videoId = videos.map((object) => ({
   video_id: object.video_id,
@@ -17,15 +17,12 @@ const videoId = videos.map((object) => ({
 }));
 var firstTen = videoId.slice(0, 20);
 
-
 const random = videos.map((object) => ({
   video_id: object.video_id,
   title: object.title,
 }));
 
-var randomVideos = random.sort(()=>Math.random() - 0.5);
-
-
+var randomVideos = random.sort(() => Math.random() - 0.5);
 
 import hipVideos from '../scripts/hipVideosCall.js';
 const hipvideoId = hipVideos.map((object) => ({
@@ -68,8 +65,6 @@ const beatvideoId = beatVideos.map((object) => ({
   video_id: object.video_id,
   title: object.title,
 }));
-
-
 ---
 
 <div
@@ -164,8 +159,7 @@ const beatvideoId = beatVideos.map((object) => ({
 <div id='myDiveight' data-myVariable={JSON.stringify(turnvideoId)}></div>
 <div id='myDivnine' data-myVariable={JSON.stringify(beatvideoId)}></div>
 <div id='myDivten' data-myVariable={JSON.stringify(randomVideos)}></div>
-<div id='Robert Brownie Jr.' data-myVariable={JSON.stringify(ease)}></div>
-
+<div id='forprofile' data-myVariable={JSON.stringify(profileVids)}></div>
 
 <script is:inline>
   var tag = document.createElement('script');
@@ -182,7 +176,6 @@ const beatvideoId = beatVideos.map((object) => ({
   songTitle.textContent = videoTitle;
 
   function changeVideoId(elementId) {
-    console.log(elementId)
     var data = document
       .getElementById(elementId)
       .getAttribute('data-myVariable');
