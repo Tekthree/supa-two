@@ -48,3 +48,4 @@ Finally, the code defines the main layout of the website using the Layout compon
 
 - Fixed issues with supabase
 - Fixed Youtube API
+

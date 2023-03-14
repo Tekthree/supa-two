@@ -20,8 +20,16 @@ let genre = 'test';
 </style>
 
 <!-- Slider main container -->
+<div class='h-full flex items-center mt-10 mb-4'>
+  <div>
+    <h1 class='text-lg md:text-2xl text-mt font-bold tracking-tight sm:text-xl'>
+      JAM BY GENRE
+    </h1>
+    <p class='hidden sm:block mr-4 text-mtLight'>Find your flow</p>
+  </div>
+</div>
 
-<div class='overflow-hidden sm:max-w-3xl mx-auto max-w-sm'>
+<div class='overflow-hidden mx-auto'>
   <div class=''>
     <div class='swipertwo'>
       <div class='swiper-wrapper flex lg:justify-center justify-start'>
@@ -118,15 +126,9 @@ let genre = 'test';
     const swiper = new Swiper('.swipertwo', {
       slidesPerView: 'auto',
       grabCursor: true,
-      speed: 10000,
       spaceBetween: 5,
-      freeMode: true,
       loop: true,
       centeredSlides: true,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-      },
     });
   </script>
 
