@@ -11,6 +11,8 @@ const profileVids = easeVideos.map((object) => ({
   title: object.title,
 }));
 
+console.log(profileVids)
+
 const videoId = videos.map((object) => ({
   video_id: object.video_id,
   title: object.title,
@@ -173,7 +175,7 @@ const beatvideoId = beatVideos.map((object) => ({
   var parsedArray = JSON.parse(data);
   var videoId = parsedArray.map((obj) => obj.video_id);
   var videoTitle = parsedArray.map((obj) => obj.title);
-  songTitle.textContent = videoTitle;
+  songTitle.textContent = videoTitle[0];
 
   function changeVideoId(elementId) {
     var data = document
@@ -182,7 +184,7 @@ const beatvideoId = beatVideos.map((object) => ({
     var parsedArray = JSON.parse(data);
     videoId = parsedArray.map((obj) => obj.video_id);
     videoTitle = parsedArray.map((obj) => obj.title);
-    songTitle.textContent = videoTitle;
+    songTitle.textContent = videoTitle[0];
 
     // Reload the player with the new video ID
     currentVideoId = 0;
