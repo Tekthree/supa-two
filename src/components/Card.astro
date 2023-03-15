@@ -6,8 +6,6 @@ import athree from '/images/a3.png';
 import afour from '/images/a4.png';
 import afive from '/images/a5.png';
 
-
-
 export interface Props {
   url?: string;
   title?: string;
@@ -18,7 +16,7 @@ export interface Props {
 const { url, title, username, channel_id } = Astro.props as Props;
 ---
 
-<div class='back bg-cardColor group rounded-lg flex flex-col '>
+<div class='back bg-cardColor group rounded-lg flex flex-col'>
   <div
     class='aspect-w-1 aspect-h-1 overflow-hidden rounded-t-lg bg-gray xl:aspect-w-7 xl:aspect-h-8'
   >
@@ -28,31 +26,31 @@ const { url, title, username, channel_id } = Astro.props as Props;
     />
   </div>
   <div class='px-3 mt-3 mb-5 h-[60px]'>
-    <h3 class='text-xs leading-snug md:text-sm lg:font-medium text-mt line-clamp-2'>
+    <h3
+      class='text-xs leading-snug md:text-sm lg:font-medium text-mt line-clamp-2'
+    >
       {title}
     </h3>
-    <a href="">
+    <a href=''>
       <div class='flex items-center mt-2 mb-2'>
-      <img
-        class='rounded-full opacity-70 hover:opacity-80 h-4'
-        src={username === 'DunnD'
-          ? afive
-          : username === 'Tek Jones'
-          ? athree
-          : username === 'JohnGlist'
-          ? atwo
-          : username === 'Nations'
-          ? afour
-          : username === 'ALF of Hip Hop Slam'
-          ? atwo
-          : profileImage}
-        
-    
-      />
-      <p class='text-xs ml-2 font-medium text-mt opacity-50'>
-        {username}
-      </p>
-    </div>
+        <img
+          class='rounded-full opacity-70 hover:opacity-80 h-4'
+          src={username === 'DunnD'
+            ? afive
+            : username === 'Tek Jones'
+            ? athree
+            : username === 'JohnGlist'
+            ? atwo
+            : username === 'Nations'
+            ? afour
+            : username === 'ALF of Hip Hop Slam'
+            ? atwo
+            : profileImage}
+        />
+        <p class='text-xs ml-2 font-medium text-mt opacity-50'>
+          {username}
+        </p>
+      </div>
     </a>
   </div>
   <div class='mt-auto p-3 border-t-[1px] flex justify-between'>

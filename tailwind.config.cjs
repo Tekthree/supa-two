@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      mcBg: '#161720',
+      mcBg: '#13141c',
       cardColor: '#212330',
       mt: '#898a91',
       mtLight: '#adaeb7',
