@@ -10,6 +10,7 @@ module.exports = {
       mtLight: '#adaeb7',
       hlcolor: '#4d377a',
       bnav: '#13141c',
+      heart: '#d93025',
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],
