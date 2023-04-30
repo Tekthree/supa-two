@@ -2,23 +2,110 @@
 import logo from '/crew.png';
 ---
 
-<div class='mx-auto max-w-2xl text-center'>
-  <div class='mx-auto max-w-7xl pt-10 px-4 sm:px-6 lg:px-8'>
-    <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
+<script>
+  const animatedTexts = document.getElementById('animated-texts');
+  const pTags = animatedTexts.querySelectorAll('p');
 
-    <!-- Content goes here -->
+  let mouseX = 0;
+  let mouseY = 0;
+
+  function updatePElements() {
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    pTags.forEach((p, index) => {
+      const multiplier = index % 2 === 0 ? 1 : -1;
+      const translateX =
+        ((mouseX / viewportWidth) * 20 + (mouseY / viewportHeight) * 20) *
+        multiplier;
+
+      p.style.transform = `translateX(${translateX}px)`;
+    });
+
+    requestAnimationFrame(updatePElements);
+  }
+
+  document.addEventListener('mousemove', (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+  });
+
+  requestAnimationFrame(updatePElements);
+</script>
+
+<div
+  class='relative md:overflow-hidden max-w-4xl md:mx-auto mx-4 rounded-lg mt-20'
+>
+  <div
+    class='bg-[#1e1f2c] rounded-lg md:flex justify-center items-center py-3 px-5 gap-6 max-w-4xl md:mx-auto mx-4'
+  >
+    <img
+      src={logo}
+      alt=''
+      class='md:w-70 w-60 z-10 mx-auto md:mt-0 -mt-20 md:mb-0 mb-3'
+    />
+    <div class='max-w-md mx-auto'>
+      <p
+        class='text-mtLight uppercase subpixel-antialiased text-xs md:text-[14px] relative text-center md:text-left z-10 font-[mortendlight] tracking-widest'
+      >
+        Welcome to <span class='font-[mortendextrabold]'> Zoo-tube</span> 💜, a highly
+        curated collection of
+      </p>
+      <p
+        class='text-mtLight uppercase subpixel-antialiased text-xs md:text-[14px] font-[mortendextrabold] text-center md:text-left tracking-widest md:mb-0 mb-4'
+      >
+        timeless sounds
+      </p>
+    </div>
   </div>
-  <img src={logo} alt='' class='mx-auto w-[50%]' />
-  <p
-    class='mx-auto mt-6 max-w-xl px-10 leading-1 text-sm md:text-md text-mtLight'
+
+  <div
+    class='absolute bottom-0 left-[-400px] transform-gpu rotate-[-45deg] smooth-transition rounded-lg md:block hidden'
+    id='animated-texts'
   >
-    Welcome to Zoo-Tube 💜, a highly curated collection of
-  </p>
-  <span
-    class='uppercase font-bold text-sm md:text-md mx-auto max-w-xl px-10 leading-1 text-mtLight'
-    >timeless sounds</span
-  >
+    <p
+      class='text-[#2b2b39] text-3xl font-[mortendextrabold] leading-none tracking-wide'
+    >
+      zoo-tube &gt; zoo-tube &gt; zoo-tube &gt; zoo-tube
+    </p>
+    <p
+      class='text-[#2b2b39] text-3xl font-[mortendextrabold] leading-none tracking-wide'
+    >
+      zoo-tube &gt; zoo-tube &gt; zoo-tube &gt; zoo-tube
+    </p>
+    <p
+      class='text-[#2b2b39] text-3xl font-[mortendextrabold] leading-none tracking-wide'
+    >
+      zoo-tube &gt; zoo-tube &gt; zoo-tube &gt; zoo-tube
+    </p>
+    <p
+      class='text-[#2b2b39] text-3xl font-[mortendextrabold] leading-none tracking-wide'
+    >
+      zoo-tube &gt; zoo-tube &gt; zoo-tube &gt; zoo-tube
+    </p>
+    <p
+      class='text-[#2b2b39] text-3xl font-[mortendextrabold] leading-none tracking-wide'
+    >
+      zoo-tube &gt; zoo-tube &gt; zoo-tube &gt; zoo-tube
+    </p>
+    <p
+      class='text-[#2b2b39] text-3xl font-[mortendextrabold] leading-none tracking-wide'
+    >
+      zoo-tube &gt; zoo-tube &gt; zoo-tube &gt; zoo-tube
+    </p>
+    <p
+      class='text-[#2b2b39] text-3xl font-[mortendextrabold] leading-none tracking-wide'
+    >
+      zoo-tube &gt; zoo-tube &gt; zoo-tube &gt; zoo-tube
+    </p>
+    <p
+      class='text-[#2b2b39] text-3xl font-[mortendextrabold] leading-none tracking-wide'
+    >
+      zoo-tube &gt; zoo-tube &gt; zoo-tube &gt; zoo-tube
+    </p>
+  </div>
 </div>
+
 <div
   class='absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]'
 >
@@ -46,3 +133,9 @@ import logo from '/crew.png';
     </defs>
   </svg>
 </div>
+
+<style>
+  .smooth-transition {
+    transition: transform 0.3s ease;
+  }
+</style>
