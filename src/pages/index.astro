@@ -11,7 +11,7 @@ import UserTags from '../components/UserTags.astro';
 import Header from '../components/Header.astro';
 import BottomNav from '../components/BottomNav.astro';
 import Genretags from '../components/Genretags.astro';
-import { useState } from '@astrojs/react';
+import { Analytics } from '@vercel/analytics';
 const first40 = []; // Your list of videos
 const itemsPerPage = 10;
 
@@ -24,9 +24,6 @@ function paginate(items, pageNumber) {
 }
 
 var firstfourty = uniqueVideos.slice(0, 40);
-
-
-
 ---
 
 <Layout title='Okizoo Homepage'>
@@ -78,7 +75,6 @@ var firstfourty = uniqueVideos.slice(0, 40);
           <UserTags />
           <Genretags />
 
-
           <HipHop />
           <House />
           <Dnb />
@@ -129,9 +125,6 @@ var firstfourty = uniqueVideos.slice(0, 40);
           </div>
         </div>
       </div>
-
-      
     </div>
   </main>
 </Layout>
-
