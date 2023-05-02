@@ -3,34 +3,55 @@ import logo from '/crew.png';
 ---
 
 <script>
-  const animatedTexts = document.getElementById('animated-texts');
-  const pTags = animatedTexts.querySelectorAll('p');
+ const animatedTexts = document.getElementById('animated-texts');
+const pTags = animatedTexts.querySelectorAll('p');
 
-  let mouseX = 0;
-  let mouseY = 0;
+let mouseX = 0;
+let mouseY = 0;
+let animationSpeed = .2; // Adjust this value to control the scrolling speed
 
-  function updatePElements() {
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
+function updatePElements() {
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
 
-    pTags.forEach((p, index) => {
-      const multiplier = index % 2 === 0 ? 1 : -1;
-      const translateX =
-        ((mouseX / viewportWidth) * 20 + (mouseY / viewportHeight) * 20) *
-        multiplier;
+  pTags.forEach((p, index) => {
+    const multiplier = index % 2 === 0 ? 1 : -1;
+    const translateX =
+      ((mouseX / viewportWidth) * 20 + (mouseY / viewportHeight) * 20) *
+      multiplier;
 
-      p.style.transform = `translateX(${translateX}px)`;
-    });
+    const currentTransform = p.style.transform;
+    let currentTranslateX = 0;
 
-    requestAnimationFrame(updatePElements);
-  }
+    if (currentTransform) {
+      const match = currentTransform.match(/translateX\((\-?\d+(\.\d+)?)px\)/);
+      if (match && match[1]) {
+        currentTranslateX = parseFloat(match[1]);
+      }
+    }
 
-  document.addEventListener('mousemove', (event) => {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
+    const newTranslateX = currentTranslateX + animationSpeed * multiplier;
+    p.style.transform = `translateX(${newTranslateX}px)`;
+
+    // Check if the p tag is out of view, then reset its position
+    if (multiplier > 0 && p.getBoundingClientRect().right < 0) {
+      const maxWidth = Math.max(...Array.from(pTags).map(p => p.clientWidth));
+      p.style.transform = `translateX(${newTranslateX + maxWidth * 2}px)`;
+    } else if (multiplier < 0 && p.getBoundingClientRect().left > viewportWidth) {
+      const maxWidth = Math.max(...Array.from(pTags).map(p => p.clientWidth));
+      p.style.transform = `translateX(${newTranslateX - maxWidth * 2}px)`;
+    }
   });
 
   requestAnimationFrame(updatePElements);
+}
+
+document.addEventListener('mousemove', (event) => {
+  mouseX = event.clientX;
+  mouseY = event.clientY;
+});
+
+requestAnimationFrame(updatePElements);
 </script>
 
 <div
