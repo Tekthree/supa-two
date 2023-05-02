@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'mortendextra_bold_outline';
-  src: url('fonts/mortend_-_extrabold_outline-webfont.woff2') format('woff2'),
+  src: url('/fonts/mortend_-_extrabold_outline-webfont.woff2') format('woff2'),
     url('fonts/mortend_-_extrabold_outline-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -11,8 +11,8 @@
 
 @font-face {
   font-family: 'mortendlight';
-  src: url('fonts/mortend_-_light-webfont.woff2') format('woff2'),
-    url('fonts/mortend_-_light-webfont.woff') format('woff');
+  src: url('/fonts/mortend_-_light-webfont.woff2') format('woff2'),
+    url('/fonts/mortend_-_light-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -20,8 +20,8 @@
 
 @font-face {
   font-family: 'mortendextrabold';
-  src: url('fonts/mortend_-_extrabold-webfont.woff2') format('woff2'),
-    url('fonts/mortend_-_extrabold-webfont.woff') format('woff');
+  src: url('/fonts/mortend_-_extrabold-webfont.woff2') format('woff2'),
+    url('/fonts/mortend_-_extrabold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
