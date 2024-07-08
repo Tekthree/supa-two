@@ -1,9 +1,7 @@
 let uniqueVideos;
 
 try {
-  const response = await fetch(
-    'https://okizoo-backend.herokuapp.com/api/urls/allgems'
-  );
+  const response = await fetch('http://localhost:5000/api/urls/allgems');
   const { data } = await response.json();
   data.sort(function (a, b) {
     return new Date(b.message_timestamp) - new Date(a.message_timestamp);
