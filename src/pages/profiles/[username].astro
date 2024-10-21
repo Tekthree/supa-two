@@ -1,26 +1,35 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import uniqueVideos from '../../scripts/video.js';
+import { Image } from 'astro:assets';
+
 
 import Card from '../../components/Card.astro';
-import profileImage from '/jam.jpg';
-import atwo from '/images/a2.jpg';
-import athree from '/images/a3.png';
-import afour from '/images/a4.png';
-import afive from '/images/a5.png';
+import profileImage from './public/images/jam.jpg';
+import atwo from './public/images/a2.jpg';
+import athree from './public/images/a3.png';
+import afour from './public/images/a4.png';
+import afive from './public/images/a5.png';
+
+export const prerender = true;
 
 export function getStaticPaths() {
   return [
-    { params: { username: 'DunnD' } },
-    { params: { username: 'Tek Jones' } },
-    { params: { username: 'JohnGlist' } },
-    { params: { username: 'Nations' } },
-    { params: { username: 'ALF of Hip Hop Slam' } },
-    { params: { username: 'Robert Brownie Jr.' } },
+    { params: { username: 'dunnd' } },
+    { params: { username: 'tekjones' } },
+    { params: { username: 'johnglist' } },
+    { params: { username: 'ryunations' } },
+    { params: { username: 'alfofhiphopslam' } }, // Removed trailing space
+    { params: { username: 'robertbrowniejr.' } },
+    { params: { username: 'duragdibiase' } },
+    { params: { username: 'hecto0157' } },
+    { params: { username: 'precise' } },
+
   ];
 }
 
 var { username } = Astro.params;
+console.log(username);
 
 const filteredVideos = uniqueVideos.filter(
   (video) => video.username === username
@@ -51,19 +60,23 @@ const numVideos = filteredVideos.length;
               <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
                 <div class='-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5'>
                   <div class='flex'>
-                    <img
+                    <Image
                       class='h-24 w-24 rounded-full ring-4 ring-hlcolor sm:h-32 sm:w-32'
-                      src={username === 'DunnD'
+                      src={username === 'dunnd'
                         ? afive
-                        : username === 'Tek Jones'
+                        : username === 'tekjones'
                         ? athree
-                        : username === 'JohnGlist'
+                        : username === 'johnglist'
                         ? atwo
-                        : username === 'Nations'
+                        : username === 'ryunations'
                         ? afour
-                        : username === 'ALF of Hip Hop Slam'
+                        : username === 'alfofhiphopslam '
                         ? atwo
                         : profileImage}
+                        alt={`${username}'s profile image`}
+                        width={128}
+                        height={128}
+                        layout='responsive'
                     />
                   </div>
                   <div

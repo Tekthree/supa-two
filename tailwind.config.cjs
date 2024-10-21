@@ -2,9 +2,7 @@
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    fontFamily: {
-     
-    },
+    fontFamily: {},
     extend: {},
     colors: {
       mcBg: '#13141c',
@@ -16,5 +14,4 @@ module.exports = {
       heart: '#d93025',
     },
   },
-  plugins: [require('@tailwindcss/line-clamp')],
 };

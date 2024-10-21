@@ -3,7 +3,7 @@ const videos = [
     id: 5717,
     created_at: '2023-02-24 06:26:33.130898+00',
     title: "Nick Grant - '96 Bulls",
-    username: 'DunnD',
+    username: 'dunnd',
     url: 'https://www.youtube.com/watch?v=qRHCMshfne4&list=LL&index=1173',
     video_id: 'qRHCMshfne4',
     channel_id: 1049841438919246000,
@@ -16,8 +16,18 @@ const videos = [
 let uniqueVideos;
 
 try {
-  const response = await fetch('http://localhost:5000/api/urls/allmusic');
-  const { data } = await response.json();
+  const response = await fetch('http://localhost:8000/api/urls/allmusic');
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const jsonResponse = await response.json();
+  console.log('API Response:', jsonResponse); // Log the entire response to inspect its structure
+
+  const { data } = jsonResponse;
+  if (!data) {
+    throw new Error('Response does not contain data property');
+  }
+
   data.sort(function (a, b) {
     return new Date(b.message_timestamp) - new Date(a.message_timestamp);
   });

@@ -1,11 +1,12 @@
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
 
-import profileImage from '/jam.jpg';
-import atwo from '/images/a2.jpg';
-import athree from '/images/a3.png';
-import afour from '/images/a4.png';
-import afive from '/images/a5.png';
+import profileImage from './public/images/jam.jpg';
+import atwo from './public/images/a2.jpg';
+import athree from './public/images/a3.png';
+import afour from './public/images/a4.png';
+import afive from './public/images/a5.png';
+import { Image } from 'astro:assets';
 
 export interface Props {
   url?: string;
@@ -34,19 +35,23 @@ const { url, title, username, channel_id } = Astro.props as Props;
     </h3>
     <a href=''>
       <div class='flex items-center mt-2 mb-2'>
-        <img
+        <Image
           class='rounded-full opacity-70 hover:opacity-80 h-4'
-          src={username === 'DunnD'
+          src={username === 'dunnd'
             ? afive
-            : username === 'Tek Jones'
+            : username === 'tekjones'
             ? athree
-            : username === 'JohnGlist'
+            : username === 'johnglist'
             ? atwo
-            : username === 'Nations'
+            : username === 'ryunations'
             ? afour
-            : username === 'ALF of Hip Hop Slam'
+            : username === 'alfofhiphopslam '
             ? atwo
             : profileImage}
+          alt={`${username}'s profile image`}
+          width={16}
+          height={8}
+          layout='responsive'
         />
         <p class='text-xs ml-2 font-medium text-mt opacity-50'>
           {username}
