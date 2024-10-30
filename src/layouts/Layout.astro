@@ -2,6 +2,7 @@
 import TopNav from '../components/TopNav.astro';
 import PlayerBottom from '../components/PlayerBottom.astro';
 import '../styles/global.css';
+
 export interface Props {
   title: string;
 }
@@ -27,7 +28,10 @@ const { title } = Astro.props;
   <body class='bg-mcBg h-[100vh] pb-20'>
     <!-- This example requires Tailwind CSS v3.0+ -->
 
-    <slot />
+      <slot />
+
+
+    
     <PlayerBottom/>
    <script type="module" src="/main.js"></script>
   </body>

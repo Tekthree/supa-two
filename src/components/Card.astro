@@ -1,12 +1,12 @@
 ---
-import { YouTube } from '@astro-community/astro-embed-youtube';
-
-import profileImage from './public/images/jam.jpg';
-import atwo from './public/images/a2.jpg';
-import athree from './public/images/a3.png';
-import afour from './public/images/a4.png';
-import afive from './public/images/a5.png';
-import { Image } from 'astro:assets';
+// Card.astro
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import { Image } from "astro:assets";
+import profileImage from "./public/images/jam.jpg";
+import atwo from "./public/images/a2.jpg";
+import athree from "./public/images/a3.png";
+import afour from "./public/images/a4.png";
+import afive from "./public/images/a5.png";
 
 export interface Props {
   url?: string;
@@ -14,107 +14,110 @@ export interface Props {
   username?: string;
   channel_id?: number;
   heart_count?: number;
+  video_id?: string;
 }
 
-const { url, title, username, channel_id, heart_count } = Astro.props as Props;
+const { url, title, username, channel_id, heart_count, video_id } =
+  Astro.props as Props;
 ---
 
-<div class='back bg-cardColor group rounded-lg flex flex-col'>
+<div class="back bg-cardColor group rounded-lg flex flex-col">
   <div
-    class='aspect-w-1 aspect-h-1 overflow-hidden rounded-t-lg bg-gray xl:aspect-w-7 xl:aspect-h-8'
+    class="aspect-w-1 aspect-h-1 overflow-hidden rounded-t-lg bg-gray xl:aspect-w-7 xl:aspect-h-8"
   >
     <YouTube
-      class='w-full h-full object-cover object-center group-hover:opacity-75'
+      class="w-full h-full object-cover object-center group-hover:opacity-75"
       id={url}
     />
   </div>
-  <div class='px-3 mt-3 mb-5 h-[60px]'>
+  <div class="px-3 mt-3 mb-5 h-[60px]">
     <h3
-      class='text-xs leading-snug md:text-sm lg:font-medium text-mt line-clamp-2'
+      class="text-xs leading-snug md:text-sm lg:font-medium text-mt line-clamp-2"
     >
       {title}
     </h3>
-    <a href=''>
-      <div class='flex items-center mt-2 mb-2'>
+    <a href="">
+      <div class="flex items-center mt-2 mb-2">
         <Image
-          class='rounded-full opacity-70 hover:opacity-80 h-4'
-          src={username === 'dunnd'
+          class="rounded-full opacity-70 hover:opacity-80 h-4"
+          src={username === "dunnd"
             ? afive
-            : username === 'tekjones'
-            ? athree
-            : username === 'johnglist'
-            ? atwo
-            : username === 'ryunations'
-            ? afour
-            : username === 'alfofhiphopslam '
-            ? atwo
-            : profileImage}
+            : username === "tekjones"
+              ? athree
+              : username === "johnglist"
+                ? atwo
+                : username === "ryunations"
+                  ? afour
+                  : username === "alfofhiphopslam "
+                    ? atwo
+                    : profileImage}
           alt={`${username}'s profile image`}
           width={16}
           height={8}
-          layout='responsive'
+          layout="responsive"
         />
-        <p class='text-xs ml-2 font-medium text-mt opacity-50'>
+        <p class="text-xs ml-2 font-medium text-mt opacity-50">
           {username}
         </p>
       </div>
     </a>
   </div>
-  <div class='mt-auto p-3 border-t-[1px] flex justify-between'>
+  <div class="mt-auto p-3 border-t-[1px] flex justify-between">
     <p
-      class='text-mtLight opacity-80 font-semibold px-2 py-1 inline-block border-mtLight rounded-md text-xs'
+      class="text-mtLight opacity-80 font-semibold px-2 py-1 inline-block border-mtLight rounded-md text-xs"
     >
       {
         channel_id === 1057747211468943450
-          ? 'Gems'
+          ? "Gems"
           : channel_id === 1049841438919245925
-          ? 'Hip-Hop'
-          : channel_id === 1062329322477727764
-          ? 'Beat Suite'
-          : channel_id === 1062325851418525776
-          ? 'House'
-          : channel_id === 1062325992137424986
-          ? 'Drum n Bass'
-          : channel_id === 1062327975091126342
-          ? 'Turntablism'
-          : channel_id === 1071400000216641566
-          ? 'Ragga/Soundclash'
-          : ''
+            ? "Hip-Hop"
+            : channel_id === 1062329322477727764
+              ? "Beat Suite"
+              : channel_id === 1062325851418525776
+                ? "House"
+                : channel_id === 1062325992137424986
+                  ? "Drum n Bass"
+                  : channel_id === 1062327975091126342
+                    ? "Turntablism"
+                    : channel_id === 1071400000216641566
+                      ? "Ragga/Soundclash"
+                      : ""
       }
     </p>
-    <div class='flex items-center gap-x-2'>
+    <div class="flex items-center gap-x-2">
       <div class="flex items-center bg-[#282b3c] rounded-full px-1">
-        <button class='like-btn'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 24 24'
-          fill='currentColor'
-          class='w-[14px] h-[14px] md:w-[18px] md:h-[18px]'
+        <button
+          class="like-btn"
+          data-video-id={video_id}
+          data-heart-count={heart_count}
         >
-          <path
-            d='M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z'
-          ></path>
-        </svg>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-[14px] h-[14px] md:w-[18px] md:h-[18px]"
+          >
+            <path
+              d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"
+            ></path>
+          </svg>
+        </button>
 
-      <p class="text-mtLight opacity-80 font-semibold px-1">
-        {heart_count}
-      </p>
-
-
+        <p class="text-mtLight opacity-80 font-semibold px-1">
+          {heart_count}
+        </p>
       </div>
-      
 
       <svg
-        xmlns='http://www.w3.org/2000/svg'
-        viewBox='0 0 24 24'
-        fill='currentColor'
-        class='w-[14px] h-[14px] md:w-[18px] md:h-[18px] text-mtLight'
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="w-[14px] h-[14px] md:w-[18px] md:h-[18px] text-mtLight"
       >
         <path
-          fill-rule='evenodd'
-          d='M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z'
-          clip-rule='evenodd'></path>
+          fill-rule="evenodd"
+          d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
+          clip-rule="evenodd"></path>
       </svg>
     </div>
   </div>
@@ -127,19 +130,23 @@ const { url, title, username, channel_id, heart_count } = Astro.props as Props;
 
   .like-btn {
     color: #adaeb7;
+    transition: color 0.2s ease;
   }
   .like-btn.active {
     color: #d93025;
   }
+  .like-btn:hover {
+    transform: scale(1.1);
+  }
 </style>
 
 <script>
-  const likeBtns = document.querySelectorAll('.like-btn');
+  const likeBtns = document.querySelectorAll(".like-btn");
 
   for (let i = 0; i < likeBtns.length; i++) {
-    likeBtns[i].addEventListener('click', function () {
-      console.log('clicked');
-      this.classList.toggle('active');
+    likeBtns[i].addEventListener("click", function () {
+      console.log("clicked");
+      this.classList.toggle("active");
     });
   }
 </script>

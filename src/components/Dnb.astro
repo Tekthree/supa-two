@@ -1,6 +1,6 @@
 ---
-import Card from './Card.astro';
-import strippedVideo from '../scripts/dnbVideosCall';
+import Card from "./Card.astro";
+import strippedVideo from "../scripts/dnbVideosCall";
 
 const firstTen = strippedVideo.slice(0, 20);
 ---
@@ -14,77 +14,77 @@ const firstTen = strippedVideo.slice(0, 20);
 
 <!-- Slider main container -->
 
-<div class='overflow-hidden'>
-  <div class=''>
-    <div class='swiperseven'>
+<div class="overflow-hidden">
+  <div class="">
+    <div class="swiperseven">
       <!-- Additional required wrapper -->
-      <div class='max-w-7xl mb-8 mt-20'>
-        <div class='flex justify-between items-center'>
-          <div class='mr-3 flex justify-between items-center'>
+      <div class="max-w-7xl mb-8 mt-20">
+        <div class="flex justify-between items-center">
+          <div class="mr-3 flex justify-between items-center">
             <button
-              class='button rounded-full'
-              id='playbtntwo'
+              class="button rounded-full"
+              id="playbtntwo"
               onclick="changeVideoId('myDivfive')"
               ><svg
-                xmlns='http://www.w3.org/2000/svg'
-                viewBox='0 0 24 24'
-                fill='currentColor'
-                class='w-6 h-6'
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
               >
                 <path
-                  fill-rule='evenodd'
-                  d='M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z'
-                  clip-rule='evenodd'></path>
+                  fill-rule="evenodd"
+                  d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+                  clip-rule="evenodd"></path>
               </svg>
             </button>
           </div>
-          <div class='w-full flex justify-between items-center'>
+          <div class="w-full flex justify-between items-center">
             <div>
               <h1
-                class='text-lg md:text-2xl text-mt font-bold tracking-tight sm:text-xl'
+                class="text-lg md:text-2xl text-mt font-bold tracking-tight sm:text-xl"
               >
                 DRUM AND BASS
               </h1>
-              <p class='hidden sm:block mr-4 text-mtLight'>
+              <p class="hidden sm:block mr-4 text-mtLight">
                 Recent heat from the dnb scene
               </p>
             </div>
-            <div class='flex space-x-1'>
-              <button class='text-mtLight p-2 px-3 leading-none rounded-full'>
+            <div class="flex space-x-1">
+              <button class="text-mtLight p-2 px-3 leading-none rounded-full">
                 more</button
               >
               <button
-                class='text-mtLight p-2 rounded-full sb-prev hover:bg-[#1c2236]'
+                class="text-mtLight p-2 rounded-full sb-prev hover:bg-[#1c2236]"
                 ><svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke-width='1.5'
-                  stroke='currentColor'
-                  class='w-6 h-6'
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
                 >
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    d='M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   ></path>
                 </svg>
               </button>
               <button
-                class='text-mtLight p-2 rounded-full sb-next hover:bg-[#1c2236]'
+                class="text-mtLight p-2 rounded-full sb-next hover:bg-[#1c2236]"
               >
                 <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke-width='1.5'
-                  stroke='currentColor'
-                  class='w-6 h-6'
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
                 >
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    d='M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   ></path>
                 </svg>
               </button>
@@ -93,16 +93,17 @@ const firstTen = strippedVideo.slice(0, 20);
         </div>
       </div>
 
-      <div class='swiper-wrapper'>
+      <div class="swiper-wrapper">
         {
           firstTen.map((ytVideos) => (
-            <div class='swiper-slide'>
+            <div class="swiper-slide">
               <Card
                 url={ytVideos.url}
                 title={ytVideos.title}
                 username={ytVideos.username}
                 channel_id={ytVideos.channel_id}
                 heart_count={ytVideos.heart_count}
+                video_id={ytVideos.video_id}
               />
             </div>
           ))
@@ -113,19 +114,19 @@ const firstTen = strippedVideo.slice(0, 20);
   </div>
 </div>
 
-<script type='module'>
-  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js';
-  const swiper = new Swiper('.swiperseven', {
+<script type="module">
+  import Swiper from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
+  const swiper = new Swiper(".swiperseven", {
     // Optional parameters
     slidesPerView: 2.3,
     spaceBetween: 12,
     freeMode: true,
     momentumRatio: 1,
-    direction: 'horizontal',
+    direction: "horizontal",
     loop: false,
     navigation: {
-      nextEl: '.sb-next',
-      prevEl: '.sb-prev',
+      nextEl: ".sb-next",
+      prevEl: ".sb-prev",
     },
     breakpoints: {
       640: {
