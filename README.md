@@ -1,51 +1,159 @@
-# Okizoo Discord Music App
+# Zoo-tube Frontend
 
-A basic module for building web applications with [Astro](https://astro.js.org/).
+## Overview
+Zoo-tube is a modern music discovery platform that transforms Discord music sharing into an interactive streaming experience. Built with Astro.js, it offers a smooth, responsive interface for discovering and sharing music across different genres.
 
-## Getting Started
+## ✨ Features
+- Genre-based music discovery
+- User profiles with shared tracks
+- Smooth carousel navigation
+- Responsive design
+- Authentication with multiple providers
+- Real-time music player
+- Like system
+- Upcoming: Live radio and chat features
 
-1. Install the dependencies:
+## 🛠 Tech Stack
+- **Astro.js** - Web framework
+- **React** - Interactive components
+- **Tailwind CSS** - Styling
+- **Supabase** - Database services
+- **Auth0** - Authentication
+- **SwiperJS** - Carousel functionality
+- **Node.JS** - Runtime environment
 
+## 📋 Prerequisites
+- Node.js (v16 or higher)
+- npm/yarn
+- Supabase account
+- Auth0 account
 
-2. Run the development server:
+## 🔧 Environment Variables
+Create a `.env` file:
+```env
+PUBLIC_SUPABASE_URL=your_supabase_url
+PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
+## 🚀 Getting Started
 
-3. Build the app for production:
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/supa-two.git
+cd supa-two
+```
 
+2. Install dependencies:
+```bash
+npm install
+```
 
+3. Run development server:
+```bash
+npm run dev
+```
 
-## Scripts
+## 📁 Project Structure
+```
+src/
+├── components/     # Reusable UI components
+├── layouts/        # Page layouts
+├── pages/         # Route components
+├── lib/           # Utilities and config
+├── styles/        # Global styles
+└── scripts/       # Client-side scripts
+```
 
-The following scripts are available in this module:
+## 🎨 Key Components
 
-- `dev`: Runs the development server.
-- `start`: Runs the development server.
-- `build`: Builds the production assets.
-- `preview`: Previews the production build.
-- `astro`: Runs the Astro CLI.
+### Genre Sliders
+Smooth, responsive carousels for genre navigation using SwiperJS:
+```javascript
+const swiper = new Swiper('.genre-slider', {
+  slidesPerView: 2.3,
+  spaceBetween: 12,
+  freeMode: true,
+  // Responsive breakpoints...
+});
+```
 
-## Dependencies
+### Dynamic User Pages
+Individual pages for each user showing their shared tracks:
+```typescript
+// [username].astro
+export function getStaticPaths() {
+  return [
+    { params: { username: 'user1' } },
+    // ...more users
+  ];
+}
+```
 
-This module depends on the following packages:
+## 🔄 Upcoming Features
 
-- `@astro-community/astro-embed-youtube`: A package for embedding YouTube videos in Astro projects.
-- `@astrojs/netlify`: A package for working with Netlify in Astro projects.
-- `@astrojs/tailwind`: A package for using Tailwind CSS in Astro projects.
-- `astro`: The Astro CLI.
-- `tailwindcss`: The Tailwind CSS library.
+### Code Refactoring
+ - organizing and creating more components
+ - efficientcy 
 
+### Radio Feature
+- Synchronized video playback
+- Live chat integration
+- Multiple genre channels
+- Real-time user presence
 
-This code is a astrojs app that pulls YouTube URLs from Discord messages and catalogs them on a website. The main layout of the website is defined in the Layout component imported from '../layouts/Layout.astro'. The data for the YouTube videos to be displayed on the website is stored in galleryData which is imported from '../../public/galleryData'. The app uses the YouTube component from '@astro-community/astro-embed-youtube' to embed the videos on the website.
+### Enhanced User Dashboard
+- Liked tracks collection
+- Sharing statistics
+- Activity feed
+- Custom playlists
 
-The code also imports the Discord.js library and creates a new Discord client. The client is configured to use several intents for accessing information from Discord. The Discord bot token is stored in the environment variable DISCORD_BOT_TOKEN.
+## 📱 Responsive Design
+- Mobile-first approach
+- Smooth transitions
+- Optimized images
+- Adaptive layouts
 
-The code also uses Supabase to retrieve the music data from a database. The Supabase client is created with the public URL and service role key stored in the environment variables PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY. The code then fetches all the data from the "music" table in the database and orders it by the "id" column.
+## 🤝 Contributing
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/new-feature`
+3. Commit changes: `git commit -m 'Add new feature'`
+4. Push to branch: `git push origin feature/new-feature`
+5. Submit a Pull Request
 
-The code then logs in to the Discord client using the token and fetches all messages from a specified text channel. The messages are filtered to find those that contain the string "youtu" and YouTube URLs are extracted from these messages. The extracted URLs are logged to the console.
+## 🔍 Scripts
+```json
+{
+  "dev": "astro dev",
+  "build": "astro build",
+  "preview": "astro preview",
+  "astro": "astro"
+}
+```
 
-Finally, the code defines the main layout of the website using the Layout component and embeds the videos using the YouTube component. The videos are displayed in a grid layout with information about the video and its creator displayed below each video.
+## 📚 Documentation
+- [Astro Documentation](https://docs.astro.build)
+- [Supabase Documentation](https://supabase.io/docs)
+- [Auth0 Documentation](https://auth0.com/docs)
 
+## 🎯 Development Status
+- ✅ Basic features implemented
+- ✅ Authentication system
+- ✅ Genre navigation
+- ✅ User profiles
+- 🚧 Like system (In Progress)
+- 🚧 Radio feature (Planned)
+- 🚧 Chat system (Planned)
 
-- Fixed issues with supabase
-- Fixed Youtube API
+## 📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
+## 📧 Contact
+Tek Jones - tekthree@gmail.com
+
+Project Link: [https://github.com/Tekthree/supa-two](https://github.com/Tekthree/supa-two)
+
+## 🙏 Acknowledgments
+- Discord communities for inspiration
+- Astro.js team for the amazing framework
+- Supabase team for backend services
+- Auth0 team for authentication services
