@@ -11,6 +11,7 @@ import UserTags from '../components/UserTags.astro';
 import Header from '../components/Header.astro';
 import BottomNav from '../components/BottomNav.astro';
 import Genretags from '../components/Genretags.astro';
+import MainNav from '@/components/MainNav.astro';
 const first40 = []; // Your list of videos
 const itemsPerPage = 10;
 
@@ -26,7 +27,9 @@ var firstfourty = uniqueVideos.slice(0, 40);
 ---
 
 <Layout title='Okizoo Homepage'>
-  <main class='bg-mcBg overflow-hidden'>
+  <div>
+    <MainNav />
+    <main class='bg-mcBg overflow-hidden lg:pl-72'>
     <div class='relative isolate overflow-hidden'>
       <div class='pt-1 px-1 sm:px-6 sm:py-18 lg:px-8'>
         <Header />
@@ -130,4 +133,6 @@ var firstfourty = uniqueVideos.slice(0, 40);
       </div>
     </div>
   </main>
+  </div>
+  
 </Layout>
